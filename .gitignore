@@ -1,0 +1,5 @@
+node-red/.npm/
+node-red/node_modules/
+node-red-w1/.npm/
+node-red-w1/node_modules/
+redis-data/

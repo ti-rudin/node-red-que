@@ -1,0 +1,787 @@
+[
+    {
+        "id": "3f98de411a14795f",
+        "type": "tab",
+        "label": "w1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a0efbb89.5e42d8",
+        "type": "redis-config",
+        "name": "local",
+        "options": "redis://:Yz25RAdGgkFg@redis:6379",
+        "cluster": false,
+        "optionsType": "str"
+    },
+    {
+        "id": "0fde83b90ac05731",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "workers",
+        "obj": true,
+        "x": 600,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "27db2f168531b6ef",
+        "type": "inject",
+        "z": "3f98de411a14795f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "c35590d8bd6dc749"
+            ]
+        ]
+    },
+    {
+        "id": "e2d50d7747a267e5",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "Initialize Binance",
+        "func": "\n\nconst binance = new Binance().options({\n    APIKEY: \"eTkVw1NdwT6IQKZDoYEYUE0G7zNqI1vZirDQiAL8t1V7vdFSwd4PLoF3drvhtui2\",\n    APISECRET: \"aqOoNDzRuO4UBRnivxejpbf1pMs5Lm3OkOA3hK5hhhIXPmOTaXSUthxBYEFRvDhx\",\n    family:4\n});\n\nglobal.set('binance', binance);",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "Binance",
+                "module": "node-binance-api"
+            }
+        ],
+        "x": 380,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b00d80d8dab1500d",
+        "type": "inject",
+        "z": "3f98de411a14795f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "e2d50d7747a267e5"
+            ]
+        ]
+    },
+    {
+        "id": "39619d1d6faffa93",
+        "type": "debug",
+        "z": "3f98de411a14795f",
+        "name": "debug 36",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1e09f725191cbd3c",
+        "type": "catch",
+        "z": "3f98de411a14795f",
+        "name": "catch all",
+        "scope": null,
+        "uncaught": false,
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "39619d1d6faffa93",
+                "418e5b92c3deaff5"
+            ]
+        ]
+    },
+    {
+        "id": "c35590d8bd6dc749",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "w1",
+        "func": "let worker_id = \"w1\"\nglobal.set('worker_id', worker_id)\n\nlet worker = {\n    worker_id: worker_id,\n    locked:false,\n    start: new Date().getTime(),\n    task_id:null\n}\nmsg.payload = {\n\n    cmd: \"add\",\n    worker: worker\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "0fde83b90ac05731"
+            ]
+        ]
+    },
+    {
+        "id": "61d171d622c588e9",
+        "type": "redis-instance",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "name": "",
+        "topic": "redis",
+        "location": "global",
+        "x": 610,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "418e5b92c3deaff5",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "stop",
+        "obj": false,
+        "x": 510,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "967a4a6be570f892",
+        "type": "switch",
+        "z": "3f98de411a14795f",
+        "name": "task.cmd",
+        "property": "payload.task.cmd",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "onoff",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "reset",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "check_orders",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 720,
+        "y": 740,
+        "wires": [
+            [
+                "060a65e8b3a20747"
+            ],
+            [
+                "461cc8ca1b9344e7"
+            ],
+            [
+                "f99a0b7c2b2bdb76"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "cc79d368ab2cba39",
+        "type": "switch",
+        "z": "3f98de411a14795f",
+        "name": "worker_id",
+        "property": "payload.worker.worker_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "worker_id",
+                "vt": "global"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 560,
+        "y": 740,
+        "wires": [
+            [
+                "967a4a6be570f892"
+            ]
+        ]
+    },
+    {
+        "id": "060a65e8b3a20747",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "onoff",
+        "func": "\n\nmsg.payload.bot.onoff = false\n\nmsg.payload.bot.status.updated = new Date().getTime()\n\nmsg.topic = \"fjob\"\nnode.status({ fill: \"green\", shape: \"dot\" });\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 560,
+        "wires": [
+            [
+                "f1b804e6d445a7bf",
+                "4404247d923b5b06"
+            ]
+        ]
+    },
+    {
+        "id": "461cc8ca1b9344e7",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "reset",
+        "func": "let redis = context.global.get('redis');\n\nlet startSetKey = \"bots:\" + msg.payload.bot.botname + \":start_set\";\n\nredis.get(startSetKey).then((startSet) => {\n    msg.payload.bot = JSON.parse(startSet)\n\n    msg.payload.bot.status.updated = new Date().getTime()\n  \n    msg.topic = \"fjob\"\n    node.status({ fill: \"green\", shape: \"dot\" });\n    node.send(msg)\n\n}).catch((err) => {\n    node.error(\"Error getting startSet: \" + err);\n});\n\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 620,
+        "wires": [
+            [
+                "a10d51438b3ae779",
+                "359f66609e04a4df"
+            ]
+        ]
+    },
+    {
+        "id": "c6dc265d96e6e171",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "floor_edit",
+        "func": "msg.payload.bot.floors[msg.payload.task.floor.floorNumber] = msg.payload.task.floor\n\n\nmsg.payload.bot.status.updated = new Date().getTime()\n\nmsg.topic = \"fjob\"\nnode.status({ fill: \"green\", shape: \"dot\" });\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 680,
+        "wires": [
+            [
+                "5bfccf83b509c8f1",
+                "a1cd0a4493392c52"
+            ]
+        ]
+    },
+    {
+        "id": "7c269496e14a98ec",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "tsl_edit",
+        "func": "msg.payload.bot.tsl = msg.payload.task.tsl\n\n\nmsg.payload.bot.status.updated = new Date().getTime()\n\nmsg.topic = \"fjob\"\nnode.status({ fill: \"green\", shape: \"dot\" });\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 740,
+        "wires": [
+            [
+                "1fd0b351240a01d6",
+                "b6a6c71aadfa399d"
+            ]
+        ]
+    },
+    {
+        "id": "1a07e915c77b4c13",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "check_ma",
+        "func": "if (msg.payload.bot.settings.exchange !== \"TestB\") {\n  const binance = global.get('binance');\n  function parseApiError(error) {\n    if (error.body) {\n      try {\n        var resp = JSON.parse(error.body);\n        return resp.msg;\n      } catch (error) {/* pass thru */ }\n    }\n    return \"Unknown error. Status code: \" + error.statsCode;\n  }\n\n  if (!binance) {\n    msg.statusCode = 500;\n    msg.payload = { error: 'Binance instance is not initialized.' };\n    return msg;\n  }\n\n  let moneta = msg.payload.bot.settings.pair\n\n  let deep = Number(msg.payload.bot.settings.ma2);\n\n  binance.useServerTime(function () {\n    binance.candlesticks(moneta, \"1m\", (error, ticks, symbol) => {\n\n      if (error) {\n        var errorMsg = parseApiError(error) + \", moneta:\" + moneta;\n        node.error(errorMsg, msg);\n\n        msg.err = error;\n        node.status({ fill: \"red\", shape: \"dot\", text: errorMsg });\n\n        node.send(msg);\n\n      }\n\n      msg.candles = ticks;\n      node.status({ fill: \"green\", shape: \"dot\" });\n      node.send(msg);\n\n    }, { limit: deep });\n\n  });\n} else {\n  return msg\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "gBinance",
+                "module": "node-binance-api"
+            }
+        ],
+        "x": 1050,
+        "y": 800,
+        "wires": [
+            [
+                "2b667548b846af2d"
+            ]
+        ],
+        "inputLabels": [
+            "orderid, moneta"
+        ],
+        "outputLabels": [
+            "status"
+        ],
+        "icon": "node-red/inject.svg"
+    },
+    {
+        "id": "f99a0b7c2b2bdb76",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "check_orders",
+        "func": "// Получаем данные об этажах и настройках из сообщения\nlet floors = msg.payload.bot.floors;\nconst pair = msg.payload.bot.settings.pair;\nconst redis = context.global.get('redis'); // Получаем экземпляр Redis\nconst binance = global.get('binance'); // Получаем экземпляр Binance\n\nconst botname = msg.payload.bot.botname;\nconst tilog = global.get('tilog'); // Логирование\nconst enableLogging = false; // Флаг для включения/выключения логирования\n\n/**\n * Функция для логирования сообщений.\n * @param {string} message - Сообщение для логирования.\n */\nfunction log(message) {\n    if (enableLogging && tilog) {\n        tilog(botname, message);\n    }\n}\n\n/**\n * Функция для парсинга ошибок API Binance.\n * @param {object} error - Объект ошибки.\n * @returns {string} - Сообщение об ошибке.\n */\nfunction parseApiError(error) {\n    if (error.body) {\n        try {\n            const resp = JSON.parse(error.body);\n            return resp.msg;\n        } catch (e) {\n            // pass thru\n        }\n    }\n    return `Unknown error. Status code: ${error.statusCode}`;\n}\n\n\n\n/**\n * Функция для записи значения в Redis с истечением срока действия.\n * @param {object} redis - Экземпляр Redis.\n * @param {string} key - Ключ для записи значения.\n * @param {string} value - Значение для записи.\n * @param {number} expiration - Время истечения срока действия в секундах.\n * @returns {Promise} - Промис, который разрешается при успешной записи или отклоняется в случае ошибки.\n */\nasync function setRedisValue(redis, key, value, expiration) {\n    return new Promise((resolve, reject) => {\n        redis.setex(key, expiration, value, (err) => {\n            if (err) {\n                log(`Ошибка при записи значения в Redis для ключа ${key}: ${err.message}`);\n                reject(err);\n            } else {\n                log(`Значение успешно записано в Redis для ключа ${key}`);\n                resolve();\n            }\n        });\n    });\n}\n\n/**\n * Промисификация функции binance.orderStatus для получения статуса ордера.\n * @param {string} pair - Торговая пара.\n * @param {number} orderId - Идентификатор ордера.\n * @returns {Promise} - Промис, который разрешается в объект статуса ордера или отклоняется в случае ошибки.\n */\nfunction getBinanceOrderStatus(pair, orderId) {\n    return new Promise((resolve, reject) => {\n        binance.orderStatus(pair, undefined, (error, orderStatus, symbol) => {\n            if (error) {\n                const errorMsg = parseApiError(error);\n                log(`Ошибка при получении статуса ордера из Binance: ${errorMsg}`);\n                reject(new Error(errorMsg));\n            } else {\n                log(`Статус ордера получен от Binance: ${orderStatus.status}`);\n                resolve(orderStatus);\n            }\n        }, { orderId: orderId });\n    });\n}\n\nasync function getRedisValue(key) {\n    return new Promise((resolve, reject) => {\n        redis.get(key, (err, data) => {\n            if (err) {\n                reject(err);\n            } else {\n                resolve(data);\n            }\n        });\n    });\n}\n\n/**\n * Основная функция для обновления статусов этажей.\n * @param {object} floors - Объект этажей.\n * @param {string} pair - Торговая пара.\n * @returns {Promise} - Промис, который разрешается в массив результатов или отклоняется в случае ошибки.\n */\nasync function updateFloorStatuses(floors, pair) {\n    const result = [];\n\n    for (const key in floors) {\n        if (floors.hasOwnProperty(key)) {\n            const item = floors[key];\n            let floor = floors[key];\n\n            if (item.buyId > 0) {\n                try {\n                    log(`Обработка этажа ${item.floorNumber}, buyId: ${item.buyId}`);\n\n                    // Проверка наличия orderId перед запросом к Binance\n                    if (!item.buyId) {\n                        throw new Error(`Missing orderId for floor ${item.floorNumber}`);\n                    }\n\n                    // Получаем текущий статус ордера из Redis\n                    const currentStatus = item.buyStatus;\n\n                    // Если статус \"FILLED\", пропускаем повторный запрос\n                    if (currentStatus === \"FILLED\") {\n                        log(`Статус ордера уже \"FILLED\", пропускаем повторный запрос`);\n                        item.buyStatus = currentStatus;\n                        result.push({\n                            buyId: item.buyId,\n                            floorNumber: item.floorNumber,\n                            buyStatus: item.buyStatus\n                        });\n                        continue;\n                    }\n\n                    // Синхронизация времени сервера\n                    await binance.useServerTime();\n\n                    // Получаем статус ордера из Binance\n                    const orderStatus = await getBinanceOrderStatus(pair, item.buyId);\n                    const buyStatus = orderStatus.status;\n\n                    // Записываем статус в Redis\n                    await setRedisValue(redis, `orders-status:${pair}:${item.buyId}`, buyStatus, 1000);\n\n                    // Обновляем статус в объекте этажа\n                    item.buyStatus = buyStatus;\n\n                    // Если статус \"FILLED\", сохраняем цену и комиссию в Redis\n                    if (buyStatus === \"FILLED\") {\n                        log(`Ордер выполнен, сохраняем цену и комиссию в Redis`);\n                        await setRedisValue(redis, `orders-status:${pair}:${item.buyId}-price`, orderStatus.price, 10000);\n                        await setRedisValue(redis, `orders-status:${pair}:${item.buyId}-comsa`, orderStatus.commission, 10000);\n                        log(`Цена и комиссия сохранены для buyId: ${item.buyId}`);\n                    }\n\n                    // Добавляем результат в массив\n                    result.push({\n                        buyId: item.buyId,\n                        floorNumber: item.floorNumber,\n                        buyStatus: item.buyStatus\n                    });\n                } catch (err) {\n                    log(`Ошибка при обработке этажа ${item.floorNumber}: ${err.message}`);\n                    node.error(`Error processing floor ${item.floorNumber}: ${err.message}`, msg);\n                }\n            }\n\n            switch (floor.status) {\n                case '0':\n                    node.status({ fill: \"green\", shape: \"dot\" });\n                    break;\n                case 'pending_buy':\n                    const orderKey = `orders-status:${pair}:${floor.buyId}`;\n                    const orderStatus = await getRedisValue(orderKey);\n                    floor.buyStatus = orderStatus;\n\n                    if (orderStatus === \"NEW\") { floor.status = \"set_buy\" }\n                    if (orderStatus === \"FILLED\") { floor.status = \"filled_buy\" }\n                    if (orderStatus === \"CANCELED\") { floor.status = \"0\" }\n\n                    break;\n                case 'set_buy':\n                    const orderKeySetBuy = `orders-status:${pair}:${floor.buyId}`;\n                    const orderStatusSetBuy = await getRedisValue(orderKeySetBuy);\n                    floor.buyStatus = orderStatusSetBuy;\n\n                    if ((orderStatus === \"NEW\")&&(floor.floorNumber !== Number(msg.payload.bot.status.currentfloor))) {\n\n                        if (msg.payload.bot.zapret_na_zakup) {\n                            node.send([null, {\n                                payload: {\n                                    cmd: \"add\",\n                                    task: {\n                                        bot_id: msg.payload.bot.botname,\n                                        cmd: `cancel_on_${msg.payload.bot.settings.exchange.toLowerCase()}`,\n                                        floor: floor\n\n                                    }\n                                }\n                            }]);\n                        }\n                        floor.status = \"pending_cancel_buy\"\n\n                    }\n                    if (orderStatus === \"FILLED\") { floor.status = \"filled_buy\" }\n                    if (orderStatus === \"CANCELED\") { floor.status = \"0\" }\n\n                    break;\n                case 'pending_cancel_buy':\n                    const orderKeyPendingCancel = `orders-status:${pair}:${floor.buyId}`;\n                    const orderStatusPendingCancel = await getRedisValue(orderKeyPendingCancel);\n                    floor.buyStatus = orderStatusPendingCancel;\n\n                    if (orderStatus === \"NEW\") { }\n                    if (orderStatus === \"FILLED\") { floor.status = \"filled_buy\" }\n                    if (orderStatus === \"CANCELED\") { floor.status = \"0\" }\n\n                    break;\n                case 'filled_buy':\n                    if (Number(msg.payload.bot.status.currentprice) >= Number(floor.endPrice)) {\n                        floor.status = \"pending_sell\";\n                        log(`Начали продавать на этаже ${floor.floorNumber}`);\n                    }\n                    break;\n                case 'pending_sell':\n                    msg.payload.bot.openpos.quantity += Number(floor.vol);\n\n                    break;\n            }\n        }\n    }\n\n    return result;\n}\n\n// Запуск основной функции\nupdateFloorStatuses(floors, pair)\n    .then(result => {\n        msg.orders = result;\n        msg.payload.bot.floors = floors;\n        msg.payload.bot.status.updated = new Date().getTime();\n\n        msg.topic = \"fjob\";\n        node.status({ fill: \"green\", shape: \"dot\" });\n        log(`Обновление статусов этажей завершено успешно`);\n        node.send(msg);\n    })\n    .catch(err => {\n        msg.err = err;\n        msg.payload.bot.status.updated = new Date().getTime();\n\n        msg.topic = \"fjob\";\n        node.status({ fill: \"red\", shape: \"dot\" });\n        log(`Ошибка при обновлении статусов этажей: ${err.message}`);\n        node.send(msg);\n    });\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 860,
+        "wires": [
+            [
+                "8a8ef2e28a22bae8",
+                "9c535863257785c3"
+            ],
+            [
+                "a3d8146f265a569c"
+            ]
+        ],
+        "icon": "node-red/inject.svg"
+    },
+    {
+        "id": "8b6fbbe479782674",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "buy_on_binance",
+        "func": "const binance = global.get('binance');\nconst tilog = global.get('tilog'); // Логирование\nconst botname = msg.payload.bot.botname;\n\n// Переменная для управления логированием\nconst enableLogging = true; // true - логирование включено, false - выключено\n\n// Функция для логирования\nfunction log(message, data = null) {\n    let nodeName = node.name;\n    let botname = msg.payload.bot.botname;\n    if (enableLogging && tilog) {\n        if (data) {\n            tilog(botname, `[${nodeName}] ${message}: ${JSON.stringify(data, null, 2)}`);\n        } else {\n            tilog(botname, `[${nodeName}] ${message}`);\n        }\n    }\n}\n\n// Функция для парсинга ошибок API\nfunction parseApiError(error) {\n    if (error.body) {\n        try {\n            const resp = JSON.parse(error.body);\n            return resp.msg;\n        } catch (e) {\n            // pass thru\n        }\n    }\n    return `Unknown error. Status code: ${error.statusCode}`;\n}\n\n// Промисификация функции binance.buy\nasync function buyBinanceOrder(pair, quantity, price) {\n    return new Promise((resolve, reject) => {\n        binance.buy(pair, quantity, price, { type: 'LIMIT' }, (err, resp) => {\n            if (err) {\n                reject(err);\n            } else {\n                resolve(resp);\n            }\n        });\n    });\n}\n\n// Функция для обработки ошибок\nfunction handleError(msg, err) {\n    const errorMsg = parseApiError(err);\n    log(`Ошибка при покупке: ${errorMsg}`);\n    msg.payload.bot.onoff = false;\n    msg.payload.bot.status.errmsg = `Остановлен в результате ошибки ${errorMsg}`;\n    msg.payload.bot.status.updated = new Date().getTime();\n    msg.topic = \"fjob\";\n    node.status({ fill: \"red\", shape: \"ring\" });\n    msg.err = err;\n    node.send([msg, null]);\n}\n\n// Функция для обработки успешного выполнения\nfunction handleSuccess(msg, resp, floor, quantity) {\n    log(`Ордер успешно размещен: orderId=${resp.orderId}, status=${resp.status}`);\n\n    floor.status = \"set_buy\"; // Обновлено состояние\n    floor.buyId = resp.orderId;\n    floor.buyDate = new Date().getTime();\n    floor.buyStatus = resp.status;\n    floor.vol = quantity;\n    msg.payload.bot.floors[msg.payload.task.floor.floorNumber] = floor;\n\n    msg.payload.bot.status.updated = new Date().getTime();\n    msg.topic = \"fjob\";\n    node.status({ fill: \"green\", shape: \"dot\" });\n    msg.resp = resp;\n    node.send([msg, msg]);\n}\n\n// Функция для обработки таймаута\nfunction handleTimeout(msg) {\n    log(`Таймаут при размещении ордера`);\n    msg.payload.bot.onoff = false;\n    msg.payload.bot.status.errmsg = \"Остановлен в результате таймаута\";\n    msg.payload.bot.status.updated = new Date().getTime();\n\n    msg.topic = \"fjob\";\n    node.status({ fill: \"red\", shape: \"ring\" });\n    node.send([msg, null]);\n}\n\nconst floor = msg.payload.task.floor;\nconst quantity = Number((Number(msg.payload.bot.finance.depo) * Number(msg.payload.bot.settings.ordersize) / 100 / Number(msg.payload.bot.status.currentprice)).toFixed(msg.payload.bot.settings.digitq));\nconst pair = msg.payload.bot.settings.pair;\nconst price = floor.initBuyPrice;\n\nlog(`Начало размещения ордера: pair=${pair}, quantity=${quantity}, price=${price}`);\n\nconst TIMEOUT = 2000;\n\nconst timeout = setTimeout(() => {\n    handleTimeout(msg);\n}, TIMEOUT);\n\n// Используем серверное время для размещения ордера\nbinance.useServerTime(async () => {\n    try {\n        const resp = await buyBinanceOrder(pair, quantity, price);\n        if (resp && resp.code) {\n            log(`Ошибка: ${resp.msg}`);\n            handleError(msg, { body: JSON.stringify({ msg: resp.msg, floor: floor }) });\n        } else {\n\n            clearTimeout(timeout);\n            handleSuccess(msg, resp, floor, quantity);\n        }\n    } catch (err) {\n        clearTimeout(timeout);\n        handleError(msg, err);\n    }\n});\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 1160,
+        "wires": [
+            [
+                "18fb270117d445c1"
+            ],
+            [
+                "248fbe364d630951"
+            ]
+        ]
+    },
+    {
+        "id": "4a7542dde5f85791",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": " cancel_on_binance",
+        "func": "const binance = global.get('binance');\nconst tilog = global.get('tilog'); // Логирование\nconst botname = msg.payload.bot.botname;\n\n// Переменная для управления логированием\nconst enableLogging = true; // true - логирование включено, false - выключено\n\n// Функция для логирования\nfunction log(message, data = null) {\n    let nodeName = node.name;\n    let botname = msg.payload.bot.botname;\n    if (enableLogging && tilog) {\n        if (data) {\n            tilog(botname, `[${nodeName}] ${message}: ${JSON.stringify(data, null, 2)}`);\n        } else {\n            tilog(botname, `[${nodeName}] ${message}`);\n        }\n    }\n}\n\n// Функция для парсинга ошибок API\nfunction parseApiError(error) {\n    if (error.body) {\n        try {\n            const resp = JSON.parse(error.body);\n            return resp.msg;\n        } catch (e) {\n            // pass thru\n        }\n    }\n    return `Unknown error. Status code: ${error.statusCode}`;\n}\n\n// Промисификация функции binance.buy\n\nasync function cancelBinanceOrder(pair, orderId) {\n    return new Promise((resolve, reject) => {\n        binance.cancel(pair, orderId, (err, resp) => {\n            if (err) {\n                reject(err);\n            } else {\n                resolve(resp);\n            }\n        });\n    });\n}\n\n// Функция для обработки ошибок\nfunction handleError(msg, err) {\n    const errorMsg = parseApiError(err);\n    log(`Ошибка : ${errorMsg}`);\n    msg.payload.bot.onoff = false;\n    msg.payload.bot.status.errmsg = `Остановлен в результате ошибки ${errorMsg}`;\n    msg.payload.bot.status.updated = new Date().getTime();\n    msg.topic = \"fjob\";\n    node.status({ fill: \"red\", shape: \"ring\" });\n    msg.err = err;\n    node.send([msg, null]);\n}\n\n// Функция для обработки таймаута\nfunction handleTimeout(msg) {\n    log(`Остановлен в результате таймаута`);\n    msg.payload.bot.onoff = false;\n    msg.payload.bot.status.errmsg = \"Остановлен в результате таймаута\";\n    msg.payload.bot.status.updated = new Date().getTime();\n\n    msg.topic = \"fjob\";\n    node.status({ fill: \"red\", shape: \"ring\" });\n    node.send([msg, null]);\n}\n\nconst floor = msg.payload.task.floor;\nconst pair = msg.payload.bot.settings.pair;\nconst TIMEOUT = 2000;\n\nconst timeout = setTimeout(() => {\n    handleTimeout(msg);\n}, TIMEOUT);\n\n// Используем серверное время для размещения ордера\nbinance.useServerTime(async () => {\n    try {\n        const resp = await cancelBinanceOrder(pair, floor.buyId);\n        clearTimeout(timeout);\n\n        if (resp && resp.code) {\n            log(5, `Ошибка при отмене ордера: ${resp.msg}`);\n            handleError(msg, { body: JSON.stringify({ msg: resp.msg, floor: floor }) });\n        } else {\n            log(6, `Ордер успешно отменен`);\n            floor.buyStatus = \"CANCELED\";\n            floor.status = \"0\";\n            msg.payload.bot.floors[floor.floorNumber] = floor; // Обновляем объект бота\n\n            msg.payload.bot.status.updated = new Date().getTime();\n            msg.topic = \"fjob\";\n            node.status({ fill: \"green\", shape: \"dot\" });\n            node.send([msg, msg]);\n        }\n    } catch (err) {\n        clearTimeout(timeout);\n        handleError(msg, err);\n    }\n});\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 1260,
+        "wires": [
+            [
+                "dbade64f3039e3b5"
+            ],
+            [
+                "e317e5b8648d3837"
+            ]
+        ]
+    },
+    {
+        "id": "f5df7c542e6c1208",
+        "type": "redis-in",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "subscribe",
+        "name": "",
+        "topic": "job",
+        "obj": true,
+        "timeout": 0,
+        "x": 310,
+        "y": 740,
+        "wires": [
+            [
+                "cc79d368ab2cba39",
+                "e60cdd5aa590fc8a"
+            ]
+        ]
+    },
+    {
+        "id": "f1b804e6d445a7bf",
+        "type": "debug",
+        "z": "3f98de411a14795f",
+        "name": "debug 25",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "4404247d923b5b06",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "fjob",
+        "obj": true,
+        "x": 1210,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "a10d51438b3ae779",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "fjob",
+        "obj": true,
+        "x": 1190,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "359f66609e04a4df",
+        "type": "debug",
+        "z": "3f98de411a14795f",
+        "name": "debug 43",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "5bfccf83b509c8f1",
+        "type": "debug",
+        "z": "3f98de411a14795f",
+        "name": "debug 34",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "a1cd0a4493392c52",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "fjob",
+        "obj": true,
+        "x": 1210,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "1fd0b351240a01d6",
+        "type": "debug",
+        "z": "3f98de411a14795f",
+        "name": "debug 55",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "b6a6c71aadfa399d",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "fjob",
+        "obj": true,
+        "x": 1210,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "2b667548b846af2d",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "расчет и запись MA ",
+        "func": "if (msg.payload.bot.settings.exchange === \"TestB\") {\n  const redis = global.get('redis');\n\n  Promise.all([\n    redis.get('testb:ma_big'),\n    redis.get('testb:ma_small')\n  ]).then(([ma_big, ma_small]) => {\n    if (ma_big) { msg.payload.bot.status.sr_ma_big = ma_big; }\n    if (ma_small) { msg.payload.bot.status.sr_ma_small = ma_small; }\n\n    msg.payload.bot.status.updated = new Date().getTime();\n    msg.payload.bot.busy = false;\n    msg.topic = \"fjob\";\n    node.status({ fill: \"green\", shape: \"dot\" });\n    node.send(msg)\n  }).catch((err) => {\n    console.error('Error fetching data from Redis:', err);\n    node.status({ fill: \"red\", shape: \"dot\" });\n    msg.topic = \"fjob\";\n    node.send(msg)\n  });\n} else {\n  let candles = msg.candles;\n\n  let heiken = candles.map(function (tick) {\n    return (Number(tick[1]) + Number(tick[2]) + Number(tick[3]) + Number(tick[4])) / 4;\n  });\n\n  msg.heiken = heiken;\n\n  let heiken_small = heiken.slice(-msg.payload.bot.settings.ma1);\n\n  let sum_all = heiken.reduce(function (sum, current) {\n    return sum + current;\n  });\n\n  let sum_small = heiken_small.reduce(function (sum, current) {\n    return sum + current;\n  });\n\n  msg.payload.bot.status.sr_ma_big = sum_all / msg.payload.bot.settings.ma2;\n  msg.payload.bot.status.sr_ma_small = sum_small / msg.payload.bot.settings.ma1;\n\n  msg.payload.bot.status.updated = new Date().getTime();\n  msg.payload.bot.busy = false;\n  msg.topic = \"fjob\";\n  node.status({ fill: \"green\", shape: \"dot\" });\n node.send(msg)\n}\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 800,
+        "wires": [
+            [
+                "3ab92779ddde1b33",
+                "cf51da890134f0a6"
+            ]
+        ]
+    },
+    {
+        "id": "8a8ef2e28a22bae8",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "fjob",
+        "obj": true,
+        "x": 1230,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "9c535863257785c3",
+        "type": "debug",
+        "z": "3f98de411a14795f",
+        "name": "debug 27",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1380,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "a3d8146f265a569c",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "tasks",
+        "obj": true,
+        "x": 1230,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "18fb270117d445c1",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "fjob",
+        "obj": true,
+        "x": 1390,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "248fbe364d630951",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "floor_edit",
+        "func": "msg.payload  = {\n    cmd: \"add\",\n    task: {\n        bot_id: msg.payload.bot.botname,\n        cmd: \"floor_edit\",\n        floor: msg.payload.bot.floors[msg.payload.task.floor.floorNumber]\n\n    }\n}\nmsg.topic = \"tasks\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 1200,
+        "wires": [
+            [
+                "c5b36f3c4325ec1f"
+            ]
+        ]
+    },
+    {
+        "id": "dbade64f3039e3b5",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "fjob",
+        "obj": true,
+        "x": 1390,
+        "y": 1260,
+        "wires": []
+    },
+    {
+        "id": "e317e5b8648d3837",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "floor_edit",
+        "func": "msg.payload  = {\n    cmd: \"add\",\n    task: {\n        bot_id: msg.payload.bot.botname,\n        cmd: \"floor_edit\",\n        floor: msg.payload.bot.floors[msg.payload.task.floor.floorNumber]\n\n    }\n}\nmsg.topic = \"tasks\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 1300,
+        "wires": [
+            [
+                "df9cd59775f67b7a"
+            ]
+        ]
+    },
+    {
+        "id": "e60cdd5aa590fc8a",
+        "type": "debug",
+        "z": "3f98de411a14795f",
+        "name": "debug 33",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "3ab92779ddde1b33",
+        "type": "debug",
+        "z": "3f98de411a14795f",
+        "name": "debug 32",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1600,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "cf51da890134f0a6",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "fjob",
+        "obj": true,
+        "x": 1450,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "c5b36f3c4325ec1f",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "tasks",
+        "obj": true,
+        "x": 1390,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "df9cd59775f67b7a",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "tasks",
+        "obj": true,
+        "x": 1390,
+        "y": 1300,
+        "wires": []
+    }
+]

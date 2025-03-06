@@ -1,0 +1,9 @@
+{
+    "node-binance-api": {
+        "spec": "node-binance-api",
+        "module": "node-binance-api",
+        "subpath": "",
+        "builtin": false,
+        "known": false
+    }
+}
