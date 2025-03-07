@@ -1,0 +1,234 @@
+Fri Mar 07 2025 12:20:13 -1741339213816 : {
+  "task": "cmd1",
+  "worktime": 63,
+  "diff": {
+    "updated": {
+      "old": 1741339201342,
+      "new": 1741339213812
+    }
+  }
+}
+Fri Mar 07 2025 12:20:15 -1741339215468 : {
+  "task": "cmd1",
+  "worktime": 54,
+  "diff": {
+    "updated": {
+      "old": 1741339213812,
+      "new": 1741339215464
+    }
+  }
+}
+Fri Mar 07 2025 12:20:17 -1741339217674 : {
+  "task": "cmd2",
+  "worktime": 61,
+  "diff": {
+    "startSet": {
+      "old": 4000,
+      "new": 5000
+    }
+  }
+}
+Fri Mar 07 2025 12:20:22 -1741339222180 : {
+  "task": "cmd3",
+  "worktime": 31,
+  "diff": {
+    "onoff": {
+      "old": false,
+      "new": true
+    },
+    "updated": {
+      "old": 1741339215464,
+      "new": 1741339222176
+    }
+  }
+}
+Fri Mar 07 2025 12:20:22 -1741339222283 : {
+  "task": "cmd1",
+  "worktime": 99,
+  "diff": {
+    "onoff": {
+      "old": true,
+      "new": false
+    },
+    "updated": {
+      "old": 1741339222176,
+      "new": 1741339222280
+    }
+  }
+}
+Fri Mar 07 2025 12:25:07 -1741339507071 : {
+  "task": "cmd1",
+  "worktime": 2941,
+  "diff": {
+    "updated": {
+      "old": 1741339222280,
+      "new": 1741339507064
+    }
+  }
+}
+Fri Mar 07 2025 12:25:15 -1741339515716 : {
+  "task": "cmd1",
+  "worktime": 18,
+  "diff": {
+    "updated": {
+      "old": 1741339507064,
+      "new": 1741339515712
+    }
+  }
+}
+Fri Mar 07 2025 12:25:16 -1741339516788 : {
+  "task": "cmd1",
+  "worktime": 95,
+  "diff": {
+    "updated": {
+      "old": 1741339515712,
+      "new": 1741339516778
+    }
+  }
+}
+Fri Mar 07 2025 12:25:17 -1741339517798 : {
+  "task": "cmd1",
+  "worktime": 107,
+  "diff": {
+    "updated": {
+      "old": 1741339516778,
+      "new": 1741339517793
+    }
+  }
+}
+Fri Mar 07 2025 12:25:18 -1741339518743 : {
+  "task": "cmd1",
+  "worktime": 39,
+  "diff": {
+    "updated": {
+      "old": 1741339517793,
+      "new": 1741339518738
+    }
+  }
+}
+Fri Mar 07 2025 12:25:19 -1741339519478 : {
+  "task": "cmd2",
+  "worktime": 124,
+  "diff": {
+    "startSet": {
+      "old": 5000,
+      "new": 6000
+    }
+  }
+}
+Fri Mar 07 2025 12:25:19 -1741339519778 : {
+  "task": "cmd1",
+  "worktime": 84,
+  "diff": {
+    "updated": {
+      "old": 1741339518738,
+      "new": 1741339519775
+    }
+  }
+}
+Fri Mar 07 2025 12:25:20 -1741339520794 : {
+  "task": "cmd1",
+  "worktime": 108,
+  "diff": {
+    "updated": {
+      "old": 1741339519775,
+      "new": 1741339520790
+    }
+  }
+}
+Fri Mar 07 2025 12:25:21 -1741339521725 : {
+  "task": "cmd1",
+  "worktime": 45,
+  "diff": {
+    "updated": {
+      "old": 1741339520790,
+      "new": 1741339521721
+    }
+  }
+}
+Fri Mar 07 2025 12:25:22 -1741339522747 : {
+  "task": "cmd1",
+  "worktime": 75,
+  "diff": {
+    "updated": {
+      "old": 1741339521721,
+      "new": 1741339522740
+    }
+  }
+}
+Fri Mar 07 2025 12:25:23 -1741339523714 : {
+  "task": "cmd1",
+  "worktime": 52,
+  "diff": {
+    "updated": {
+      "old": 1741339522740,
+      "new": 1741339523710
+    }
+  }
+}
+Fri Mar 07 2025 12:25:28 -1741339528586 : {
+  "task": "cmd2",
+  "worktime": 103,
+  "diff": {
+    "startSet": {
+      "old": 6000,
+      "new": 7000
+    }
+  }
+}
+Fri Mar 07 2025 12:25:29 -1741339529865 : {
+  "task": "cmd3",
+  "worktime": 77,
+  "diff": {
+    "onoff": {
+      "old": false,
+      "new": true
+    },
+    "updated": {
+      "old": 1741339523710,
+      "new": 1741339529857
+    }
+  }
+}
+Fri Mar 07 2025 12:25:29 -1741339529971 : {
+  "task": "cmd1",
+  "worktime": 101,
+  "diff": {
+    "onoff": {
+      "old": true,
+      "new": false
+    },
+    "updated": {
+      "old": 1741339529857,
+      "new": 1741339529967
+    }
+  }
+}
+Fri Mar 07 2025 12:25:38 -1741339538952 : {
+  "task": "cmd3",
+  "worktime": 74,
+  "diff": {
+    "onoff": {
+      "old": false,
+      "new": true
+    },
+    "updated": {
+      "old": 1741339529967,
+      "new": 1741339538947
+    }
+  }
+}
+Fri Mar 07 2025 12:25:39 -1741339539052 : {
+  "task": "cmd1",
+  "worktime": 96,
+  "diff": {
+    "onoff": {
+      "old": true,
+      "new": false
+    },
+    "updated": {
+      "old": 1741339538947,
+      "new": 1741339539048
+    }
+  }
+}

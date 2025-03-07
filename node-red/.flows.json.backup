@@ -46,8 +46,8 @@
             "8d641831239b2422",
             "966770f448592d8a"
         ],
-        "x": 814,
-        "y": 39,
+        "x": 914,
+        "y": 779,
         "w": 832,
         "h": 242
     },
@@ -70,13 +70,12 @@
             "c7ce1f056828d12a",
             "b11b10b452fb73e9",
             "1e638efbf3ae2176",
-            "c8d0df9a1fa29733",
             "c6ca2ef381f3491f"
         ],
-        "x": 34,
-        "y": 1019,
+        "x": 134,
+        "y": 139,
         "w": 1332,
-        "h": 202
+        "h": 142
     },
     {
         "id": "158e5d192d0f095e",
@@ -101,8 +100,8 @@
             "feab0eab0da867d2",
             "52ec746db78470b8"
         ],
-        "x": 34,
-        "y": 39,
+        "x": 134,
+        "y": 779,
         "w": 712,
         "h": 242
     },
@@ -130,8 +129,8 @@
             "22aa2b25788e0cdb",
             "3d53fec093355008"
         ],
-        "x": 34,
-        "y": 719,
+        "x": 134,
+        "y": 1439,
         "w": 1412,
         "h": 202
     },
@@ -170,13 +169,13 @@
             "b1c880a62780d09d",
             "9b8df2345d69bb57",
             "097a57e22aef71e2",
-            "b4aa5c9efd38fe07",
-            "bdbcb8f835cc114f"
+            "bdbcb8f835cc114f",
+            "592a9a8bb1ca78fb"
         ],
-        "x": 34,
-        "y": 319,
+        "x": 134,
+        "y": 1079,
         "w": 2012,
-        "h": 342
+        "h": 322
     },
     {
         "id": "d508da9d29e25c1b",
@@ -197,8 +196,8 @@
             "8347c14f1fa7a6fa",
             "1cf161e0c69d5e31"
         ],
-        "x": 34,
-        "y": 1279,
+        "x": 134,
+        "y": 579,
         "w": 872,
         "h": 162
     },
@@ -260,13 +259,11 @@
             "6bf1ef50cbecab4f",
             "b09bb3bdd73a3a23",
             "dcbbcac0c97d9b75",
-            "3fd54341a9dc0bf5",
-            "dca36c2a2747021c",
             "4673fc2475b1d4a7",
             "1ef17ae88634c9d0"
         ],
-        "x": 1654,
-        "y": 699,
+        "x": 1154,
+        "y": 339,
         "w": 632,
         "h": 342
     },
@@ -406,17 +403,6 @@
         "disabled": "false"
     },
     {
-        "id": "610af59cc0757b9f",
-        "type": "ui-link",
-        "name": "Link 1",
-        "ui": "2080f36ce7985358",
-        "path": "/get-:id",
-        "icon": "home",
-        "order": 3,
-        "visible": "true",
-        "disabled": "false"
-    },
-    {
         "id": "e8d2ed0c562b24b6",
         "type": "memory-queue",
         "name": "workers_que",
@@ -463,8 +449,8 @@
         ],
         "checkall": "true",
         "outputs": 1,
-        "x": 930,
-        "y": 1120,
+        "x": 1030,
+        "y": 180,
         "wires": [
             [
                 "02fab608d8b40fa6"
@@ -477,18 +463,18 @@
         "z": "568b629767512beb",
         "g": "ff6a6e8faf39c4f4",
         "name": "cmd: \"cmd1\"",
-        "func": "msg.payload = {\n    cmd: \"add\",\n    task:{\n        data: msg.payload,\n        cmd: \"cmd1\"\n    }\n    \n}\n\n\nreturn msg;",
+        "func": "msg.payload = {\n    cmd: \"add\",\n    task:{\n        data: msg.payload,\n        cmd: \"cmd1\"\n    }\n    \n}\nmsg.topic = \"tasks\"\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1110,
-        "y": 1120,
+        "x": 1210,
+        "y": 180,
         "wires": [
             [
-                "aa2ff68a2cc8cc90"
+                "eb1270c5ba3d2c8d"
             ]
         ]
     },
@@ -499,8 +485,8 @@
         "g": "158e5d192d0f095e",
         "name": "tasks_que",
         "queue": "6675fc48b29179a6",
-        "x": 270,
-        "y": 80,
+        "x": 370,
+        "y": 820,
         "wires": [
             []
         ]
@@ -512,8 +498,8 @@
         "g": "158e5d192d0f095e",
         "name": "tasks_que",
         "queue": "6675fc48b29179a6",
-        "x": 120,
-        "y": 220,
+        "x": 220,
+        "y": 960,
         "wires": [
             [
                 "d61d699966642c44"
@@ -530,8 +516,8 @@
         "name": "",
         "topic": "tasks",
         "obj": true,
-        "x": 1290,
-        "y": 1120,
+        "x": 1390,
+        "y": 180,
         "wires": []
     },
     {
@@ -545,8 +531,8 @@
         "topic": "tasks",
         "obj": true,
         "timeout": 0,
-        "x": 110,
-        "y": 80,
+        "x": 210,
+        "y": 820,
         "wires": [
             [
                 "d997bdf3cc4cd3cd",
@@ -561,8 +547,8 @@
         "g": "158e5d192d0f095e",
         "name": "tasks_que",
         "queue": "6675fc48b29179a6",
-        "x": 630,
-        "y": 140,
+        "x": 730,
+        "y": 880,
         "wires": []
     },
     {
@@ -579,8 +565,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
-        "y": 620,
+        "x": 820,
+        "y": 1360,
         "wires": []
     },
     {
@@ -594,8 +580,8 @@
         "topic": "workers",
         "obj": true,
         "timeout": 0,
-        "x": 890,
-        "y": 80,
+        "x": 990,
+        "y": 820,
         "wires": [
             [
                 "ed8fbf57e4e6949b",
@@ -610,8 +596,8 @@
         "g": "87c8f2fa36ac1382",
         "name": "workers_que",
         "queue": "e8d2ed0c562b24b6",
-        "x": 1050,
-        "y": 80,
+        "x": 1150,
+        "y": 820,
         "wires": [
             []
         ]
@@ -623,8 +609,8 @@
         "g": "87c8f2fa36ac1382",
         "name": "workers_que",
         "queue": "e8d2ed0c562b24b6",
-        "x": 910,
-        "y": 220,
+        "x": 1010,
+        "y": 960,
         "wires": [
             [
                 "4c5a8b4b8c56de5c"
@@ -638,8 +624,8 @@
         "g": "87c8f2fa36ac1382",
         "name": "workers_que ask",
         "queue": "e8d2ed0c562b24b6",
-        "x": 1430,
-        "y": 80,
+        "x": 1530,
+        "y": 820,
         "wires": []
     },
     {
@@ -664,8 +650,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1250,
-        "y": 80,
+        "x": 1350,
+        "y": 820,
         "wires": [
             [
                 "d1966f385a403833"
@@ -685,8 +671,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1290,
-        "y": 140,
+        "x": 1390,
+        "y": 880,
         "wires": [
             [
                 "8d641831239b2422"
@@ -721,8 +707,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 1090,
-        "y": 220,
+        "x": 1190,
+        "y": 960,
         "wires": [
             [
                 "fa828d2f06f9c824"
@@ -748,8 +734,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1290,
-        "y": 180,
+        "x": 1390,
+        "y": 920,
         "wires": [
             [
                 "204f9cc1c5e6922f"
@@ -769,8 +755,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1300,
-        "y": 240,
+        "x": 1400,
+        "y": 980,
         "wires": [
             [
                 "84824815df856d6a"
@@ -784,8 +770,8 @@
         "g": "87c8f2fa36ac1382",
         "name": "workers_que ask",
         "queue": "e8d2ed0c562b24b6",
-        "x": 1530,
-        "y": 240,
+        "x": 1630,
+        "y": 980,
         "wires": []
     },
     {
@@ -795,8 +781,8 @@
         "g": "87c8f2fa36ac1382",
         "name": "workers_que ask",
         "queue": "e8d2ed0c562b24b6",
-        "x": 1530,
-        "y": 180,
+        "x": 1630,
+        "y": 920,
         "wires": []
     },
     {
@@ -806,8 +792,8 @@
         "g": "87c8f2fa36ac1382",
         "name": "workers_que ask",
         "queue": "e8d2ed0c562b24b6",
-        "x": 1530,
-        "y": 140,
+        "x": 1630,
+        "y": 880,
         "wires": []
     },
     {
@@ -817,8 +803,8 @@
         "g": "158e5d192d0f095e",
         "name": "tasks_que ask",
         "queue": "6675fc48b29179a6",
-        "x": 640,
-        "y": 80,
+        "x": 740,
+        "y": 820,
         "wires": []
     },
     {
@@ -843,8 +829,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 470,
-        "y": 80,
+        "x": 570,
+        "y": 820,
         "wires": [
             [
                 "54efb4176e56f31b"
@@ -879,8 +865,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 270,
-        "y": 220,
+        "x": 370,
+        "y": 960,
         "wires": [
             [
                 "2eec6422d14b3453"
@@ -906,8 +892,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 140,
+        "x": 560,
+        "y": 880,
         "wires": [
             [
                 "8b7207c6120561a1"
@@ -927,8 +913,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 180,
+        "x": 560,
+        "y": 920,
         "wires": [
             [
                 "31945d2ecfaf9c10"
@@ -948,8 +934,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 240,
+        "x": 570,
+        "y": 980,
         "wires": [
             [
                 "feab0eab0da867d2"
@@ -963,8 +949,8 @@
         "g": "158e5d192d0f095e",
         "name": "tasks_que",
         "queue": "6675fc48b29179a6",
-        "x": 650,
-        "y": 180,
+        "x": 750,
+        "y": 920,
         "wires": []
     },
     {
@@ -974,8 +960,8 @@
         "g": "158e5d192d0f095e",
         "name": "tasks_que",
         "queue": "6675fc48b29179a6",
-        "x": 650,
-        "y": 240,
+        "x": 750,
+        "y": 980,
         "wires": []
     },
     {
@@ -988,8 +974,8 @@
         "name": "",
         "topic": "job",
         "obj": true,
-        "x": 930,
-        "y": 400,
+        "x": 1030,
+        "y": 1140,
         "wires": []
     },
     {
@@ -1003,14 +989,13 @@
         "topic": "fjob",
         "obj": true,
         "timeout": 0,
-        "x": 1550,
-        "y": 480,
+        "x": 1650,
+        "y": 1220,
         "wires": [
             [
                 "01fea6de57fc7843",
                 "33c9c3cad581e88b",
-                "3eb09ceb8e1825eb",
-                "b4aa5c9efd38fe07"
+                "3eb09ceb8e1825eb"
             ]
         ]
     },
@@ -1027,8 +1012,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1740,
-        "y": 480,
+        "x": 1840,
+        "y": 1220,
         "wires": [
             [
                 "9f9befe01079228e"
@@ -1045,8 +1030,8 @@
         "name": "",
         "topic": "tasks",
         "obj": true,
-        "x": 1910,
-        "y": 480,
+        "x": 2010,
+        "y": 1220,
         "wires": []
     },
     {
@@ -1062,8 +1047,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 950,
-        "y": 480,
+        "x": 1050,
+        "y": 1220,
         "wires": [
             [
                 "8b320e07b182bbee"
@@ -1080,8 +1065,8 @@
         "name": "",
         "topic": "tasks",
         "obj": true,
-        "x": 1110,
-        "y": 480,
+        "x": 1210,
+        "y": 1220,
         "wires": []
     },
     {
@@ -1097,8 +1082,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
-        "y": 540,
+        "x": 1060,
+        "y": 1280,
         "wires": [
             [
                 "1494dcb5ad0ec6a9",
@@ -1116,8 +1101,8 @@
         "name": "",
         "topic": "workers",
         "obj": true,
-        "x": 1140,
-        "y": 540,
+        "x": 1240,
+        "y": 1280,
         "wires": []
     },
     {
@@ -1134,8 +1119,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
-        "y": 140,
+        "x": 1000,
+        "y": 880,
         "wires": []
     },
     {
@@ -1152,8 +1137,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 120,
-        "y": 140,
+        "x": 220,
+        "y": 880,
         "wires": []
     },
     {
@@ -1166,8 +1151,8 @@
         "name": "",
         "topic": "workers",
         "obj": true,
-        "x": 1920,
-        "y": 540,
+        "x": 2020,
+        "y": 1280,
         "wires": []
     },
     {
@@ -1183,8 +1168,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1740,
-        "y": 540,
+        "x": 1840,
+        "y": 1280,
         "wires": [
             [
                 "de33fa624f62aaaa"
@@ -1196,16 +1181,16 @@
         "type": "function",
         "z": "568b629767512beb",
         "g": "96fc1aea58e82b13",
-        "name": "global.set bot",
-        "func": "const tilog = global.get('tilog');\nconst getBotDifferences = global.get('getBotDifferences');\nif (msg.payload.bot?.onoff === false) {\n    tilog(msg.payload.bot.botname, 'onoff === false');\n    global.set(msg.payload.bot.botname, msg.payload.bot);\n}\n// Основная логика обработки команд\nswitch (msg.payload.task.cmd) {\n    case \"check_ma\":\n        if (msg.payload.bot) {\n            global.set(msg.payload.bot.botname + \"-ma\", {\n                ma1: msg.payload.bot.status.sr_ma_small,\n                ma2: msg.payload.bot.status.sr_ma_big\n            });\n        }\n        break;\n\n    case \"check\":\n    case \"check_orders\":\n    case \"onoff\":\n    case \"floor_edit\":\n    case \"reset\":\n    case \"tsl\":\n    case \"tsl_edit\":\n    case \"regist_lead\":\n        if (msg.payload.bot) {\n            msg.payload.bot.busy = false;\n            global.set(msg.payload.bot.botname, msg.payload.bot);\n        }\n        break;\n\n    case \"buy_on_binance\":\n    case \"buy_on_testb\":\n    case \"cancel_on_binance\":\n    case \"cancel_on_testb\":\n    case \"sell_on_binance\":\n    case \"sell_on_testb\":\n    case \"msell_on_binance\":\n    case \"msell_on_testb\":\n    case \"sell_cancel_on_binance\":\n    case \"sell_cancel_on_testb\":\n    case \"order_status_on_binance\":\n    case \"order_status_on_testb\":\n    case \"cancel_for_msell_on_binance\":\n    case \"cancel_for_msell_on_testb\":\n        { }\n        break;\n\n}\n\n\n// Функция для логирования изменений\nfunction logChanges(botname, changes, worktime) {\n\n    const logmsg = { task: msg.payload.task.cmd, worktime: worktime, diff: changes };\n    tilog(botname, JSON.stringify(logmsg, null, 2));\n\n}\n\ntry {\n    // Проверяем, что msg.payload.bot_start и msg.payload.bot существуют\n    if (msg.payload.bot_start && msg.payload.bot) {\n        const startTime = msg.payload.task.task_id;\n        const worktime = (new Date().getTime()) - startTime;\n\n\n        const changes = getBotDifferences(msg.payload.bot, msg.payload.bot_start, [\n            'busy',\n            'status.updated',\n            'status.currentprice',\n            'status.lastprice',\n            'status.sr_ma_big',\n            'status.sr_ma_small',\n            'status.rezhim',\n            'zapret_na_zakup',\n            'status.lastfloor',\n            'status.floorlow',\n            'status.floorhight',\n            'status.currentfloor',\n            'status.floorprogress',\n            'finance.depo'\n        ]);\n        \n        if (JSON.stringify(changes) !== '{}') {\n            node.warn(changes);\n            logChanges(msg.payload.bot.botname, changes, worktime);\n        }\n\n\n    } else {\n        throw new Error(\"Отсутствуют данные для сравнения объектов.\");\n    }\n} catch (error) {\n    //console.error('Ошибка при сравнении объектов:', error);\n    tilog(msg.payload.bot ? msg.payload.bot.botname : 'неизвестный бот', `global.set bot Ошибка: ${error}`);\n}\n\nreturn msg;\n",
+        "name": "global.set",
+        "func": "const tilog = global.get('tilog');\nconst getBotDifferences = global.get('getBotDifferences');\n\n// Основная логика обработки команд\nswitch (msg.payload.task.cmd) {\n    case \"cmd1\":\n    case \"cmd2\":\n    case \"cmd3\":\n        if (msg.payload.data) {\n            msg.payload.data.locked = false;\n            global.set('data', msg.payload.data);\n        }\n        break;\n}\n\n// Функция для логирования изменений\nfunction logChanges(changes, worktime) {\n\n    const logmsg = { task: msg.payload.task.cmd, worktime: worktime, diff: changes };\n    tilog('log-end-task', JSON.stringify(logmsg, null, 2));\n\n}\n\ntry {\n    // Проверяем, что msg.payload.bot_start и msg.payload.bot существуют\n    if (msg.payload.data_start && msg.payload.data) {\n        const startTime = msg.payload.task.task_id;\n        const worktime = (new Date().getTime()) - startTime;\n        const changes = getBotDifferences(msg.payload.data, msg.payload.data_start, [\n            'locked',\n            //игнорируемые логером поля\n\n        ]);\n\n        if (JSON.stringify(changes) !== '{}') {\n            //node.warn(changes);\n            logChanges(changes, worktime);\n        }\n\n\n    } else {\n        throw new Error(\"Отсутствуют данные для сравнения объектов.\");\n    }\n} catch (error) {\n    //console.error('Ошибка при сравнении объектов:', error);\n    tilog('log-end-task', `global.set  Ошибка: ${error}`);\n}\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1740,
-        "y": 420,
+        "x": 1820,
+        "y": 1160,
         "wires": [
             [
                 "bdbcb8f835cc114f"
@@ -1234,8 +1219,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 460,
-        "y": 400,
+        "x": 560,
+        "y": 1140,
         "wires": [
             [
                 "5e8cd33b83f802a8"
@@ -1248,15 +1233,15 @@
         "z": "568b629767512beb",
         "g": "96fc1aea58e82b13",
         "name": "broker set task",
-        "func": "\nmsg.topic = \"\";\n\n// Функция для установки статуса бота\nfunction getBot(botId) {\n    let bot = global.get(botId);\n    if (!bot) {\n        msg.error = `Bot with ID ${botId} not found`;\n        return null;\n    }\n    return bot;\n}\n\n// Функция для получения задачи с наименьшим ключом и статусом \"created\"\nfunction getFieldWithSmallestKeyAndCreatedStatus(tasks) {\n    const keys = Object.keys(tasks);\n\n    // Фильтруем задачи с командой \"cansel_on_binance\" и статусом \"created\"\n    const canselKeys = keys.filter(key =>\n        tasks[key].cmd === \"cansel_on_binance\" && tasks[key].status === \"created\"\n    );\n    if (canselKeys.length > 0) {\n        const smallestKey = Math.min(...canselKeys.map(Number));\n        return tasks[smallestKey];\n    }\n\n    // фильтруем задачи только со статусом \"created\"\n    const createdKeys = keys.filter(key => tasks[key].status === \"created\");\n    if (createdKeys.length > 0) {\n        const smallestKey = Math.min(...createdKeys.map(Number));\n        return tasks[smallestKey];\n    }\n\n    // Если нет ни одной подходящей задачи, возвращаем null\n    return null;\n}\n\n// Функция для получения первого работника с locked: false\nfunction getFirstUnlockedField(workers) {\n    for (const key in workers) {\n        if (workers[key].locked === false) {\n            return workers[key];\n        }\n    }\n    return null;\n}\n\n// Основная функция\nfunction processMessage(msg) {\n    try {\n        // Получаем задачи и работников\n        let tasks = global.get('tasks') || {};\n        let workers = global.get('workers') || {};\n\n        // Проверяем, есть ли задачи\n        if (Object.keys(tasks).length === 0) {\n            msg.error = 'No tasks available';\n            return [null, msg];\n        }\n\n        // Получаем задачу\n        msg.task = getFieldWithSmallestKeyAndCreatedStatus(tasks);\n        if (!msg.task) {\n            msg.error = 'No task with status \"created\" found';\n            return [null, msg];\n        }\n\n        // Получаем работника\n        msg.worker = getFirstUnlockedField(workers);\n        if (!msg.worker) {\n            msg.error = 'No unlocked worker found';\n            return [null, msg];\n        }\n\n\n \n        let data = global.get(\"data\");\n\n        switch (msg.task.cmd) {\n            \n            case \"cmd1\":\n            case \"cmd2\":\n            case \"cmd3\":\n           \n                // Блокируем бота для этих команд\n                if (!data) {\n                    msg.error = `Bot with ID ${msg.task.bot_id} not found`;\n                    return [null, msg];\n                }\n                if (data.locked) {\n                    msg.error = `Bot with ID ${msg.task.bot_id} is already busy`;\n                    return [null, msg];\n                }\n\n                data.locked = true;\n\n                global.set('data', data);\n\n                msg.payload = {\n                    task: msg.task,\n                    worker: msg.worker,\n                    data: data \n                };\n                break;\n\n            default:\n                msg.error = `Unknown command: ${msg.task.cmd}`;\n                return [null, msg];\n        }\n\n        return [msg, null];\n    } catch (error) {\n        msg.error = 'Error processing message: ' + error.message;\n        return [null, msg];\n    }\n}\n\n// Вызов основной функции\nreturn processMessage(msg);\n",
+        "func": "\nmsg.topic = \"\";\n\n// Функция для установки статуса бота\nfunction getBot(botId) {\n    let bot = global.get(botId);\n    if (!bot) {\n        msg.error = `Bot with ID ${botId} not found`;\n        return null;\n    }\n    return bot;\n}\n\n// Функция для получения задачи с наименьшим ключом и статусом \"created\"\nfunction getFieldWithSmallestKeyAndCreatedStatus(tasks) {\n    const keys = Object.keys(tasks);\n\n    // Фильтруем задачи с командой \"cansel_on_binance\" и статусом \"created\"\n    const canselKeys = keys.filter(key =>\n        tasks[key].cmd === \"cansel_on_binance\" && tasks[key].status === \"created\"\n    );\n    if (canselKeys.length > 0) {\n        const smallestKey = Math.min(...canselKeys.map(Number));\n        return tasks[smallestKey];\n    }\n\n    // фильтруем задачи только со статусом \"created\"\n    const createdKeys = keys.filter(key => tasks[key].status === \"created\");\n    if (createdKeys.length > 0) {\n        const smallestKey = Math.min(...createdKeys.map(Number));\n        return tasks[smallestKey];\n    }\n\n    // Если нет ни одной подходящей задачи, возвращаем null\n    return null;\n}\n\n// Функция для получения первого работника с locked: false\nfunction getFirstUnlockedField(workers) {\n    for (const key in workers) {\n        if (workers[key].locked === false) {\n            return workers[key];\n        }\n    }\n    return null;\n}\n\n// Основная функция\nfunction processMessage(msg) {\n    try {\n        // Получаем задачи и работников\n        let tasks = global.get('tasks') || {};\n        let workers = global.get('workers') || {};\n\n        // Проверяем, есть ли задачи\n        if (Object.keys(tasks).length === 0) {\n            msg.error = 'No tasks available';\n            return [null, msg];\n        }\n\n        // Получаем задачу\n        msg.task = getFieldWithSmallestKeyAndCreatedStatus(tasks);\n        if (!msg.task) {\n            msg.error = 'No task with status \"created\" found';\n            return [null, msg];\n        }\n\n        // Получаем работника\n        msg.worker = getFirstUnlockedField(workers);\n        if (!msg.worker) {\n            msg.error = 'No unlocked worker found';\n            return [null, msg];\n        }\n\n\n \n        let data = global.get(\"data\") || {locked:false};\n\n        switch (msg.task.cmd) {\n            \n            case \"cmd1\":\n            case \"cmd2\":\n            case \"cmd3\":\n           \n                // Блокируем бота для этих команд\n                if (!data) {\n                    msg.error = `Bot with ID ${msg.task.bot_id} not found`;\n                    return [null, msg];\n                }\n                if (data.locked) {\n                    msg.error = `Bot with ID ${msg.task.bot_id} is already busy`;\n                    return [null, msg];\n                }\n\n                data.locked = true;\n\n                global.set('data', data);\n\n                msg.payload = {\n                    task: msg.task,\n                    worker: msg.worker,\n                    data: data, \n                    data_start: data \n                };\n                break;\n\n            default:\n                msg.error = `Unknown command: ${msg.task.cmd}`;\n                return [null, msg];\n        }\n\n        return [msg, null];\n    } catch (error) {\n        msg.error = 'Error processing message: ' + error.message;\n        return [null, msg];\n    }\n}\n\n// Вызов основной функции\nreturn processMessage(msg);\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
-        "y": 460,
+        "x": 800,
+        "y": 1200,
         "wires": [
             [
                 "a51aebaa5db61e67",
@@ -1265,7 +1250,8 @@
                 "ee1b9aab100e9620"
             ],
             [
-                "ef88361a622b562d"
+                "ef88361a622b562d",
+                "592a9a8bb1ca78fb"
             ]
         ],
         "icon": "node-red/file-out.svg"
@@ -1284,8 +1270,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 700,
-        "y": 400,
+        "x": 800,
+        "y": 1140,
         "wires": []
     },
     {
@@ -1306,11 +1292,11 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 550,
-        "y": 1180,
+        "x": 650,
+        "y": 240,
         "wires": [
             [
-                "d7c36a2c3593f4f6"
+                "c6ca2ef381f3491f"
             ]
         ]
     },
@@ -1325,8 +1311,8 @@
         "topic": "start1",
         "obj": true,
         "timeout": 0,
-        "x": 390,
-        "y": 1180,
+        "x": 490,
+        "y": 240,
         "wires": [
             [
                 "0dcf5ac1082019a3"
@@ -1351,8 +1337,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 460,
-        "y": 1120,
+        "x": 560,
+        "y": 180,
         "wires": [
             [
                 "c6ca2ef381f3491f"
@@ -1377,8 +1363,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 260,
-        "y": 1120,
+        "x": 360,
+        "y": 180,
         "wires": [
             [
                 "d7c36a2c3593f4f6"
@@ -1396,8 +1382,8 @@
         "topic": "start",
         "obj": true,
         "timeout": 0,
-        "x": 110,
-        "y": 1120,
+        "x": 210,
+        "y": 180,
         "wires": [
             [
                 "b4444ff8b6b1ceb9"
@@ -1415,8 +1401,8 @@
         "topic": "stop",
         "obj": true,
         "timeout": 0,
-        "x": 110,
-        "y": 1180,
+        "x": 210,
+        "y": 240,
         "wires": [
             [
                 "1e638efbf3ae2176"
@@ -1436,40 +1422,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 250,
-        "y": 1180,
+        "x": 350,
+        "y": 240,
         "wires": [
             [
                 "d7c36a2c3593f4f6"
             ]
-        ]
-    },
-    {
-        "id": "c8d0df9a1fa29733",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "g": "ff6a6e8faf39c4f4",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 480,
-        "y": 1060,
-        "wires": [
-            []
         ]
     },
     {
@@ -1485,8 +1443,8 @@
         "septopics": true,
         "property": "error",
         "topi": "topic",
-        "x": 730,
-        "y": 580,
+        "x": 830,
+        "y": 1320,
         "wires": [
             [
                 "dc9ca2cdf2f23320"
@@ -1511,8 +1469,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 480,
-        "y": 460,
+        "x": 580,
+        "y": 1200,
         "wires": [
             [
                 "5e8cd33b83f802a8"
@@ -1537,8 +1495,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 270,
-        "y": 460,
+        "x": 370,
+        "y": 1200,
         "wires": [
             [
                 "dbbc6e7e7053b9b4"
@@ -1556,8 +1514,8 @@
         "topic": "start",
         "obj": true,
         "timeout": 0,
-        "x": 110,
-        "y": 460,
+        "x": 210,
+        "y": 1200,
         "wires": [
             [
                 "6ed648c066d5e348"
@@ -1575,8 +1533,8 @@
         "topic": "stop",
         "obj": true,
         "timeout": 0,
-        "x": 110,
-        "y": 520,
+        "x": 210,
+        "y": 1260,
         "wires": [
             [
                 "27662231843109fd"
@@ -1596,8 +1554,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 250,
-        "y": 520,
+        "x": 350,
+        "y": 1260,
         "wires": [
             [
                 "dbbc6e7e7053b9b4"
@@ -1615,8 +1573,8 @@
         "topic": "start1",
         "obj": true,
         "timeout": 0,
-        "x": 410,
-        "y": 520,
+        "x": 510,
+        "y": 1260,
         "wires": [
             [
                 "d74ec617ec7d4cd3"
@@ -1641,8 +1599,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 570,
-        "y": 520,
+        "x": 670,
+        "y": 1260,
         "wires": [
             [
                 "5e8cd33b83f802a8"
@@ -1667,8 +1625,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 550,
-        "y": 880,
+        "x": 650,
+        "y": 1600,
         "wires": [
             [
                 "7a02cb2c9f28de8c"
@@ -1686,8 +1644,8 @@
         "topic": "start1",
         "obj": true,
         "timeout": 0,
-        "x": 390,
-        "y": 880,
+        "x": 490,
+        "y": 1600,
         "wires": [
             [
                 "ad3241508beef299"
@@ -1712,8 +1670,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 460,
-        "y": 820,
+        "x": 560,
+        "y": 1540,
         "wires": [
             [
                 "7a02cb2c9f28de8c"
@@ -1738,8 +1696,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 270,
-        "y": 820,
+        "x": 370,
+        "y": 1540,
         "wires": [
             [
                 "2885c7e78caf2b89"
@@ -1757,8 +1715,8 @@
         "topic": "start",
         "obj": true,
         "timeout": 0,
-        "x": 110,
-        "y": 820,
+        "x": 210,
+        "y": 1540,
         "wires": [
             [
                 "2ccb1331c22f8f4b"
@@ -1776,8 +1734,8 @@
         "topic": "stop",
         "obj": true,
         "timeout": 0,
-        "x": 110,
-        "y": 880,
+        "x": 210,
+        "y": 1600,
         "wires": [
             [
                 "d253e34c4950bcb5"
@@ -1797,8 +1755,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 250,
-        "y": 880,
+        "x": 350,
+        "y": 1600,
         "wires": [
             [
                 "2885c7e78caf2b89"
@@ -1827,8 +1785,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 490,
-        "y": 760,
+        "x": 590,
+        "y": 1480,
         "wires": [
             []
         ]
@@ -1846,8 +1804,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 680,
-        "y": 820,
+        "x": 780,
+        "y": 1540,
         "wires": [
             [
                 "720d881395cdefd0"
@@ -1914,8 +1872,8 @@
         "height": 8,
         "className": "",
         "interpolation": "linear",
-        "x": 960,
-        "y": 780,
+        "x": 1120,
+        "y": 1500,
         "wires": [
             []
         ]
@@ -1933,8 +1891,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 890,
-        "y": 840,
+        "x": 990,
+        "y": 1560,
         "wires": [
             [
                 "4aa09b361e1a9da6"
@@ -1954,8 +1912,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 1050,
-        "y": 840,
+        "x": 1150,
+        "y": 1560,
         "wires": [
             [
                 "22aa2b25788e0cdb",
@@ -1973,8 +1931,8 @@
         "name": "",
         "topic": "stop",
         "obj": false,
-        "x": 1190,
-        "y": 840,
+        "x": 1290,
+        "y": 1560,
         "wires": []
     },
     {
@@ -1991,8 +1949,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1340,
-        "y": 840,
+        "x": 1440,
+        "y": 1560,
         "wires": []
     },
     {
@@ -2014,8 +1972,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1300,
-        "y": 540,
+        "x": 1400,
+        "y": 1280,
         "wires": [
             []
         ]
@@ -2033,8 +1991,8 @@
         "initialize": "let tilog = function (botname = msg.topic, data = msg.payload) {\n    \n    let promise = new Promise((resolve, reject) => {\n        msg.resolve = resolve;\n        msg.reject = reject;\n    });\n    \n\n    msg.topic = botname;\n    msg.payload = data;\n\n    node.send(Object.assign({}, msg));\n    \n    return promise;\n};\n\nglobal.set('tilog', tilog);",
         "finalize": "",
         "libs": [],
-        "x": 350,
-        "y": 1320,
+        "x": 450,
+        "y": 620,
         "wires": [
             [
                 "1cf161e0c69d5e31"
@@ -2046,15 +2004,15 @@
         "type": "inject",
         "z": "568b629767512beb",
         "g": "d508da9d29e25c1b",
-        "name": "botname, log msg",
+        "name": "logname, log msg",
         "props": [],
         "repeat": "",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
         "topic": "",
-        "x": 170,
-        "y": 1320,
+        "x": 270,
+        "y": 620,
         "wires": [
             [
                 "6526e141.43af9"
@@ -2074,8 +2032,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 1320,
+        "x": 920,
+        "y": 620,
         "wires": []
     },
     {
@@ -2089,8 +2047,8 @@
         "topic": "tilog",
         "obj": true,
         "timeout": 0,
-        "x": 110,
-        "y": 1400,
+        "x": 210,
+        "y": 700,
         "wires": [
             [
                 "a82f56ba838aa8c2"
@@ -2109,8 +2067,8 @@
         "createDir": true,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 440,
-        "y": 1400,
+        "x": 540,
+        "y": 700,
         "wires": [
             []
         ]
@@ -2120,7 +2078,7 @@
         "type": "function",
         "z": "568b629767512beb",
         "g": "d508da9d29e25c1b",
-        "name": "function 10",
+        "name": "data prepare",
         "func": "msg.filename = msg.payload.filename\nmsg.payload = msg.payload.tgmsg\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -2128,8 +2086,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 270,
-        "y": 1400,
+        "x": 370,
+        "y": 700,
         "wires": [
             [
                 "6de3ad897ed6bdb0"
@@ -2146,8 +2104,8 @@
         "name": "",
         "topic": "tilog",
         "obj": true,
-        "x": 670,
-        "y": 1320,
+        "x": 770,
+        "y": 620,
         "wires": []
     },
     {
@@ -2163,8 +2121,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 1320,
+        "x": 610,
+        "y": 620,
         "wires": [
             [
                 "8347c14f1fa7a6fa",
@@ -2183,8 +2141,8 @@
         "topic": "start_broker",
         "obj": true,
         "timeout": 0,
-        "x": 130,
-        "y": 400,
+        "x": 230,
+        "y": 1140,
         "wires": [
             [
                 "dbbc6e7e7053b9b4"
@@ -2202,8 +2160,8 @@
         "topic": "stop_broker",
         "obj": true,
         "timeout": 0,
-        "x": 130,
-        "y": 580,
+        "x": 230,
+        "y": 1320,
         "wires": [
             [
                 "27662231843109fd"
@@ -2233,8 +2191,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2170,
-        "y": 740,
+        "x": 1670,
+        "y": 380,
         "wires": [
             [
                 "2d637db0eed5abec"
@@ -2251,8 +2209,8 @@
         "name": "",
         "topic": "stop",
         "obj": false,
-        "x": 2170,
-        "y": 780,
+        "x": 1670,
+        "y": 420,
         "wires": []
     },
     {
@@ -2273,8 +2231,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1750,
-        "y": 740,
+        "x": 1250,
+        "y": 380,
         "wires": [
             [
                 "6f844f4b99d5e778"
@@ -2291,8 +2249,8 @@
         "name": "",
         "topic": "start",
         "obj": false,
-        "x": 1750,
-        "y": 780,
+        "x": 1250,
+        "y": 420,
         "wires": []
     },
     {
@@ -2313,8 +2271,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1930,
-        "y": 740,
+        "x": 1430,
+        "y": 380,
         "wires": [
             [
                 "1c5f85e0ddf680be"
@@ -2331,8 +2289,8 @@
         "name": "",
         "topic": "start1",
         "obj": false,
-        "x": 1930,
-        "y": 780,
+        "x": 1430,
+        "y": 420,
         "wires": []
     },
     {
@@ -2353,8 +2311,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1770,
-        "y": 860,
+        "x": 1270,
+        "y": 500,
         "wires": [
             [
                 "6bf1ef50cbecab4f"
@@ -2371,8 +2329,8 @@
         "name": "",
         "topic": "start_broker",
         "obj": false,
-        "x": 1770,
-        "y": 900,
+        "x": 1270,
+        "y": 540,
         "wires": []
     },
     {
@@ -2393,8 +2351,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1950,
-        "y": 860,
+        "x": 1450,
+        "y": 500,
         "wires": [
             [
                 "dcbbcac0c97d9b75"
@@ -2411,48 +2369,8 @@
         "name": "",
         "topic": "stop_broker",
         "obj": false,
-        "x": 1950,
-        "y": 900,
-        "wires": []
-    },
-    {
-        "id": "3fd54341a9dc0bf5",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "name": "resetbusy ",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 2180,
-        "y": 860,
-        "wires": [
-            [
-                "dca36c2a2747021c"
-            ]
-        ]
-    },
-    {
-        "id": "dca36c2a2747021c",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "resetbusy",
-        "obj": false,
-        "x": 2180,
-        "y": 900,
+        "x": 1450,
+        "y": 540,
         "wires": []
     },
     {
@@ -2477,8 +2395,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 2190,
-        "y": 960,
+        "x": 1690,
+        "y": 600,
         "wires": [
             [
                 "1ef17ae88634c9d0"
@@ -2498,29 +2416,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2190,
-        "y": 1000,
+        "x": 1690,
+        "y": 640,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "b4aa5c9efd38fe07",
-        "type": "debug",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "debug 52",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1500,
-        "y": 360,
-        "wires": []
     },
     {
         "id": "bdbcb8f835cc114f",
@@ -2536,8 +2436,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1940,
-        "y": 380,
+        "x": 2040,
+        "y": 1120,
         "wires": []
     },
     {
@@ -2553,8 +2453,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
-        "y": 1120,
+        "x": 860,
+        "y": 180,
         "wires": [
             [
                 "cc76fea89599be73"
@@ -2562,20 +2462,146 @@
         ]
     },
     {
-        "id": "aa2ff68a2cc8cc90",
+        "id": "592a9a8bb1ca78fb",
         "type": "debug",
         "z": "568b629767512beb",
-        "name": "debug 1",
-        "active": true,
+        "g": "96fc1aea58e82b13",
+        "name": "debug 2",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1280,
-        "y": 980,
+        "x": 1000,
+        "y": 1360,
         "wires": []
+    },
+    {
+        "id": "a403772312f053b0",
+        "type": "function",
+        "z": "568b629767512beb",
+        "name": "cmd: \"cmd2\"",
+        "func": "msg.payload = {\n    cmd: \"add\",\n    task:{\n        data: msg.payload,\n        cmd: \"cmd2\"\n    }\n    \n}\nmsg.topic = \"tasks\"\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 380,
+        "wires": [
+            [
+                "fcd4f19676b82acd"
+            ]
+        ]
+    },
+    {
+        "id": "fcd4f19676b82acd",
+        "type": "redis-out",
+        "z": "568b629767512beb",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "tasks",
+        "obj": true,
+        "x": 630,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "0417c82bf07e31aa",
+        "type": "function",
+        "z": "568b629767512beb",
+        "name": "cmd: \"cmd3\"",
+        "func": "msg.payload = {\n    cmd: \"add\",\n    task:{\n        data: msg.payload,\n        cmd: \"cmd3\"\n    }\n    \n}\nmsg.topic = \"tasks\"\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 440,
+        "wires": [
+            [
+                "4d056c31fb8a406e"
+            ]
+        ]
+    },
+    {
+        "id": "4d056c31fb8a406e",
+        "type": "redis-out",
+        "z": "568b629767512beb",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "tasks",
+        "obj": true,
+        "x": 630,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "80a935fc08fd6701",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 440,
+        "wires": [
+            [
+                "0417c82bf07e31aa"
+            ]
+        ]
+    },
+    {
+        "id": "1e9a209555c36865",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 380,
+        "wires": [
+            [
+                "a403772312f053b0"
+            ]
+        ]
     },
     {
         "id": "0fde83b90ac05731",
@@ -3049,7 +3075,7 @@
         "type": "function",
         "z": "3f98de411a14795f",
         "name": "cmd1",
-        "func": "\n\nmsg.payload.data.onoff = false\n\nmsg.payload.data.status.updated = new Date().getTime()\n\nmsg.topic = \"fjob\"\nnode.status({ fill: \"green\", shape: \"dot\" });\nreturn msg;",
+        "func": "\n\nmsg.payload.data.onoff = false\n\nmsg.payload.data.updated = new Date().getTime()\n\nmsg.topic = \"fjob\"\nnode.status({ fill: \"green\", shape: \"dot\" });\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3070,7 +3096,7 @@
         "type": "function",
         "z": "3f98de411a14795f",
         "name": "cmd2",
-        "func": "let redis = context.global.get('redis');\n\nlet startSetKey = \"global_settings:main_puls_delay\";\n\nredis.get(startSetKey).then((startSet) => {\n    msg.payload.data.startSet = JSON.parse(startSet)\n\n    msg.topic = \"fjob\"\n    node.status({ fill: \"green\", shape: \"dot\" });\n    node.send(msg)\n\n}).catch((err) => {\n    node.error(\"Error getting startSet: \" + err);\n});\n\n\n\n",
+        "func": "let redis = context.global.get('redis');\n\nlet startSetKey = \"global_settings:main_puls_delay\";\n\nredis.get(startSetKey).then((startSet) => {\n    msg.payload.data.startSet += JSON.parse(startSet)\n\n    msg.topic = \"fjob\"\n    node.status({ fill: \"green\", shape: \"dot\" });\n    node.send(msg)\n\n}).catch((err) => {\n    node.error(\"Error getting startSet: \" + err);\n});\n\n\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3091,7 +3117,7 @@
         "type": "function",
         "z": "3f98de411a14795f",
         "name": "cmd3",
-        "func": "// Получаем данные об этажах и настройках из сообщения\nlet floors = msg.payload.bot.floors;\nconst pair = msg.payload.bot.settings.pair;\nconst redis = context.global.get('redis'); // Получаем экземпляр Redis\nconst binance = global.get('binance'); // Получаем экземпляр Binance\n\nconst botname = msg.payload.bot.botname;\nconst tilog = global.get('tilog'); // Логирование\nconst enableLogging = false; // Флаг для включения/выключения логирования\n\n/**\n * Функция для логирования сообщений.\n * @param {string} message - Сообщение для логирования.\n */\nfunction log(message) {\n    if (enableLogging && tilog) {\n        tilog(botname, message);\n    }\n}\n\n/**\n * Функция для парсинга ошибок API Binance.\n * @param {object} error - Объект ошибки.\n * @returns {string} - Сообщение об ошибке.\n */\nfunction parseApiError(error) {\n    if (error.body) {\n        try {\n            const resp = JSON.parse(error.body);\n            return resp.msg;\n        } catch (e) {\n            // pass thru\n        }\n    }\n    return `Unknown error. Status code: ${error.statusCode}`;\n}\n\n\n\n/**\n * Функция для записи значения в Redis с истечением срока действия.\n * @param {object} redis - Экземпляр Redis.\n * @param {string} key - Ключ для записи значения.\n * @param {string} value - Значение для записи.\n * @param {number} expiration - Время истечения срока действия в секундах.\n * @returns {Promise} - Промис, который разрешается при успешной записи или отклоняется в случае ошибки.\n */\nasync function setRedisValue(redis, key, value, expiration) {\n    return new Promise((resolve, reject) => {\n        redis.setex(key, expiration, value, (err) => {\n            if (err) {\n                log(`Ошибка при записи значения в Redis для ключа ${key}: ${err.message}`);\n                reject(err);\n            } else {\n                log(`Значение успешно записано в Redis для ключа ${key}`);\n                resolve();\n            }\n        });\n    });\n}\n\n/**\n * Промисификация функции binance.orderStatus для получения статуса ордера.\n * @param {string} pair - Торговая пара.\n * @param {number} orderId - Идентификатор ордера.\n * @returns {Promise} - Промис, который разрешается в объект статуса ордера или отклоняется в случае ошибки.\n */\nfunction getBinanceOrderStatus(pair, orderId) {\n    return new Promise((resolve, reject) => {\n        binance.orderStatus(pair, undefined, (error, orderStatus, symbol) => {\n            if (error) {\n                const errorMsg = parseApiError(error);\n                log(`Ошибка при получении статуса ордера из Binance: ${errorMsg}`);\n                reject(new Error(errorMsg));\n            } else {\n                log(`Статус ордера получен от Binance: ${orderStatus.status}`);\n                resolve(orderStatus);\n            }\n        }, { orderId: orderId });\n    });\n}\n\nasync function getRedisValue(key) {\n    return new Promise((resolve, reject) => {\n        redis.get(key, (err, data) => {\n            if (err) {\n                reject(err);\n            } else {\n                resolve(data);\n            }\n        });\n    });\n}\n\n/**\n * Основная функция для обновления статусов этажей.\n * @param {object} floors - Объект этажей.\n * @param {string} pair - Торговая пара.\n * @returns {Promise} - Промис, который разрешается в массив результатов или отклоняется в случае ошибки.\n */\nasync function updateFloorStatuses(floors, pair) {\n    const result = [];\n\n    for (const key in floors) {\n        if (floors.hasOwnProperty(key)) {\n            const item = floors[key];\n            let floor = floors[key];\n\n            if (item.buyId > 0) {\n                try {\n                    log(`Обработка этажа ${item.floorNumber}, buyId: ${item.buyId}`);\n\n                    // Проверка наличия orderId перед запросом к Binance\n                    if (!item.buyId) {\n                        throw new Error(`Missing orderId for floor ${item.floorNumber}`);\n                    }\n\n                    // Получаем текущий статус ордера из Redis\n                    const currentStatus = item.buyStatus;\n\n                    // Если статус \"FILLED\", пропускаем повторный запрос\n                    if (currentStatus === \"FILLED\") {\n                        log(`Статус ордера уже \"FILLED\", пропускаем повторный запрос`);\n                        item.buyStatus = currentStatus;\n                        result.push({\n                            buyId: item.buyId,\n                            floorNumber: item.floorNumber,\n                            buyStatus: item.buyStatus\n                        });\n                        continue;\n                    }\n\n                    // Синхронизация времени сервера\n                    await binance.useServerTime();\n\n                    // Получаем статус ордера из Binance\n                    const orderStatus = await getBinanceOrderStatus(pair, item.buyId);\n                    const buyStatus = orderStatus.status;\n\n                    // Записываем статус в Redis\n                    await setRedisValue(redis, `orders-status:${pair}:${item.buyId}`, buyStatus, 1000);\n\n                    // Обновляем статус в объекте этажа\n                    item.buyStatus = buyStatus;\n\n                    // Если статус \"FILLED\", сохраняем цену и комиссию в Redis\n                    if (buyStatus === \"FILLED\") {\n                        log(`Ордер выполнен, сохраняем цену и комиссию в Redis`);\n                        await setRedisValue(redis, `orders-status:${pair}:${item.buyId}-price`, orderStatus.price, 10000);\n                        await setRedisValue(redis, `orders-status:${pair}:${item.buyId}-comsa`, orderStatus.commission, 10000);\n                        log(`Цена и комиссия сохранены для buyId: ${item.buyId}`);\n                    }\n\n                    // Добавляем результат в массив\n                    result.push({\n                        buyId: item.buyId,\n                        floorNumber: item.floorNumber,\n                        buyStatus: item.buyStatus\n                    });\n                } catch (err) {\n                    log(`Ошибка при обработке этажа ${item.floorNumber}: ${err.message}`);\n                    node.error(`Error processing floor ${item.floorNumber}: ${err.message}`, msg);\n                }\n            }\n\n            switch (floor.status) {\n                case '0':\n                    node.status({ fill: \"green\", shape: \"dot\" });\n                    break;\n                case 'pending_buy':\n                    const orderKey = `orders-status:${pair}:${floor.buyId}`;\n                    const orderStatus = await getRedisValue(orderKey);\n                    floor.buyStatus = orderStatus;\n\n                    if (orderStatus === \"NEW\") { floor.status = \"set_buy\" }\n                    if (orderStatus === \"FILLED\") { floor.status = \"filled_buy\" }\n                    if (orderStatus === \"CANCELED\") { floor.status = \"0\" }\n\n                    break;\n                case 'set_buy':\n                    const orderKeySetBuy = `orders-status:${pair}:${floor.buyId}`;\n                    const orderStatusSetBuy = await getRedisValue(orderKeySetBuy);\n                    floor.buyStatus = orderStatusSetBuy;\n\n                    if ((orderStatus === \"NEW\")&&(floor.floorNumber !== Number(msg.payload.bot.status.currentfloor))) {\n\n                        if (msg.payload.bot.zapret_na_zakup) {\n                            node.send([null, {\n                                payload: {\n                                    cmd: \"add\",\n                                    task: {\n                                        bot_id: msg.payload.bot.botname,\n                                        cmd: `cancel_on_${msg.payload.bot.settings.exchange.toLowerCase()}`,\n                                        floor: floor\n\n                                    }\n                                }\n                            }]);\n                        }\n                        floor.status = \"pending_cancel_buy\"\n\n                    }\n                    if (orderStatus === \"FILLED\") { floor.status = \"filled_buy\" }\n                    if (orderStatus === \"CANCELED\") { floor.status = \"0\" }\n\n                    break;\n                case 'pending_cancel_buy':\n                    const orderKeyPendingCancel = `orders-status:${pair}:${floor.buyId}`;\n                    const orderStatusPendingCancel = await getRedisValue(orderKeyPendingCancel);\n                    floor.buyStatus = orderStatusPendingCancel;\n\n                    if (orderStatus === \"NEW\") { }\n                    if (orderStatus === \"FILLED\") { floor.status = \"filled_buy\" }\n                    if (orderStatus === \"CANCELED\") { floor.status = \"0\" }\n\n                    break;\n                case 'filled_buy':\n                    if (Number(msg.payload.bot.status.currentprice) >= Number(floor.endPrice)) {\n                        floor.status = \"pending_sell\";\n                        log(`Начали продавать на этаже ${floor.floorNumber}`);\n                    }\n                    break;\n                case 'pending_sell':\n                    msg.payload.bot.openpos.quantity += Number(floor.vol);\n\n                    break;\n            }\n        }\n    }\n\n    return result;\n}\n\n// Запуск основной функции\nupdateFloorStatuses(floors, pair)\n    .then(result => {\n        msg.orders = result;\n        msg.payload.bot.floors = floors;\n        msg.payload.bot.status.updated = new Date().getTime();\n\n        msg.topic = \"fjob\";\n        node.status({ fill: \"green\", shape: \"dot\" });\n        log(`Обновление статусов этажей завершено успешно`);\n        node.send(msg);\n    })\n    .catch(err => {\n        msg.err = err;\n        msg.payload.bot.status.updated = new Date().getTime();\n\n        msg.topic = \"fjob\";\n        node.status({ fill: \"red\", shape: \"dot\" });\n        log(`Ошибка при обновлении статусов этажей: ${err.message}`);\n        node.send(msg);\n    });\n",
+        "func": "\n\nmsg.payload.data.onoff = !msg.payload.data.onoff\n\nmsg.payload.data.updated = new Date().getTime()\n\nmsg.topic = \"fjob\"\nnode.status({ fill: \"green\", shape: \"dot\" });\nreturn [msg,msg];",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -3254,7 +3280,7 @@
         "type": "function",
         "z": "3f98de411a14795f",
         "name": "do cmd1",
-        "func": "\nreturn msg;",
+        "func": "msg.payload = {\n    cmd: \"add\",\n    task:{\n        data: msg.payload.data,\n        cmd: \"cmd1\"\n    }\n    \n}\nmsg.topic = \"tasks\"\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3265,9 +3291,27 @@
         "y": 800,
         "wires": [
             [
-                "6e5d54647e4db6e6"
+                "6e5d54647e4db6e6",
+                "69af9d0a35951760"
             ]
         ]
+    },
+    {
+        "id": "69af9d0a35951760",
+        "type": "debug",
+        "z": "3f98de411a14795f",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 800,
+        "wires": []
     },
     {
         "id": "8b32af2f20fb9c8b",
@@ -3772,5 +3816,52 @@
         "x": 810,
         "y": 60,
         "wires": []
+    },
+    {
+        "id": "24c489e3cd436036",
+        "type": "function",
+        "z": "20ab889ce2631bfa",
+        "name": "getBotDifferences",
+        "func": "function getBotDifferences(bot, botStart, ignorePaths = []) {\n    const ignoreSet = new Set(ignorePaths);    // Рекурсивная функция сравнения объектов    \n    function compareObjects(a, b, differences = {}, path = []) {\n        const allKeys = new Set([...Object.keys(a), ...Object.keys(b)]);\n        allKeys.forEach(key => {\n            const currentPath = [...path, key];\n            const pathString = currentPath.join('.');            // Пропускаем игнорируемые пути  \n            if (ignoreSet.has(pathString)) return;\n            const aVal = a[key];\n            const bVal = b[key];\n            // Обработка объектов        \n            if (isObject(aVal) && isObject(bVal)) {\n                const nestedDiff = {};\n                compareObjects(aVal, bVal, nestedDiff, currentPath);\n                if (Object.keys(nestedDiff).length > 0) {\n                    differences[key] = nestedDiff;\n                }\n            }\n            // Обработка массивов   \n            else if (Array.isArray(aVal) && Array.isArray(bVal)) {\n                if (JSON.stringify(aVal) !== JSON.stringify(bVal)) {\n                    differences[key] = { old: bVal, new: aVal };\n                }\n            }\n            // Простые значения     \n            else {\n                if (!isEqual(aVal, bVal)) {\n                    differences[key] = { old: bVal, new: aVal };\n                }\n            }\n        });\n        return differences;\n    }\n    // Проверка является ли значение объектом (не массивом)  \n    function isObject(val) { return val !== null && typeof val === 'object' && !Array.isArray(val); }\n    // Универсальное сравнение значений   \n    function isEqual(a, b) {\n        if (a === b) return true;\n        if (a === undefined || b === undefined) return false;\n        return JSON.stringify(a) === JSON.stringify(b);\n    }\n    return compareObjects(bot, botStart);\n} global.set('getBotDifferences', getBotDifferences);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7033ba311f97738f",
+        "type": "inject",
+        "z": "20ab889ce2631bfa",
+        "name": "init functions",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 520,
+        "wires": [
+            [
+                "24c489e3cd436036"
+            ]
+        ]
     }
 ]
