@@ -5,8 +5,6 @@ tasks:
       docker-compose up
 
 ports:
-  - port: 3000
-    onOpen: open-browser
   - port: 1880
     onOpen: open-browser
 

@@ -10,7 +10,7 @@ services:
     ports:
       - "1880:1880"
     environment:
-      - NODE_RED_ENABLE_SAFE_MODE=true
+      - NODE_RED_ENABLE_SAFE_MODE=false
       - TZ=Europe/Moscow
     networks:
       - tibotnet

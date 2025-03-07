@@ -406,17 +406,6 @@
         "disabled": "false"
     },
     {
-        "id": "610af59cc0757b9f",
-        "type": "ui-link",
-        "name": "Link 1",
-        "ui": "2080f36ce7985358",
-        "path": "/get-:id",
-        "icon": "home",
-        "order": 3,
-        "visible": "true",
-        "disabled": "false"
-    },
-    {
         "id": "e8d2ed0c562b24b6",
         "type": "memory-queue",
         "name": "workers_que",
@@ -1248,7 +1237,7 @@
         "z": "568b629767512beb",
         "g": "96fc1aea58e82b13",
         "name": "broker set task",
-        "func": "\nmsg.topic = \"\";\n\n// Функция для установки статуса бота\nfunction getBot(botId) {\n    let bot = global.get(botId);\n    if (!bot) {\n        msg.error = `Bot with ID ${botId} not found`;\n        return null;\n    }\n    return bot;\n}\n\n// Функция для получения задачи с наименьшим ключом и статусом \"created\"\nfunction getFieldWithSmallestKeyAndCreatedStatus(tasks) {\n    const keys = Object.keys(tasks);\n\n    // Фильтруем задачи с командой \"cansel_on_binance\" и статусом \"created\"\n    const canselKeys = keys.filter(key =>\n        tasks[key].cmd === \"cansel_on_binance\" && tasks[key].status === \"created\"\n    );\n    if (canselKeys.length > 0) {\n        const smallestKey = Math.min(...canselKeys.map(Number));\n        return tasks[smallestKey];\n    }\n\n    // фильтруем задачи только со статусом \"created\"\n    const createdKeys = keys.filter(key => tasks[key].status === \"created\");\n    if (createdKeys.length > 0) {\n        const smallestKey = Math.min(...createdKeys.map(Number));\n        return tasks[smallestKey];\n    }\n\n    // Если нет ни одной подходящей задачи, возвращаем null\n    return null;\n}\n\n// Функция для получения первого работника с locked: false\nfunction getFirstUnlockedField(workers) {\n    for (const key in workers) {\n        if (workers[key].locked === false) {\n            return workers[key];\n        }\n    }\n    return null;\n}\n\n// Основная функция\nfunction processMessage(msg) {\n    try {\n        // Получаем задачи и работников\n        let tasks = global.get('tasks') || {};\n        let workers = global.get('workers') || {};\n\n        // Проверяем, есть ли задачи\n        if (Object.keys(tasks).length === 0) {\n            msg.error = 'No tasks available';\n            return [null, msg];\n        }\n\n        // Получаем задачу\n        msg.task = getFieldWithSmallestKeyAndCreatedStatus(tasks);\n        if (!msg.task) {\n            msg.error = 'No task with status \"created\" found';\n            return [null, msg];\n        }\n\n        // Получаем работника\n        msg.worker = getFirstUnlockedField(workers);\n        if (!msg.worker) {\n            msg.error = 'No unlocked worker found';\n            return [null, msg];\n        }\n\n\n        let ma = global.get(msg.task.bot_id + \"-ma\") || {};\n        let bot = global.get(msg.task.bot_id);\n\n        bot.status.sr_ma_small = ma.ma1;\n        bot.status.sr_ma_big = ma.ma2;\n\n\n        switch (msg.task.cmd) {\n            case \"check_ma\":\n\n            case \"buy_on_binance\":\n            case \"buy_on_testb\":\n            case \"cancel_on_binance\":\n            case \"cancel_on_testb\":\n            case \"sell_on_binance\":\n            case \"sell_on_testb\":\n            case \"msell_on_binance\":\n            case \"msell_on_testb\":\n            case \"sell_cancel_on_binance\":\n            case \"sell_cancel_on_testb\":\n            case \"order_status_on_binance\":\n            case \"order_status_on_testb\":\n            case \"cancel_for_msell_on_binance\":\n            case \"cancel_for_msell_on_testb\":\n                //ничего не блокируем\n                msg.payload = {\n                    task: msg.task,\n                    worker: msg.worker,\n                    bot: bot,\n                    bot_start: bot\n                };\n                break;\n\n            case \"check\":\n            case \"check_orders\":\n            case \"onoff\":\n            case \"reset\":\n            case \"floor_edit\":\n            case \"regist_lead\":\n            case \"tsl\":\n            case \"tsl_edit\":\n                // Блокируем бота для этих команд\n                if (!bot) {\n                    msg.error = `Bot with ID ${msg.task.bot_id} not found`;\n                    return [null, msg];\n                }\n                if (bot.busy) {\n                    msg.error = `Bot with ID ${msg.task.bot_id} is already busy`;\n                    return [null, msg];\n                }\n\n                bot.busy = true;\n\n                global.set(msg.task.bot_id, bot);\n\n                msg.payload = {\n                    task: msg.task,\n                    worker: msg.worker,\n                    bot: bot || null, // Если бот не был установлен, используем null\n                    bot_start: bot || null\n                };\n                break;\n\n            default:\n                msg.error = `Unknown command: ${msg.task.cmd}`;\n                return [null, msg];\n        }\n\n        return [msg, null];\n    } catch (error) {\n        msg.error = 'Error processing message: ' + error.message;\n        return [null, msg];\n    }\n}\n\n// Вызов основной функции\nreturn processMessage(msg);\n",
+        "func": "\nmsg.topic = \"\";\n\n// Функция для установки статуса бота\nfunction getBot(botId) {\n    let bot = global.get(botId);\n    if (!bot) {\n        msg.error = `Bot with ID ${botId} not found`;\n        return null;\n    }\n    return bot;\n}\n\n// Функция для получения задачи с наименьшим ключом и статусом \"created\"\nfunction getFieldWithSmallestKeyAndCreatedStatus(tasks) {\n    const keys = Object.keys(tasks);\n\n    // Фильтруем задачи с командой \"cansel_on_binance\" и статусом \"created\"\n    const canselKeys = keys.filter(key =>\n        tasks[key].cmd === \"cansel_on_binance\" && tasks[key].status === \"created\"\n    );\n    if (canselKeys.length > 0) {\n        const smallestKey = Math.min(...canselKeys.map(Number));\n        return tasks[smallestKey];\n    }\n\n    // фильтруем задачи только со статусом \"created\"\n    const createdKeys = keys.filter(key => tasks[key].status === \"created\");\n    if (createdKeys.length > 0) {\n        const smallestKey = Math.min(...createdKeys.map(Number));\n        return tasks[smallestKey];\n    }\n\n    // Если нет ни одной подходящей задачи, возвращаем null\n    return null;\n}\n\n// Функция для получения первого работника с locked: false\nfunction getFirstUnlockedField(workers) {\n    for (const key in workers) {\n        if (workers[key].locked === false) {\n            return workers[key];\n        }\n    }\n    return null;\n}\n\n// Основная функция\nfunction processMessage(msg) {\n    try {\n        // Получаем задачи и работников\n        let tasks = global.get('tasks') || {};\n        let workers = global.get('workers') || {};\n\n        // Проверяем, есть ли задачи\n        if (Object.keys(tasks).length === 0) {\n            msg.error = 'No tasks available';\n            return [null, msg];\n        }\n\n        // Получаем задачу\n        msg.task = getFieldWithSmallestKeyAndCreatedStatus(tasks);\n        if (!msg.task) {\n            msg.error = 'No task with status \"created\" found';\n            return [null, msg];\n        }\n\n        // Получаем работника\n        msg.worker = getFirstUnlockedField(workers);\n        if (!msg.worker) {\n            msg.error = 'No unlocked worker found';\n            return [null, msg];\n        }\n\n\n \n        let data = global.get(\"data\");\n\n        switch (msg.task.cmd) {\n            \n            case \"cmd1\":\n            case \"cmd2\":\n            case \"cmd3\":\n           \n                // Блокируем бота для этих команд\n                if (!data) {\n                    msg.error = `Bot with ID ${msg.task.bot_id} not found`;\n                    return [null, msg];\n                }\n                if (data.locked) {\n                    msg.error = `Bot with ID ${msg.task.bot_id} is already busy`;\n                    return [null, msg];\n                }\n\n                data.locked = true;\n\n                global.set('data', data);\n\n                msg.payload = {\n                    task: msg.task,\n                    worker: msg.worker,\n                    data: data \n                };\n                break;\n\n            default:\n                msg.error = `Unknown command: ${msg.task.cmd}`;\n                return [null, msg];\n        }\n\n        return [msg, null];\n    } catch (error) {\n        msg.error = 'Error processing message: ' + error.message;\n        return [null, msg];\n    }\n}\n\n// Вызов основной функции\nreturn processMessage(msg);\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -1830,9 +1819,7 @@
         "x": 490,
         "y": 760,
         "wires": [
-            [
-                "7a02cb2c9f28de8c"
-            ]
+            []
         ]
     },
     {
@@ -1927,7 +1914,7 @@
         "type": "function",
         "z": "568b629767512beb",
         "g": "629745055f4ba571",
-        "name": "function 8",
+        "name": "stop",
         "func": "msg = {\n    topic:\"stop\",\n    payload:\"stop\"\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -1935,7 +1922,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 900,
+        "x": 890,
         "y": 840,
         "wires": [
             [
@@ -3051,7 +3038,7 @@
         "type": "function",
         "z": "3f98de411a14795f",
         "name": "cmd1",
-        "func": "\n\nmsg.payload.bot.onoff = false\n\nmsg.payload.bot.status.updated = new Date().getTime()\n\nmsg.topic = \"fjob\"\nnode.status({ fill: \"green\", shape: \"dot\" });\nreturn msg;",
+        "func": "\n\nmsg.payload.data.onoff = false\n\nmsg.payload.data.status.updated = new Date().getTime()\n\nmsg.topic = \"fjob\"\nnode.status({ fill: \"green\", shape: \"dot\" });\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3072,7 +3059,7 @@
         "type": "function",
         "z": "3f98de411a14795f",
         "name": "cmd2",
-        "func": "let redis = context.global.get('redis');\n\nlet startSetKey = \"bots:\" + msg.payload.bot.botname + \":start_set\";\n\nredis.get(startSetKey).then((startSet) => {\n    msg.payload.bot = JSON.parse(startSet)\n\n    msg.payload.bot.status.updated = new Date().getTime()\n  \n    msg.topic = \"fjob\"\n    node.status({ fill: \"green\", shape: \"dot\" });\n    node.send(msg)\n\n}).catch((err) => {\n    node.error(\"Error getting startSet: \" + err);\n});\n\n\n\n",
+        "func": "let redis = context.global.get('redis');\n\nlet startSetKey = \"global_settings:main_puls_delay\";\n\nredis.get(startSetKey).then((startSet) => {\n    msg.payload.data.startSet = JSON.parse(startSet)\n\n    msg.topic = \"fjob\"\n    node.status({ fill: \"green\", shape: \"dot\" });\n    node.send(msg)\n\n}).catch((err) => {\n    node.error(\"Error getting startSet: \" + err);\n});\n\n\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3108,7 +3095,7 @@
                 "b980f98e071e07ea"
             ],
             [
-                "6e5d54647e4db6e6"
+                "83b5684b5d188dfc"
             ]
         ],
         "icon": "node-red/inject.svg"
@@ -3252,6 +3239,26 @@
         "wires": []
     },
     {
+        "id": "83b5684b5d188dfc",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "name": "do cmd1",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 800,
+        "wires": [
+            [
+                "6e5d54647e4db6e6"
+            ]
+        ]
+    },
+    {
         "id": "8b32af2f20fb9c8b",
         "type": "ui-switch",
         "z": "20ab889ce2631bfa",
@@ -3277,8 +3284,8 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 750,
-        "y": 160,
+        "x": 870,
+        "y": 360,
         "wires": [
             [
                 "a4a77381630faae2"
@@ -3297,8 +3304,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1370,
-        "y": 900,
+        "x": 220,
+        "y": 60,
         "wires": [
             [
                 "d89709ef.fd9368"
@@ -3309,16 +3316,16 @@
         "id": "d89709ef.fd9368",
         "type": "function",
         "z": "20ab889ce2631bfa",
-        "name": "",
-        "func": "let redis = context.flow.get('redis');\n\nredis.info().then((data)=>{\n    msg.payload = data\n    node.send(msg);\n})\n\n/*\nredis.call(\"anycmd\").then((data)=>{\n    msg.payload = data\n    node.send(msg);\n})*/",
+        "name": "redis.info()",
+        "func": "let redis = context.global.get('redis');\n\nredis.info().then((data)=>{\n    msg.payload = data\n    node.send(msg);\n})\n\n/*\nredis.call(\"anycmd\").then((data)=>{\n    msg.payload = data\n    node.send(msg);\n})*/",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1600,
-        "y": 900,
+        "x": 390,
+        "y": 60,
         "wires": [
             [
                 "f2e9c3a0.8f181"
@@ -3336,8 +3343,10 @@
         "tostatus": false,
         "complete": "true",
         "targetType": "full",
-        "x": 1920,
-        "y": 900,
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 60,
         "wires": []
     },
     {
@@ -3352,8 +3361,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 400,
-        "y": 40,
+        "x": 520,
+        "y": 240,
         "wires": [
             [
                 "feb16e3893d5e4af"
@@ -3381,8 +3390,8 @@
         "topic": "global_settings:main_puls_delay",
         "payload": "[]",
         "payloadType": "json",
-        "x": 180,
-        "y": 40,
+        "x": 300,
+        "y": 240,
         "wires": [
             [
                 "1be6f7e94d6a1fa8"
@@ -3414,8 +3423,8 @@
         "iconPosition": "left",
         "iconInnerPosition": "inside",
         "spinner": "default",
-        "x": 630,
-        "y": 40,
+        "x": 750,
+        "y": 240,
         "wires": [
             [
                 "81a628e43d7bcbda"
@@ -3434,8 +3443,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
-        "y": 40,
+        "x": 990,
+        "y": 240,
         "wires": [
             [
                 "479e53ebd03b2a11"
@@ -3454,8 +3463,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1040,
-        "y": 40,
+        "x": 1160,
+        "y": 240,
         "wires": [
             []
         ]
@@ -3472,8 +3481,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 340,
-        "y": 160,
+        "x": 460,
+        "y": 360,
         "wires": [
             [
                 "9d69361e373bf600"
@@ -3501,8 +3510,8 @@
         "topic": "global_settings:auto_start",
         "payload": "[]",
         "payloadType": "json",
-        "x": 150,
-        "y": 160,
+        "x": 270,
+        "y": 360,
         "wires": [
             [
                 "a41a7c47e4a3c971"
@@ -3521,8 +3530,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
-        "y": 160,
+        "x": 1110,
+        "y": 360,
         "wires": [
             [
                 "b6bad10972b53e66"
@@ -3541,8 +3550,8 @@
         "paramsType": "json",
         "payloadType": "json",
         "block": false,
-        "x": 1160,
-        "y": 160,
+        "x": 1280,
+        "y": 360,
         "wires": [
             []
         ]
@@ -3559,12 +3568,198 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 160,
+        "x": 630,
+        "y": 360,
         "wires": [
             [
                 "8b32af2f20fb9c8b"
             ]
         ]
+    },
+    {
+        "id": "d05b942b9a18303b",
+        "type": "redis-command",
+        "z": "20ab889ce2631bfa",
+        "server": "a0efbb89.5e42d8",
+        "command": "set",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 900,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1ea37f58ea3cded1",
+        "type": "function",
+        "z": "20ab889ce2631bfa",
+        "name": "set 1000 if null",
+        "func": "if (msg.payload === null || msg.payload === '') {\n    msg = {\n        payload: [msg.topic, '1000']\n    }\n\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 200,
+        "wires": [
+            [
+                "d05b942b9a18303b"
+            ]
+        ]
+    },
+    {
+        "id": "9ac3e473eefcec9f",
+        "type": "redis-command",
+        "z": "20ab889ce2631bfa",
+        "server": "a0efbb89.5e42d8",
+        "command": "get",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 540,
+        "y": 200,
+        "wires": [
+            [
+                "1ea37f58ea3cded1"
+            ]
+        ]
+    },
+    {
+        "id": "1bd155b0f55efb30",
+        "type": "inject",
+        "z": "20ab889ce2631bfa",
+        "name": "global_settings:main_puls_delay",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "global_settings:main_puls_delay",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 300,
+        "y": 200,
+        "wires": [
+            [
+                "9ac3e473eefcec9f"
+            ]
+        ]
+    },
+    {
+        "id": "f6087cb738894a58",
+        "type": "redis-command",
+        "z": "20ab889ce2631bfa",
+        "server": "a0efbb89.5e42d8",
+        "command": "set",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 900,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "df900b16f5940e5b",
+        "type": "function",
+        "z": "20ab889ce2631bfa",
+        "name": "set false if null",
+        "func": "if (msg.payload === null || msg.payload === '') {\n    msg = {\n        payload: [msg.topic, 'false']\n    }\n\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 320,
+        "wires": [
+            [
+                "f6087cb738894a58"
+            ]
+        ]
+    },
+    {
+        "id": "1b4b7d9f9beec7c3",
+        "type": "redis-command",
+        "z": "20ab889ce2631bfa",
+        "server": "a0efbb89.5e42d8",
+        "command": "get",
+        "name": "",
+        "topic": "",
+        "params": "[]",
+        "paramsType": "json",
+        "payloadType": "json",
+        "block": false,
+        "x": 540,
+        "y": 320,
+        "wires": [
+            [
+                "df900b16f5940e5b"
+            ]
+        ]
+    },
+    {
+        "id": "2413b78733fa9c47",
+        "type": "inject",
+        "z": "20ab889ce2631bfa",
+        "name": "global_settings:auto_start",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "global_settings:auto_start",
+        "payload": "[]",
+        "payloadType": "json",
+        "x": 270,
+        "y": 320,
+        "wires": [
+            [
+                "1b4b7d9f9beec7c3"
+            ]
+        ]
+    },
+    {
+        "id": "4274a918b99b6efa",
+        "type": "redis-instance",
+        "z": "20ab889ce2631bfa",
+        "server": "a0efbb89.5e42d8",
+        "name": "",
+        "topic": "redis",
+        "location": "global",
+        "x": 810,
+        "y": 60,
+        "wires": []
     }
 ]
