@@ -24,185 +24,7 @@
         "env": []
     },
     {
-        "id": "87c8f2fa36ac1382",
-        "type": "group",
-        "z": "568b629767512beb",
-        "name": "workers que",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "8e6163e540a08051",
-            "ed8fbf57e4e6949b",
-            "35f52f8d29bb86ec",
-            "d1966f385a403833",
-            "02d2d983d1a789c1",
-            "4c5a8b4b8c56de5c",
-            "fa828d2f06f9c824",
-            "3ffa3679d0c5f506",
-            "8f6bcb5b922c358d",
-            "84824815df856d6a",
-            "204f9cc1c5e6922f",
-            "8d641831239b2422",
-            "966770f448592d8a"
-        ],
-        "x": 914,
-        "y": 779,
-        "w": 832,
-        "h": 242
-    },
-    {
-        "id": "ff6a6e8faf39c4f4",
-        "type": "group",
-        "z": "568b629767512beb",
-        "name": "periodic cmd1",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "02fab608d8b40fa6",
-            "cc76fea89599be73",
-            "eb1270c5ba3d2c8d",
-            "0dcf5ac1082019a3",
-            "e8b511a45f71040b",
-            "d7c36a2c3593f4f6",
-            "b4444ff8b6b1ceb9",
-            "c7ce1f056828d12a",
-            "b11b10b452fb73e9",
-            "1e638efbf3ae2176",
-            "c6ca2ef381f3491f"
-        ],
-        "x": 134,
-        "y": 139,
-        "w": 1332,
-        "h": 142
-    },
-    {
-        "id": "158e5d192d0f095e",
-        "type": "group",
-        "z": "568b629767512beb",
-        "name": "tasks que",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "d997bdf3cc4cd3cd",
-            "8b41a15ba7a99157",
-            "085b751bf0211e76",
-            "8b7207c6120561a1",
-            "54efb4176e56f31b",
-            "7134f071ab977ae1",
-            "d61d699966642c44",
-            "2eec6422d14b3453",
-            "73c51b12a85f959a",
-            "62a9c6517989dd11",
-            "31945d2ecfaf9c10",
-            "feab0eab0da867d2",
-            "52ec746db78470b8"
-        ],
-        "x": 134,
-        "y": 779,
-        "w": 712,
-        "h": 242
-    },
-    {
-        "id": "629745055f4ba571",
-        "type": "group",
-        "z": "568b629767512beb",
-        "name": "cleaner",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "ad3241508beef299",
-            "a1d906dff6692815",
-            "2885c7e78caf2b89",
-            "2ccb1331c22f8f4b",
-            "c46b53b4bd919c2b",
-            "c2b930c161523b42",
-            "d253e34c4950bcb5",
-            "9355616c5fa90159",
-            "7a02cb2c9f28de8c",
-            "720d881395cdefd0",
-            "60c1d0835a740528",
-            "4aa09b361e1a9da6",
-            "22aa2b25788e0cdb",
-            "3d53fec093355008"
-        ],
-        "x": 134,
-        "y": 1439,
-        "w": 1412,
-        "h": 202
-    },
-    {
-        "id": "96fc1aea58e82b13",
-        "type": "group",
-        "z": "568b629767512beb",
-        "name": "broker",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "dc9ca2cdf2f23320",
-            "a51aebaa5db61e67",
-            "124cc3ebba71c49f",
-            "01fea6de57fc7843",
-            "9f9befe01079228e",
-            "a8c3262da282edaf",
-            "8b320e07b182bbee",
-            "e16121c2be1ae1f8",
-            "1494dcb5ad0ec6a9",
-            "de33fa624f62aaaa",
-            "33c9c3cad581e88b",
-            "3eb09ceb8e1825eb",
-            "daa43e38aa3260c5",
-            "5e8cd33b83f802a8",
-            "ee1b9aab100e9620",
-            "ef88361a622b562d",
-            "dbbc6e7e7053b9b4",
-            "6ed648c066d5e348",
-            "268da1b948649424",
-            "3b9251157afc0ba7",
-            "27662231843109fd",
-            "20ddca6f91be5f0c",
-            "d74ec617ec7d4cd3",
-            "b1c880a62780d09d",
-            "9b8df2345d69bb57",
-            "097a57e22aef71e2",
-            "bdbcb8f835cc114f",
-            "592a9a8bb1ca78fb"
-        ],
-        "x": 134,
-        "y": 1079,
-        "w": 2012,
-        "h": 322
-    },
-    {
-        "id": "d508da9d29e25c1b",
-        "type": "group",
-        "z": "568b629767512beb",
-        "name": "logger",
-        "style": {
-            "label": true,
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "6526e141.43af9",
-            "eab25c49.10d9c8",
-            "afaf3a2c.646c88",
-            "f270d7dcd568dafa",
-            "6de3ad897ed6bdb0",
-            "a82f56ba838aa8c2",
-            "8347c14f1fa7a6fa",
-            "1cf161e0c69d5e31"
-        ],
-        "x": 134,
-        "y": 579,
-        "w": 872,
-        "h": 162
-    },
-    {
-        "id": "1b34533f634edfe2",
+        "id": "98132085df5d6410",
         "type": "group",
         "z": "568b629767512beb",
         "style": {
@@ -215,23 +37,76 @@
             "color": "#dddddd"
         },
         "nodes": [
-            "da3fdf9519a62c38",
-            "2d637db0eed5abec",
-            "33ace994176dee71",
-            "6f844f4b99d5e778",
-            "cd39266697636ab9",
-            "1c5f85e0ddf680be",
-            "bbeb7643d4a30654",
-            "6bf1ef50cbecab4f",
-            "b09bb3bdd73a3a23",
-            "dcbbcac0c97d9b75",
-            "4673fc2475b1d4a7",
-            "1ef17ae88634c9d0"
+            "4fa9d878be1d41c4",
+            "18eb79254fcfcd07",
+            "65cd5b44329acb2e",
+            "21af50813565584d",
+            "607b98142d4cc63b",
+            "49c40644aa9fa132",
+            "386ca7e8c7e67c3b",
+            "0e83c0fd6d981286"
         ],
-        "x": 1154,
-        "y": 339,
-        "w": 632,
-        "h": 342
+        "x": 174,
+        "y": 499,
+        "w": 772,
+        "h": 242
+    },
+    {
+        "id": "d4c174739de217d4",
+        "type": "group",
+        "z": "3f98de411a14795f",
+        "style": {
+            "stroke": "#2e333a",
+            "stroke-opacity": "1",
+            "fill": "#383c45",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#dddddd"
+        },
+        "nodes": [
+            "f3987b323a93c5c3",
+            "d2e16916844ef8c6",
+            "aee5dc394e1301d4",
+            "94015585f348d9c3",
+            "606463e04b70cf07",
+            "c3283ee72a5a301c",
+            "28974da5b4417212",
+            "01a180c0b0f2225d"
+        ],
+        "x": 254,
+        "y": 99,
+        "w": 732,
+        "h": 242
+    },
+    {
+        "id": "c34bda795978de35",
+        "type": "group",
+        "z": "568b629767512beb",
+        "style": {
+            "stroke": "#2e333a",
+            "stroke-opacity": "1",
+            "fill": "#383c45",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#dddddd"
+        },
+        "nodes": [
+            "162b94472306b1a9",
+            "c8fbde1a7dcb152b",
+            "ec7e1d976fe04766",
+            "83ec644475f3fbd2",
+            "722cfd9a35127689",
+            "43389ead78d0f309",
+            "11440855fb0d494d",
+            "70a01627a8dbffef",
+            "bde84900c30b397d"
+        ],
+        "x": 174,
+        "y": 59,
+        "w": 812,
+        "h": 302
     },
     {
         "id": "2080f36ce7985358",
@@ -273,56 +148,6 @@
             "groupBorderRadius": "4px",
             "widgetGap": "12px"
         }
-    },
-    {
-        "id": "e1602f0e338bcf95",
-        "type": "ui-page",
-        "name": "Настройки",
-        "ui": "2080f36ce7985358",
-        "path": "/settings",
-        "icon": "settings",
-        "layout": "flex",
-        "theme": "6f84b4e31dd5cbe3",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
-            },
-            {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
-            },
-            {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
-            }
-        ],
-        "order": 1,
-        "className": "",
-        "visible": true,
-        "disabled": false
-    },
-    {
-        "id": "87d5213318a54d25",
-        "type": "ui-group",
-        "name": "Основные",
-        "page": "e1602f0e338bcf95",
-        "width": "5",
-        "height": 1,
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
     },
     {
         "id": "a0efbb89.5e42d8",
@@ -369,13 +194,6 @@
         "disabled": "false"
     },
     {
-        "id": "e8d2ed0c562b24b6",
-        "type": "memory-queue",
-        "name": "workers_que",
-        "size": "10",
-        "discard": false
-    },
-    {
         "id": "d403defdfbeecc46",
         "type": "ui-group",
         "name": "Мониторинг",
@@ -390,844 +208,103 @@
         "groupType": "default"
     },
     {
-        "id": "6675fc48b29179a6",
-        "type": "memory-queue",
-        "name": "tasks_que",
-        "size": "10",
-        "discard": true
-    },
-    {
-        "id": "cc76fea89599be73",
-        "type": "filter",
-        "z": "568b629767512beb",
-        "g": "ff6a6e8faf39c4f4",
-        "name": "filter locked",
-        "property": "data.locked",
-        "propertyType": "msg",
-        "asArray": false,
-        "itemProperty": "",
-        "itemPropertyType": "item",
-        "rules": [
-            {
-                "t": "false",
-                "output": 1
-            }
-        ],
-        "checkall": "true",
-        "outputs": 1,
-        "x": 1030,
-        "y": 180,
-        "wires": [
-            [
-                "02fab608d8b40fa6"
-            ]
-        ]
-    },
-    {
-        "id": "02fab608d8b40fa6",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "ff6a6e8faf39c4f4",
-        "name": "cmd: \"cmd1\"",
-        "func": "msg.payload = {\n    cmd: \"add\",\n    task:{\n        data: msg.payload,\n        cmd: \"cmd1\"\n    }\n    \n}\nmsg.topic = \"tasks\"\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1210,
-        "y": 180,
-        "wires": [
-            [
-                "eb1270c5ba3d2c8d"
-            ]
-        ]
-    },
-    {
-        "id": "d997bdf3cc4cd3cd",
-        "type": "memqueue in",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "name": "tasks_que",
-        "queue": "6675fc48b29179a6",
-        "x": 370,
-        "y": 820,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8b41a15ba7a99157",
-        "type": "memqueue out",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "name": "tasks_que",
-        "queue": "6675fc48b29179a6",
-        "x": 220,
-        "y": 960,
-        "wires": [
-            [
-                "d61d699966642c44"
-            ]
-        ]
-    },
-    {
-        "id": "eb1270c5ba3d2c8d",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "ff6a6e8faf39c4f4",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "tasks",
-        "obj": true,
-        "x": 1390,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "085b751bf0211e76",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "tasks",
-        "obj": true,
-        "timeout": 0,
-        "x": 210,
-        "y": 820,
-        "wires": [
-            [
-                "d997bdf3cc4cd3cd",
-                "52ec746db78470b8"
-            ]
-        ]
-    },
-    {
-        "id": "8b7207c6120561a1",
-        "type": "memqueue ack",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "name": "tasks_que",
-        "queue": "6675fc48b29179a6",
-        "x": 730,
-        "y": 880,
-        "wires": []
-    },
-    {
-        "id": "dc9ca2cdf2f23320",
-        "type": "debug",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "debug 37",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 820,
-        "y": 1360,
-        "wires": []
-    },
-    {
-        "id": "8e6163e540a08051",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "workers",
-        "obj": true,
-        "timeout": 0,
-        "x": 990,
-        "y": 820,
-        "wires": [
-            [
-                "ed8fbf57e4e6949b",
-                "966770f448592d8a"
-            ]
-        ]
-    },
-    {
-        "id": "ed8fbf57e4e6949b",
-        "type": "memqueue in",
-        "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "name": "workers_que",
-        "queue": "e8d2ed0c562b24b6",
-        "x": 1150,
-        "y": 820,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "35f52f8d29bb86ec",
-        "type": "memqueue out",
-        "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "name": "workers_que",
-        "queue": "e8d2ed0c562b24b6",
-        "x": 1010,
-        "y": 960,
-        "wires": [
-            [
-                "4c5a8b4b8c56de5c"
-            ]
-        ]
-    },
-    {
-        "id": "d1966f385a403833",
-        "type": "memqueue ack",
-        "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "name": "workers_que ask",
-        "queue": "e8d2ed0c562b24b6",
-        "x": 1530,
-        "y": 820,
-        "wires": []
-    },
-    {
-        "id": "02d2d983d1a789c1",
+        "id": "162b94472306b1a9",
         "type": "inject",
         "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "name": "",
+        "g": "c34bda795978de35",
+        "name": "Broker Timer",
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "0.5",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1350,
-        "y": 820,
-        "wires": [
-            [
-                "d1966f385a403833"
-            ]
-        ]
-    },
-    {
-        "id": "fa828d2f06f9c824",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "name": "workers.add",
-        "func": "let workers = global.get('workers') || {}\n\n\n\nworkers[msg.payload.worker.worker_id] = msg.payload.worker\n\nglobal.set('workers', workers)\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1390,
-        "y": 880,
-        "wires": [
-            [
-                "8d641831239b2422"
-            ]
-        ]
-    },
-    {
-        "id": "4c5a8b4b8c56de5c",
-        "type": "switch",
-        "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "name": "",
-        "property": "payload.cmd",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "add",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "del",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "change",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 3,
-        "x": 1190,
-        "y": 960,
-        "wires": [
-            [
-                "fa828d2f06f9c824"
-            ],
-            [
-                "3ffa3679d0c5f506"
-            ],
-            [
-                "8f6bcb5b922c358d"
-            ]
-        ]
-    },
-    {
-        "id": "3ffa3679d0c5f506",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "name": "workers dell",
-        "func": "let workers = global.get('workers') || {}\n\ndelete workers[msg.payload.worker.worker_id]\n\n\nglobal.set('workers', workers);\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1390,
-        "y": 920,
-        "wires": [
-            [
-                "204f9cc1c5e6922f"
-            ]
-        ]
-    },
-    {
-        "id": "8f6bcb5b922c358d",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "name": "workers change",
-        "func": "let workers = global.get('workers') || {}\n\nworkers[msg.payload.worker.worker_id] = {...msg.payload.worker}\n\nglobal.set('workers', workers)\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1400,
-        "y": 980,
-        "wires": [
-            [
-                "84824815df856d6a"
-            ]
-        ]
-    },
-    {
-        "id": "84824815df856d6a",
-        "type": "memqueue ack",
-        "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "name": "workers_que ask",
-        "queue": "e8d2ed0c562b24b6",
-        "x": 1630,
-        "y": 980,
-        "wires": []
-    },
-    {
-        "id": "204f9cc1c5e6922f",
-        "type": "memqueue ack",
-        "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "name": "workers_que ask",
-        "queue": "e8d2ed0c562b24b6",
-        "x": 1630,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "8d641831239b2422",
-        "type": "memqueue ack",
-        "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "name": "workers_que ask",
-        "queue": "e8d2ed0c562b24b6",
-        "x": 1630,
-        "y": 880,
-        "wires": []
-    },
-    {
-        "id": "54efb4176e56f31b",
-        "type": "memqueue ack",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "name": "tasks_que ask",
-        "queue": "6675fc48b29179a6",
-        "x": 740,
-        "y": 820,
-        "wires": []
-    },
-    {
-        "id": "7134f071ab977ae1",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "0.5",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 570,
-        "y": 820,
-        "wires": [
-            [
-                "54efb4176e56f31b"
-            ]
-        ]
-    },
-    {
-        "id": "d61d699966642c44",
-        "type": "switch",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "name": "",
-        "property": "payload.cmd",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "add",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "del",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "change",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 3,
-        "x": 370,
-        "y": 960,
-        "wires": [
-            [
-                "2eec6422d14b3453"
-            ],
-            [
-                "73c51b12a85f959a"
-            ],
-            [
-                "62a9c6517989dd11"
-            ]
-        ]
-    },
-    {
-        "id": "2eec6422d14b3453",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "name": "tasks.add",
-        "func": "let tasks = global.get('tasks') || {}\n\nlet task = msg.payload.task\ntask.task_id = new Date().getTime()\ntask.status = 'created'\ntasks[task.task_id] = task\n\n\nglobal.set('tasks', tasks)\n\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 560,
-        "y": 880,
-        "wires": [
-            [
-                "8b7207c6120561a1"
-            ]
-        ]
-    },
-    {
-        "id": "73c51b12a85f959a",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "name": "tasks del",
-        "func": "let tasks = global.get('tasks') \n\ndelete tasks[msg.payload.task.task_id]\n\n\nglobal.set('tasks', tasks)\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 560,
-        "y": 920,
-        "wires": [
-            [
-                "31945d2ecfaf9c10"
-            ]
-        ]
-    },
-    {
-        "id": "62a9c6517989dd11",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "name": "tasks change",
-        "func": "let tasks = global.get('tasks') \n\ntasks[msg.payload.task.task_id] = msg.payload.task\n\n\nglobal.set('tasks', tasks)\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 570,
-        "y": 980,
-        "wires": [
-            [
-                "feab0eab0da867d2"
-            ]
-        ]
-    },
-    {
-        "id": "31945d2ecfaf9c10",
-        "type": "memqueue ack",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "name": "tasks_que",
-        "queue": "6675fc48b29179a6",
-        "x": 750,
-        "y": 920,
-        "wires": []
-    },
-    {
-        "id": "feab0eab0da867d2",
-        "type": "memqueue ack",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "name": "tasks_que",
-        "queue": "6675fc48b29179a6",
-        "x": 750,
-        "y": 980,
-        "wires": []
-    },
-    {
-        "id": "a51aebaa5db61e67",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "job",
-        "obj": true,
-        "x": 1030,
-        "y": 1140,
-        "wires": []
-    },
-    {
-        "id": "124cc3ebba71c49f",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "fjob",
-        "obj": true,
-        "timeout": 0,
-        "x": 1650,
-        "y": 1220,
-        "wires": [
-            [
-                "01fea6de57fc7843",
-                "33c9c3cad581e88b",
-                "3eb09ceb8e1825eb"
-            ]
-        ]
-    },
-    {
-        "id": "01fea6de57fc7843",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "complete task",
-        "func": "msg.payload = {\n    cmd: \"change\",\n    task: {\n        ...msg.payload.task,\n        fibish_at:new Date().getTime(),\n        status: \"completed\"\n\n    }\n\n}\nmsg.topic = \"tasks\"\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1840,
-        "y": 1220,
-        "wires": [
-            [
-                "9f9befe01079228e"
-            ]
-        ]
-    },
-    {
-        "id": "9f9befe01079228e",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "tasks",
-        "obj": true,
-        "x": 2010,
-        "y": 1220,
-        "wires": []
-    },
-    {
-        "id": "a8c3262da282edaf",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "change task ",
-        "func": "let task = msg.payload.task\ntask.status = \"started\"\nmsg.payload = {\n    cmd: \"change\",\n    task: task\n}\n\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1050,
-        "y": 1220,
-        "wires": [
-            [
-                "8b320e07b182bbee"
-            ]
-        ]
-    },
-    {
-        "id": "8b320e07b182bbee",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "tasks",
-        "obj": true,
-        "x": 1210,
-        "y": 1220,
-        "wires": []
-    },
-    {
-        "id": "e16121c2be1ae1f8",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "workes change",
-        "func": "\n\nlet worker = {\n    worker_id: msg.worker.worker_id,\n    update: new Date().getTime(),\n    task_id: msg.task.task_id,\n    locked: true\n\n}\n\nmsg.payload = {\n    cmd: \"change\",\n    worker: worker\n}\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1060,
-        "y": 1280,
-        "wires": [
-            [
-                "1494dcb5ad0ec6a9",
-                "b1c880a62780d09d"
-            ]
-        ]
-    },
-    {
-        "id": "1494dcb5ad0ec6a9",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "workers",
-        "obj": true,
-        "x": 1240,
-        "y": 1280,
-        "wires": []
-    },
-    {
-        "id": "966770f448592d8a",
-        "type": "debug",
-        "z": "568b629767512beb",
-        "g": "87c8f2fa36ac1382",
-        "name": "debug 17",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1000,
-        "y": 880,
-        "wires": []
-    },
-    {
-        "id": "52ec746db78470b8",
-        "type": "debug",
-        "z": "568b629767512beb",
-        "g": "158e5d192d0f095e",
-        "name": "debug 18",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 220,
-        "y": 880,
-        "wires": []
-    },
-    {
-        "id": "de33fa624f62aaaa",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "workers",
-        "obj": true,
-        "x": 2020,
-        "y": 1280,
-        "wires": []
-    },
-    {
-        "id": "33c9c3cad581e88b",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "workes change",
-        "func": "let worker = msg.payload.worker\nmsg.payload = {\n    cmd: \"change\",\n    worker: {\n        ...worker,\n        task_id: null,\n        locked:false\n    }\n\n}\nmsg.topic = \"workers\"\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1840,
-        "y": 1280,
-        "wires": [
-            [
-                "de33fa624f62aaaa"
-            ]
-        ]
-    },
-    {
-        "id": "3eb09ceb8e1825eb",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "global.set",
-        "func": "const tilog = global.get('tilog');\nconst getBotDifferences = global.get('getBotDifferences');\n\n// Основная логика обработки команд\nswitch (msg.payload.task.cmd) {\n    case \"cmd1\":\n    case \"cmd2\":\n    case \"cmd3\":\n        if (msg.payload.data) {\n            msg.payload.data.locked = false;\n            global.set('data', msg.payload.data);\n        }\n        break;\n}\n\n// Функция для логирования изменений\nfunction logChanges(changes, worktime) {\n\n    const logmsg = { task: msg.payload.task.cmd, worktime: worktime, diff: changes };\n    tilog('log-end-task', JSON.stringify(logmsg, null, 2));\n\n}\n\ntry {\n    // Проверяем, что msg.payload.bot_start и msg.payload.bot существуют\n    if (msg.payload.data_start && msg.payload.data) {\n        const startTime = msg.payload.task.task_id;\n        const worktime = (new Date().getTime()) - startTime;\n        const changes = getBotDifferences(msg.payload.data, msg.payload.data_start, [\n            'locked',\n            //игнорируемые логером поля\n\n        ]);\n\n        if (JSON.stringify(changes) !== '{}') {\n            //node.warn(changes);\n            logChanges(changes, worktime);\n        }\n\n\n    } else {\n        throw new Error(\"Отсутствуют данные для сравнения объектов.\");\n    }\n} catch (error) {\n    //console.error('Ошибка при сравнении объектов:', error);\n    tilog('log-end-task', `global.set  Ошибка: ${error}`);\n}\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1820,
-        "y": 1160,
-        "wires": [
-            [
-                "bdbcb8f835cc114f"
-            ]
-        ]
-    },
-    {
-        "id": "daa43e38aa3260c5",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
+        "repeat": ".5",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
-        "payloadType": "date",
-        "x": 560,
-        "y": 1140,
+        "payloadType": "str",
+        "x": 300,
+        "y": 120,
         "wires": [
             [
-                "5e8cd33b83f802a8"
+                "c8fbde1a7dcb152b"
             ]
         ]
     },
     {
-        "id": "5e8cd33b83f802a8",
+        "id": "c8fbde1a7dcb152b",
         "type": "function",
         "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "broker set task",
-        "func": "\nmsg.topic = \"\";\n\n// Функция для установки статуса бота\nfunction getBot(botId) {\n    let bot = global.get(botId);\n    if (!bot) {\n        msg.error = `Bot with ID ${botId} not found`;\n        return null;\n    }\n    return bot;\n}\n\n// Функция для получения задачи с наименьшим ключом и статусом \"created\"\nfunction getFieldWithSmallestKeyAndCreatedStatus(tasks) {\n    const keys = Object.keys(tasks);\n\n    // Фильтруем задачи с командой \"cansel_on_binance\" и статусом \"created\"\n    const canselKeys = keys.filter(key =>\n        tasks[key].cmd === \"cansel_on_binance\" && tasks[key].status === \"created\"\n    );\n    if (canselKeys.length > 0) {\n        const smallestKey = Math.min(...canselKeys.map(Number));\n        return tasks[smallestKey];\n    }\n\n    // фильтруем задачи только со статусом \"created\"\n    const createdKeys = keys.filter(key => tasks[key].status === \"created\");\n    if (createdKeys.length > 0) {\n        const smallestKey = Math.min(...createdKeys.map(Number));\n        return tasks[smallestKey];\n    }\n\n    // Если нет ни одной подходящей задачи, возвращаем null\n    return null;\n}\n\n// Функция для получения первого работника с locked: false\nfunction getFirstUnlockedField(workers) {\n    for (const key in workers) {\n        if (workers[key].locked === false) {\n            return workers[key];\n        }\n    }\n    return null;\n}\n\n// Основная функция\nfunction processMessage(msg) {\n    try {\n        // Получаем задачи и работников\n        let tasks = global.get('tasks') || {};\n        let workers = global.get('workers') || {};\n\n        // Проверяем, есть ли задачи\n        if (Object.keys(tasks).length === 0) {\n            msg.error = 'No tasks available';\n            return [null, msg];\n        }\n\n        // Получаем задачу\n        msg.task = getFieldWithSmallestKeyAndCreatedStatus(tasks);\n        if (!msg.task) {\n            msg.error = 'No task with status \"created\" found';\n            return [null, msg];\n        }\n\n        // Получаем работника\n        msg.worker = getFirstUnlockedField(workers);\n        if (!msg.worker) {\n            msg.error = 'No unlocked worker found';\n            return [null, msg];\n        }\n\n\n \n        let data = global.get(\"data\") || {locked:false};\n\n        switch (msg.task.cmd) {\n            \n            case \"cmd1\":\n            case \"cmd2\":\n            case \"cmd3\":\n           \n                // Блокируем бота для этих команд\n                if (!data) {\n                    msg.error = `Bot with ID ${msg.task.bot_id} not found`;\n                    return [null, msg];\n                }\n                if (data.locked) {\n                    msg.error = `Bot with ID ${msg.task.bot_id} is already busy`;\n                    return [null, msg];\n                }\n\n                data.locked = true;\n\n                global.set('data', data);\n\n                msg.payload = {\n                    task: msg.task,\n                    worker: msg.worker,\n                    data: data, \n                    data_start: data \n                };\n                break;\n\n            default:\n                msg.error = `Unknown command: ${msg.task.cmd}`;\n                return [null, msg];\n        }\n\n        return [msg, null];\n    } catch (error) {\n        msg.error = 'Error processing message: ' + error.message;\n        return [null, msg];\n    }\n}\n\n// Вызов основной функции\nreturn processMessage(msg);\n",
+        "g": "c34bda795978de35",
+        "name": "Broker: Check Tasks and Workers",
+        "func": "// ==== Конфигурация ====\nconst config = {\n    redis: {\n        taskQueueName: 'new_tasks',\n        jobChannel: 'job',\n        botLockPrefix: 'bot_lock:',\n        workerLockPrefix: 'worker_lock:',\n    },\n    noLockCommands: ['sell_on_binance', 'cancel_on_binance'],\n    lockTTL: 5, // Время жизни блокировки в секундах\n    maxTasksPerRun: 10 // Максимальное количество задач для обработки за один запуск\n};\n\n// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// ==== Функция проверки, занят ли бот ====\nasync function isBotBusy(botId) {\n    try {\n        let value = await redis.get(config.redis.botLockPrefix + botId);\n        return value !== null;\n    } catch (err) {\n        node.error(`Ошибка при проверке занятости бота ${botId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция проверки, занят ли воркер ====\nasync function isWorkerBusy(workerId) {\n    try {\n        let value = await redis.get(config.redis.workerLockPrefix + workerId);\n        return value !== null;\n    } catch (err) {\n        node.error(`Ошибка при проверке занятости воркера ${workerId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция блокировки бота ====\nasync function lockBot(botId) {\n    try {\n        await redis.set(config.redis.botLockPrefix + botId, 1, 'EX', config.lockTTL);\n        node.log(`Бот ${botId} заблокирован на ${config.lockTTL} секунд.`);\n    } catch (err) {\n        node.error(`Ошибка при блокировке бота ${botId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция блокировки воркера ====\nasync function lockWorker(workerId) {\n    try {\n        await redis.set(config.redis.workerLockPrefix + workerId, 1, 'EX', config.lockTTL);\n        node.log(`Воркер ${workerId} заблокирован на ${config.lockTTL} секунд.`);\n    } catch (err) {\n        node.error(`Ошибка при блокировке воркера ${workerId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция получения свободного воркера ====\nasync function getFreeWorker() {\n    try {\n        // Получаем список всех воркеров\n        const workers = await redis.keys('worker:*');\n\n        // Ищем первого свободного воркера\n        for (const worker of workers) {\n            const isBusy = await isWorkerBusy(worker);\n            if (!isBusy) {\n                return worker; // Возвращаем первого свободного воркера\n            }\n        }\n\n        // Если все воркеры заняты, возвращаем null\n        return null;\n    } catch (err) {\n        node.error('Ошибка при выборе воркера:', err);\n        throw err;\n    }\n}\n\n// ==== Логика брокера ====\n(async () => {\n    try {\n        // Обрабатываем до maxTasksPerRun задач за один запуск\n        for (let i = 0; i < config.maxTasksPerRun; i++) {\n            // 1. Получаем задачу из очереди\n            let taskData = await redis.lpop(config.redis.taskQueueName);\n\n            if (!taskData) {\n                node.log('Очередь задач пуста.');\n                break; // Выходим из цикла, если очередь пуста\n            }\n\n            let task;\n            try {\n                task = JSON.parse(taskData);\n            } catch (err) {\n                node.error('Ошибка при парсинге задачи:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 2. Валидация задачи\n            if (!task.task || !task.task.bot_id || !task.task.cmd) {\n                node.warn('Некорректная задача: отсутствуют обязательные поля.');\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 3. Получаем данные бота из Redis\n            let botData;\n            try {\n                botData = await redis.get(`bots:${task.task.bot_id}:data`);\n                if (botData) {\n                    task.bot_data = JSON.parse(botData);\n                } else {\n                    node.warn(`Данные бота ${task.task.bot_id} не найдены в Redis.`);\n                    await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                    continue; // Переходим к следующей задаче\n                }\n            } catch (err) {\n                node.error('Ошибка при получении данных бота:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 4. Проверяем, нужно ли блокировать бота\n            const shouldLockBot = !config.noLockCommands.includes(task.task.cmd);\n\n            // 5. Если блокировка бота требуется, проверяем, свободен ли бот\n            if (shouldLockBot) {\n                try {\n                    const isBotBusyb = await isBotBusy(task.task.bot_id);\n                    if (isBotBusyb) {\n                        node.warn(`Бот ${task.task.bot_id} занят. Возвращаем задачу в очередь.`);\n                        await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                        continue; // Переходим к следующей задаче\n                    }\n                } catch (err) {\n                    node.error('Ошибка при проверке занятости бота:', err);\n                    await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                    continue; // Переходим к следующей задаче\n                }\n            }\n\n            // 6. Получаем свободного воркера\n            let workerId;\n            try {\n                workerId = await getFreeWorker();\n                if (!workerId) {\n                    node.warn('Нет доступных воркеров. Возвращаем задачу в очередь.');\n                    await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                    continue; // Переходим к следующей задаче\n                }\n            } catch (err) {\n                node.error('Ошибка при выборе воркера:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 7. Если блокировка бота требуется, блокируем бота\n            if (shouldLockBot) {\n                try {\n                    await lockBot(task.task.bot_id);\n                } catch (err) {\n                    node.error('Ошибка при блокировке бота:', err);\n                    await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                    continue; // Переходим к следующей задаче\n                }\n            }\n\n            // 8. Блокируем воркера\n            try {\n                await lockWorker(workerId);\n            } catch (err) {\n                node.error('Ошибка при блокировке воркера:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 9. Отправляем задачу воркеру\n            task.workerId = workerId;\n            task.startTime = Date.now();\n            try {\n                await redis.publish(config.redis.jobChannel, JSON.stringify(task));\n                node.log(`Задача ${task.task.cmd} отправлена воркеру ${workerId}`);\n            } catch (err) {\n                node.error('Ошибка при отправке задачи воркеру:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 10. Получаем количество задач в очереди\n            try {\n                let queueLength = await redis.llen(config.redis.taskQueueName);\n                msg.payload = queueLength;\n                node.send(msg);\n            } catch (err) {\n                node.error('Ошибка при получении длины очереди:', err);\n                continue; // Переходим к следующей задаче\n            }\n        }\n    } catch (err) {\n        node.error(\"Ошибка в логике брокера: \", err);\n    }\n})();",
         "outputs": 2,
-        "timeout": 0,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 800,
-        "y": 1200,
+        "x": 560,
+        "y": 120,
         "wires": [
             [
-                "a51aebaa5db61e67",
-                "a8c3262da282edaf",
-                "e16121c2be1ae1f8",
-                "ee1b9aab100e9620"
+                "11440855fb0d494d"
             ],
             [
-                "ef88361a622b562d",
-                "592a9a8bb1ca78fb"
+                "bde84900c30b397d"
             ]
-        ],
-        "icon": "node-red/file-out.svg"
+        ]
     },
     {
-        "id": "ee1b9aab100e9620",
+        "id": "ec7e1d976fe04766",
+        "type": "function",
+        "z": "568b629767512beb",
+        "g": "c34bda795978de35",
+        "name": "Broker: Analyse Results",
+        "func": "// ==== Конфигурация ====\nconst config = {\n    redis: {\n        botLockPrefix: 'bot_lock:',\n        workerLockPrefix: 'worker_lock:',\n    },\n    noLockCommands: ['sell_on_binance', 'cancel_on_binance'],\n};\n\n// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// ==== Функция разблокировки воркера ====\nasync function unlockWorker(workerId) {\n    try {\n        await redis.del(config.redis.workerLockPrefix + workerId);\n        node.log(`Воркер ${workerId} разблокирован.`);\n    } catch (err) {\n        node.error(`Ошибка при разблокировке воркера ${workerId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция разблокировки бота ====\nasync function unlockBot(botId) {\n    try {\n        await redis.del(config.redis.botLockPrefix + botId);\n        node.log(`Бот ${botId} разблокирован.`);\n    } catch (err) {\n        node.error(`Ошибка при разблокировке бота ${botId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Логика анализа результатов ====\n(async () => {\n    try {\n        const msg2 = msg.payload;\n\n        //Выполняем анализ:\n        const finishTime = Date.now();\n        let durationJob = finishTime - msg2.startTime;\n        let topickey = msg.payload.workerId + msg.payload.bot_id;\n        msg.topic = topickey;\n        msg.payload = durationJob;\n\n        // Разблокируем воркера\n        await unlockWorker(msg2.workerId);\n\n        // Разблокируем бота, если команда требует блокировки\n        if (!config.noLockCommands.includes(msg2.task.cmd)) {\n            await unlockBot(msg2.bot_id);\n        }\n\n        node.send(msg);\n    } catch (err) {\n        node.error(\"Ошибка при анализе результатов: \" + err);\n        return [null, { error: 'Ошибка при анализе результатов', details: err }];\n    }\n})();",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 320,
+        "wires": [
+            [
+                "43389ead78d0f309",
+                "70a01627a8dbffef"
+            ]
+        ]
+    },
+    {
+        "id": "83ec644475f3fbd2",
+        "type": "redis-in",
+        "z": "568b629767512beb",
+        "g": "c34bda795978de35",
+        "server": "a0efbb89.5e42d8",
+        "command": "subscribe",
+        "name": "fjob",
+        "topic": "fjob",
+        "obj": true,
+        "timeout": 0,
+        "x": 260,
+        "y": 300,
+        "wires": [
+            [
+                "ec7e1d976fe04766",
+                "722cfd9a35127689"
+            ]
+        ]
+    },
+    {
+        "id": "722cfd9a35127689",
         "type": "debug",
         "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "debug 16",
+        "g": "c34bda795978de35",
+        "name": "debug 58",
         "active": false,
         "tosidebar": true,
         "console": false,
@@ -1236,560 +313,19 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 1140,
+        "x": 410,
+        "y": 280,
         "wires": []
     },
     {
-        "id": "0dcf5ac1082019a3",
-        "type": "delay",
-        "z": "568b629767512beb",
-        "g": "ff6a6e8faf39c4f4",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "50",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 650,
-        "y": 240,
-        "wires": [
-            [
-                "c6ca2ef381f3491f"
-            ]
-        ]
-    },
-    {
-        "id": "e8b511a45f71040b",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "ff6a6e8faf39c4f4",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "start1",
-        "obj": true,
-        "timeout": 0,
-        "x": 490,
-        "y": 240,
-        "wires": [
-            [
-                "0dcf5ac1082019a3"
-            ]
-        ]
-    },
-    {
-        "id": "d7c36a2c3593f4f6",
-        "type": "trigger",
-        "z": "568b629767512beb",
-        "g": "ff6a6e8faf39c4f4",
-        "name": "",
-        "op1": "1",
-        "op2": "0",
-        "op1type": "str",
-        "op2type": "str",
-        "duration": "-990",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "ms",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 560,
-        "y": 180,
-        "wires": [
-            [
-                "c6ca2ef381f3491f"
-            ]
-        ]
-    },
-    {
-        "id": "b4444ff8b6b1ceb9",
-        "type": "delay",
-        "z": "568b629767512beb",
-        "g": "ff6a6e8faf39c4f4",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "2",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 360,
-        "y": 180,
-        "wires": [
-            [
-                "d7c36a2c3593f4f6"
-            ]
-        ]
-    },
-    {
-        "id": "c7ce1f056828d12a",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "ff6a6e8faf39c4f4",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "start",
-        "obj": true,
-        "timeout": 0,
-        "x": 210,
-        "y": 180,
-        "wires": [
-            [
-                "b4444ff8b6b1ceb9"
-            ]
-        ]
-    },
-    {
-        "id": "b11b10b452fb73e9",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "ff6a6e8faf39c4f4",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "stop",
-        "obj": true,
-        "timeout": 0,
-        "x": 210,
-        "y": 240,
-        "wires": [
-            [
-                "1e638efbf3ae2176"
-            ]
-        ]
-    },
-    {
-        "id": "1e638efbf3ae2176",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "ff6a6e8faf39c4f4",
-        "name": "stop",
-        "func": "msg.reset = true;\nmsg.payload = \"\";\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 350,
-        "y": 240,
-        "wires": [
-            [
-                "d7c36a2c3593f4f6"
-            ]
-        ]
-    },
-    {
-        "id": "ef88361a622b562d",
-        "type": "rbe",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "error",
-        "topi": "topic",
-        "x": 830,
-        "y": 1320,
-        "wires": [
-            [
-                "dc9ca2cdf2f23320"
-            ]
-        ]
-    },
-    {
-        "id": "dbbc6e7e7053b9b4",
-        "type": "trigger",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "",
-        "op1": "1",
-        "op2": "0",
-        "op1type": "str",
-        "op2type": "str",
-        "duration": "-100",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "ms",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 580,
-        "y": 1200,
-        "wires": [
-            [
-                "5e8cd33b83f802a8"
-            ]
-        ]
-    },
-    {
-        "id": "6ed648c066d5e348",
-        "type": "delay",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "50",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 370,
-        "y": 1200,
-        "wires": [
-            [
-                "dbbc6e7e7053b9b4"
-            ]
-        ]
-    },
-    {
-        "id": "268da1b948649424",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "start",
-        "obj": true,
-        "timeout": 0,
-        "x": 210,
-        "y": 1200,
-        "wires": [
-            [
-                "6ed648c066d5e348"
-            ]
-        ]
-    },
-    {
-        "id": "3b9251157afc0ba7",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "stop",
-        "obj": true,
-        "timeout": 0,
-        "x": 210,
-        "y": 1260,
-        "wires": [
-            [
-                "27662231843109fd"
-            ]
-        ]
-    },
-    {
-        "id": "27662231843109fd",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "stop",
-        "func": "msg.reset = true;\nmsg.payload = \"\";\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 350,
-        "y": 1260,
-        "wires": [
-            [
-                "dbbc6e7e7053b9b4"
-            ]
-        ]
-    },
-    {
-        "id": "20ddca6f91be5f0c",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "start1",
-        "obj": true,
-        "timeout": 0,
-        "x": 510,
-        "y": 1260,
-        "wires": [
-            [
-                "d74ec617ec7d4cd3"
-            ]
-        ]
-    },
-    {
-        "id": "d74ec617ec7d4cd3",
-        "type": "delay",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "50",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 670,
-        "y": 1260,
-        "wires": [
-            [
-                "5e8cd33b83f802a8"
-            ]
-        ]
-    },
-    {
-        "id": "ad3241508beef299",
-        "type": "delay",
-        "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "50",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 650,
-        "y": 1600,
-        "wires": [
-            [
-                "7a02cb2c9f28de8c"
-            ]
-        ]
-    },
-    {
-        "id": "a1d906dff6692815",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "start1",
-        "obj": true,
-        "timeout": 0,
-        "x": 490,
-        "y": 1600,
-        "wires": [
-            [
-                "ad3241508beef299"
-            ]
-        ]
-    },
-    {
-        "id": "2885c7e78caf2b89",
-        "type": "trigger",
-        "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "name": "",
-        "op1": "1",
-        "op2": "0",
-        "op1type": "str",
-        "op2type": "str",
-        "duration": "-1",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 560,
-        "y": 1540,
-        "wires": [
-            [
-                "7a02cb2c9f28de8c"
-            ]
-        ]
-    },
-    {
-        "id": "2ccb1331c22f8f4b",
-        "type": "delay",
-        "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "50",
-        "timeoutUnits": "milliseconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 370,
-        "y": 1540,
-        "wires": [
-            [
-                "2885c7e78caf2b89"
-            ]
-        ]
-    },
-    {
-        "id": "c46b53b4bd919c2b",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "start",
-        "obj": true,
-        "timeout": 0,
-        "x": 210,
-        "y": 1540,
-        "wires": [
-            [
-                "2ccb1331c22f8f4b"
-            ]
-        ]
-    },
-    {
-        "id": "c2b930c161523b42",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "stop",
-        "obj": true,
-        "timeout": 0,
-        "x": 210,
-        "y": 1600,
-        "wires": [
-            [
-                "d253e34c4950bcb5"
-            ]
-        ]
-    },
-    {
-        "id": "d253e34c4950bcb5",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "name": "stop",
-        "func": "msg.reset = true;\nmsg.payload = \"\";\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 350,
-        "y": 1600,
-        "wires": [
-            [
-                "2885c7e78caf2b89"
-            ]
-        ]
-    },
-    {
-        "id": "9355616c5fa90159",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 590,
-        "y": 1480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7a02cb2c9f28de8c",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "name": "clean competed tasks",
-        "func": "let tasks = global.get('tasks');\n\nfunction processTasks(tasks) {\n    const msg = { payload: [] };\n\n    // Проверяем, является ли tasks объектом\n    if (tasks == null || typeof tasks !== 'object') {\n        console.error('Tasks is not a valid object');\n        return { tasks, msg };\n    }\n\n    // Проверяем общее количество задач\n    const totalTasks = Object.keys(tasks).length;\n    if (totalTasks >50) {\n        msg.reset = true;\n        node.send([null, msg]);\n    }\n\n    for (const taskId in tasks) {\n        if (tasks.hasOwnProperty(taskId)) {\n            const task = tasks[taskId];\n            if (task.status === 'completed' && task.fibish_at) {\n                const executionTime = task.fibish_at - parseInt(taskId);\n                msg.payload = executionTime;\n                msg.topic = task.cmd\n                node.send([msg, null]);\n                delete tasks[taskId];\n            }\n        }\n    }\n\n    return { tasks, msg };\n}\n\nprocessTasks(tasks);\n",
-        "outputs": 2,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 780,
-        "y": 1540,
-        "wires": [
-            [
-                "720d881395cdefd0"
-            ],
-            [
-                "60c1d0835a740528"
-            ]
-        ]
-    },
-    {
-        "id": "720d881395cdefd0",
+        "id": "43389ead78d0f309",
         "type": "ui-chart",
         "z": "568b629767512beb",
-        "g": "629745055f4ba571",
+        "g": "c34bda795978de35",
         "group": "d403defdfbeecc46",
         "name": "Время выполнения задач",
         "label": "Время выполнения задач",
-        "order": 2,
+        "order": 1,
         "chartType": "line",
         "category": "topic",
         "categoryType": "msg",
@@ -1838,75 +374,269 @@
         "height": 8,
         "className": "",
         "interpolation": "linear",
-        "x": 1120,
-        "y": 1500,
+        "x": 740,
+        "y": 320,
         "wires": [
             []
         ]
     },
     {
-        "id": "60c1d0835a740528",
+        "id": "11440855fb0d494d",
+        "type": "ui-chart",
+        "z": "568b629767512beb",
+        "g": "c34bda795978de35",
+        "group": "d403defdfbeecc46",
+        "name": "Кол-во задач в очереди",
+        "label": "Кол-во задач в очереди",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": "2",
+        "showLegend": false,
+        "removeOlder": 1,
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 850,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "70a01627a8dbffef",
+        "type": "debug",
+        "z": "568b629767512beb",
+        "g": "c34bda795978de35",
+        "name": "debug 63",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "09763db8f88a8d0d",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "name": "Test task",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"task\":{\"bot_id\":\"testid\",\"cmd\":\"sell_on_binance\",\"params\":{\"pair\":\"BNBUSDT\",\"quantity\":0.035,\"price\":544.02,\"stopprice\":544.29}}}",
+        "payloadType": "json",
+        "x": 1350,
+        "y": 600,
+        "wires": [
+            [
+                "84948af1aba39a62"
+            ]
+        ]
+    },
+    {
+        "id": "84948af1aba39a62",
+        "type": "redis-out",
+        "z": "568b629767512beb",
+        "server": "a0efbb89.5e42d8",
+        "command": "rpush",
+        "name": "",
+        "topic": "new_tasks",
+        "obj": true,
+        "x": 1590,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "41ff76b137e42b28",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "name": "Test task2",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"task\":{\"bot_id\":\"testid2\",\"cmd\":\"sell_on_binance\",\"params\":{\"pair\":\"BNBUSDT\",\"quantity\":0.035,\"price\":544.02,\"stopprice\":544.29}}}",
+        "payloadType": "json",
+        "x": 1350,
+        "y": 680,
+        "wires": [
+            [
+                "cdec4e2f30362af6"
+            ]
+        ]
+    },
+    {
+        "id": "cdec4e2f30362af6",
+        "type": "redis-out",
+        "z": "568b629767512beb",
+        "server": "a0efbb89.5e42d8",
+        "command": "rpush",
+        "name": "",
+        "topic": "new_tasks",
+        "obj": true,
+        "x": 1590,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "7061e722720929e2",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "name": "init test data",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1350,
+        "y": 240,
+        "wires": [
+            [
+                "cc134211cabcae1d"
+            ]
+        ]
+    },
+    {
+        "id": "cc134211cabcae1d",
         "type": "function",
         "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "name": "stop",
-        "func": "msg = {\n    topic:\"stop\",\n    payload:\"stop\"\n}\n\nreturn msg;",
+        "name": "redis.set    testid",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\nlet test_data = {};\ntest_data.id = \"bots:testid:data\";\ntest_data.somearr = [0,1,2];\ntest_data.someobj = {q:[0,1,2], \"bool\":true};\n\n\n// Регистрируем воркера\n(async () => await redis.set(test_data.id, JSON.stringify(test_data)))();\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
-        "y": 1560,
+        "x": 1540,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "760867d2369ea4a1",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "name": "init test data",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1350,
+        "y": 300,
         "wires": [
             [
-                "4aa09b361e1a9da6"
+                "0fac8e94e1e2b310"
             ]
         ]
     },
     {
-        "id": "4aa09b361e1a9da6",
-        "type": "rbe",
+        "id": "0fac8e94e1e2b310",
+        "type": "function",
         "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 1150,
-        "y": 1560,
+        "name": "redis.set   testid2",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\nlet test_data = {};\ntest_data.id = \"bots:testid2:data\";\ntest_data.somearr = [0,1,2];\ntest_data.someobj = {q:[0,1,2], \"bool\":true};\n\n\n// Регистрируем воркера\n(async () => await redis.set(test_data.id, JSON.stringify(test_data)))();\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1540,
+        "y": 300,
         "wires": [
-            [
-                "22aa2b25788e0cdb",
-                "3d53fec093355008"
-            ]
+            []
         ]
     },
     {
-        "id": "22aa2b25788e0cdb",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "stop",
-        "obj": false,
-        "x": 1290,
-        "y": 1560,
-        "wires": []
-    },
-    {
-        "id": "3d53fec093355008",
+        "id": "bde84900c30b397d",
         "type": "debug",
         "z": "568b629767512beb",
-        "g": "629745055f4ba571",
-        "name": "debug 15",
+        "g": "c34bda795978de35",
+        "name": "debug 66",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -1915,486 +645,219 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1440,
-        "y": 1560,
+        "x": 800,
+        "y": 140,
         "wires": []
     },
     {
-        "id": "b1c880a62780d09d",
-        "type": "ui-template",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "group": "d403defdfbeecc46",
-        "page": "",
-        "ui": "",
-        "name": "",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "head": "",
-        "format": "<template>\n    <div>\n        <h2>Worker Tasks</h2>\n        <div v-for=\"(task, index) in tasks\" :key=\"index\">\n            <p>Worker ID: {{ task.worker_id }}</p>\n            <p>Task ID: {{ task.task_id }}</p>\n            <p>Update Time: {{ formatTime(task.update) }}</p>\n            <p>Status: {{ task.locked ? 'Locked' : 'Unlocked' }}</p>\n        </div>\n    </div>\n</template>\n\n<script>\n    export default {\n        data() {\n            return {\n                tasks: []\n            }\n        },\n        methods: {\n            formatTime(timestamp) {\n                const date = new Date(timestamp);\n                return date.toLocaleString();\n            },\n            updateTasks(msg) {\n                if (msg.payload && msg.payload.cmd === 'change') {\n                    const worker = msg.payload.worker;\n                    const existingTaskIndex = this.tasks.findIndex(task => task.worker_id === worker.worker_id);\n                    if (existingTaskIndex !== -1) {\n                        this.tasks.splice(existingTaskIndex, 1, worker);\n                    } else {\n                        this.tasks.push(worker);\n                    }\n                }\n            }\n        },\n        mounted() {\n            // Пример: подписка на сообщения\n            this.$on('input', this.updateTasks);\n        },\n        beforeDestroy() {\n            // Пример: отписка от сообщений\n            this.$off('input', this.updateTasks);\n        }\n    }\n</script>\n\n<style>\n    /* Определите любые стили здесь - поддерживается чистый CSS */\n    .my-class {\n        color: red;\n    }\n</style>\n",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 1400,
-        "y": 1280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6526e141.43af9",
+        "id": "4fa9d878be1d41c4",
         "type": "function",
         "z": "568b629767512beb",
-        "g": "d508da9d29e25c1b",
-        "name": "tilog()",
-        "func": "",
+        "g": "98132085df5d6410",
+        "name": "Worker 1: Process Job",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n(async () => {\n    try {\n        // Получаем ID воркера из контекста Flow\n        const workerId = context.flow.get('workerId');\n        // Получаем сообщение\n        let task = msg.payload;\n        // Проверяем, предназначено ли сообщение этому воркеру\n        if (msg.payload.workerId !== workerId) {\n            return; // Если нет, выходим из функции\n        }\n        node.warn('Воркер '+ workerId +' получил задачу');\n\n        // Добавляем startTime и finishTime в taskData\n        const startTime = task.startTime;\n\n        // Создаем финальный объект для отправки\n        const finalData = {\n            startTime: startTime,\n            task: task.task,\n            bot_data: task.bot_data, // Добавляем данные бота\n            workerId: workerId,  // Добавляем workerId\n            bot_id: task.task.bot_id // Добавляем bot_id\n        };\n\n        // Имитация выполнения задачи\n        await new Promise(resolve => setTimeout(resolve, Math.random() * (30 - 10) + 10));\n\n        msg.payload = finalData;\n        msg.topic = \"fjob\";\n\n        node.send(msg);\n    } catch (err) {\n        node.error(\"Ошибка в воркере 1: \" + err);\n        return [null, { error: 'Ошибка в воркере 1', details: err }];\n    }\n})();",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
-        "initialize": "let tilog = function (botname = msg.topic, data = msg.payload) {\n    \n    let promise = new Promise((resolve, reject) => {\n        msg.resolve = resolve;\n        msg.reject = reject;\n    });\n    \n\n    msg.topic = botname;\n    msg.payload = data;\n\n    node.send(Object.assign({}, msg));\n    \n    return promise;\n};\n\nglobal.set('tilog', tilog);",
+        "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
+        "x": 500,
         "y": 620,
         "wires": [
             [
-                "1cf161e0c69d5e31"
+                "386ca7e8c7e67c3b",
+                "0e83c0fd6d981286"
             ]
         ]
     },
     {
-        "id": "eab25c49.10d9c8",
+        "id": "18eb79254fcfcd07",
         "type": "inject",
         "z": "568b629767512beb",
-        "g": "d508da9d29e25c1b",
-        "name": "logname, log msg",
-        "props": [],
+        "g": "98132085df5d6410",
+        "name": "Init Worker 1",
+        "props": [
+            {
+                "p": "payload",
+                "v": "true",
+                "t": "bool"
+            }
+        ],
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "1",
+        "onceDelay": 0.1,
         "topic": "",
+        "x": 290,
+        "y": 540,
+        "wires": [
+            [
+                "21af50813565584d"
+            ]
+        ]
+    },
+    {
+        "id": "65cd5b44329acb2e",
+        "type": "redis-in",
+        "z": "568b629767512beb",
+        "g": "98132085df5d6410",
+        "server": "a0efbb89.5e42d8",
+        "command": "subscribe",
+        "name": "job",
+        "topic": "job",
+        "obj": true,
+        "timeout": 0,
         "x": 270,
         "y": 620,
         "wires": [
             [
-                "6526e141.43af9"
+                "4fa9d878be1d41c4",
+                "607b98142d4cc63b"
             ]
         ]
     },
     {
-        "id": "afaf3a2c.646c88",
+        "id": "21af50813565584d",
         "type": "function",
         "z": "568b629767512beb",
-        "g": "d508da9d29e25c1b",
-        "name": "resolve",
-        "func": "msg.resolve(msg.payload);\n\n// reject\n// setTimeout(function () {\n//     msg.reject({message: 'Could not request joke'});\n// }, 2000);",
-        "outputs": 0,
+        "g": "98132085df5d6410",
+        "name": "Worker 1: Init",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// Используем context.flow для получения ID воркера, если он уже существует, иначе генерируем новый\nconst workerId = context.flow.get('workerId') || 'worker:' + RED.util.generateId();\ncontext.flow.set('workerId', workerId);\n\n// Регистрируем воркера\n(async () => await redis.set(workerId, 1))();\nnode.status({fill:\"green\",shape:\"dot\",text:\"Воркер 1 запущен:\" + workerId});\n\nmsg.workerID = workerId;\nreturn msg;",
+        "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "f270d7dcd568dafa",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "d508da9d29e25c1b",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "tilog",
-        "obj": true,
-        "timeout": 0,
-        "x": 210,
-        "y": 700,
-        "wires": [
-            [
-                "a82f56ba838aa8c2"
-            ]
-        ]
-    },
-    {
-        "id": "6de3ad897ed6bdb0",
-        "type": "file",
-        "z": "568b629767512beb",
-        "g": "d508da9d29e25c1b",
-        "name": "",
-        "filename": "filename",
-        "filenameType": "msg",
-        "appendNewline": true,
-        "createDir": true,
-        "overwriteFile": "false",
-        "encoding": "none",
-        "x": 540,
-        "y": 700,
+        "x": 470,
+        "y": 540,
         "wires": [
             []
         ]
     },
     {
-        "id": "a82f56ba838aa8c2",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "d508da9d29e25c1b",
-        "name": "data prepare",
-        "func": "msg.filename = msg.payload.filename\nmsg.payload = msg.payload.tgmsg\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 370,
-        "y": 700,
-        "wires": [
-            [
-                "6de3ad897ed6bdb0"
-            ]
-        ]
-    },
-    {
-        "id": "8347c14f1fa7a6fa",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "d508da9d29e25c1b",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "tilog",
-        "obj": true,
-        "x": 770,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "1cf161e0c69d5e31",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "d508da9d29e25c1b",
-        "name": "data prepare",
-        "func": "var date = new Date();\nvar time = new Date().getTime();\n\nlet tgmsg = date.toString().split('GMT')[0] + \"-\" + time + \" : \" + msg.payload;\nlet filename = \"/data/journals/\" + msg.topic + \".txt\";\n\nmsg = {\n    payload: {\n        tgmsg: tgmsg,\n        filename: filename\n    },\n    topic : \"tilog\",\n    resolve: msg.resolve\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 610,
-        "y": 620,
-        "wires": [
-            [
-                "8347c14f1fa7a6fa",
-                "afaf3a2c.646c88"
-            ]
-        ]
-    },
-    {
-        "id": "9b8df2345d69bb57",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "start_broker",
-        "obj": true,
-        "timeout": 0,
-        "x": 230,
-        "y": 1140,
-        "wires": [
-            [
-                "dbbc6e7e7053b9b4"
-            ]
-        ]
-    },
-    {
-        "id": "097a57e22aef71e2",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "stop_broker",
-        "obj": true,
-        "timeout": 0,
-        "x": 230,
-        "y": 1320,
-        "wires": [
-            [
-                "27662231843109fd"
-            ]
-        ]
-    },
-    {
-        "id": "da3fdf9519a62c38",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "name": " stop",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "reset",
-                "v": "true",
-                "vt": "bool"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1670,
-        "y": 380,
-        "wires": [
-            [
-                "2d637db0eed5abec"
-            ]
-        ]
-    },
-    {
-        "id": "2d637db0eed5abec",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "stop",
-        "obj": false,
-        "x": 1670,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "33ace994176dee71",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "name": "start",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1250,
-        "y": 380,
-        "wires": [
-            [
-                "6f844f4b99d5e778"
-            ]
-        ]
-    },
-    {
-        "id": "6f844f4b99d5e778",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "start",
-        "obj": false,
-        "x": 1250,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "cd39266697636ab9",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "name": "start1",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1430,
-        "y": 380,
-        "wires": [
-            [
-                "1c5f85e0ddf680be"
-            ]
-        ]
-    },
-    {
-        "id": "1c5f85e0ddf680be",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "start1",
-        "obj": false,
-        "x": 1430,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "bbeb7643d4a30654",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "name": "start_broker",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1270,
-        "y": 500,
-        "wires": [
-            [
-                "6bf1ef50cbecab4f"
-            ]
-        ]
-    },
-    {
-        "id": "6bf1ef50cbecab4f",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "start_broker",
-        "obj": false,
-        "x": 1270,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "b09bb3bdd73a3a23",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "name": "stop_broker",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1450,
-        "y": 500,
-        "wires": [
-            [
-                "dcbbcac0c97d9b75"
-            ]
-        ]
-    },
-    {
-        "id": "dcbbcac0c97d9b75",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "stop_broker",
-        "obj": false,
-        "x": 1450,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "4673fc2475b1d4a7",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "name": "clean tasks",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1690,
-        "y": 600,
-        "wires": [
-            [
-                "1ef17ae88634c9d0"
-            ]
-        ]
-    },
-    {
-        "id": "1ef17ae88634c9d0",
-        "type": "function",
-        "z": "568b629767512beb",
-        "g": "1b34533f634edfe2",
-        "name": "clean tasks",
-        "func": "global.set('tasks',{})\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1690,
-        "y": 640,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bdbcb8f835cc114f",
+        "id": "607b98142d4cc63b",
         "type": "debug",
         "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "debug 57",
-        "active": false,
+        "g": "98132085df5d6410",
+        "name": "debug 51",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "49c40644aa9fa132",
+        "type": "redis-out",
+        "z": "568b629767512beb",
+        "g": "98132085df5d6410",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "fjob",
+        "obj": true,
+        "x": 870,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "386ca7e8c7e67c3b",
+        "type": "delay",
+        "z": "568b629767512beb",
+        "g": "98132085df5d6410",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "0",
+        "randomLast": "1",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 720,
+        "y": 620,
+        "wires": [
+            [
+                "49c40644aa9fa132"
+            ]
+        ]
+    },
+    {
+        "id": "0e83c0fd6d981286",
+        "type": "debug",
+        "z": "568b629767512beb",
+        "g": "98132085df5d6410",
+        "name": "debug 64",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "2a93e7ce.341078",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1480,
+        "y": 160,
+        "wires": [
+            [
+                "d89709ef.fd9368"
+            ]
+        ]
+    },
+    {
+        "id": "d89709ef.fd9368",
+        "type": "function",
+        "z": "568b629767512beb",
+        "name": "redis.info()",
+        "func": "let redis = context.global.get('redis');\n\nredis.info().then((data)=>{\n    msg.payload = data\n    node.send(msg);\n})\n\n/*\nredis.call(\"anycmd\").then((data)=>{\n    msg.payload = data\n    node.send(msg);\n})*/",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1650,
+        "y": 160,
+        "wires": [
+            [
+                "f2e9c3a0.8f181"
+            ]
+        ]
+    },
+    {
+        "id": "f2e9c3a0.8f181",
+        "type": "debug",
+        "z": "568b629767512beb",
+        "name": "",
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -2402,211 +865,45 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2040,
-        "y": 1120,
+        "x": 1810,
+        "y": 160,
         "wires": []
     },
     {
-        "id": "c6ca2ef381f3491f",
-        "type": "function",
+        "id": "4274a918b99b6efa",
+        "type": "redis-instance",
         "z": "568b629767512beb",
-        "g": "ff6a6e8faf39c4f4",
-        "name": "get data",
-        "func": "\n\nmsg.data = global.get('data') || {\"locked\":false}\n\nnode.status({ fill: \"green\", shape: \"dot\" });\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 860,
-        "y": 180,
-        "wires": [
-            [
-                "cc76fea89599be73"
-            ]
-        ]
-    },
-    {
-        "id": "592a9a8bb1ca78fb",
-        "type": "debug",
-        "z": "568b629767512beb",
-        "g": "96fc1aea58e82b13",
-        "name": "debug 2",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1000,
-        "y": 1360,
+        "server": "a0efbb89.5e42d8",
+        "name": "",
+        "topic": "redis",
+        "location": "global",
+        "x": 1310,
+        "y": 160,
         "wires": []
     },
     {
-        "id": "a403772312f053b0",
+        "id": "24c489e3cd436036",
         "type": "function",
         "z": "568b629767512beb",
-        "name": "cmd: \"cmd2\"",
-        "func": "msg.payload = {\n    cmd: \"add\",\n    task:{\n        data: msg.payload,\n        cmd: \"cmd2\"\n    }\n    \n}\nmsg.topic = \"tasks\"\n\n\nreturn msg;",
+        "name": "getBotDifferences",
+        "func": "function getBotDifferences(bot, botStart, ignorePaths = []) {\n    const ignoreSet = new Set(ignorePaths);    // Рекурсивная функция сравнения объектов    \n    function compareObjects(a, b, differences = {}, path = []) {\n        const allKeys = new Set([...Object.keys(a), ...Object.keys(b)]);\n        allKeys.forEach(key => {\n            const currentPath = [...path, key];\n            const pathString = currentPath.join('.');            // Пропускаем игнорируемые пути  \n            if (ignoreSet.has(pathString)) return;\n            const aVal = a[key];\n            const bVal = b[key];\n            // Обработка объектов        \n            if (isObject(aVal) && isObject(bVal)) {\n                const nestedDiff = {};\n                compareObjects(aVal, bVal, nestedDiff, currentPath);\n                if (Object.keys(nestedDiff).length > 0) {\n                    differences[key] = nestedDiff;\n                }\n            }\n            // Обработка массивов   \n            else if (Array.isArray(aVal) && Array.isArray(bVal)) {\n                if (JSON.stringify(aVal) !== JSON.stringify(bVal)) {\n                    differences[key] = { old: bVal, new: aVal };\n                }\n            }\n            // Простые значения     \n            else {\n                if (!isEqual(aVal, bVal)) {\n                    differences[key] = { old: bVal, new: aVal };\n                }\n            }\n        });\n        return differences;\n    }\n    // Проверка является ли значение объектом (не массивом)  \n    function isObject(val) { return val !== null && typeof val === 'object' && !Array.isArray(val); }\n    // Универсальное сравнение значений   \n    function isEqual(a, b) {\n        if (a === b) return true;\n        if (a === undefined || b === undefined) return false;\n        return JSON.stringify(a) === JSON.stringify(b);\n    }\n    return compareObjects(bot, botStart);\n} global.set('getBotDifferences', getBotDifferences);\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
-        "y": 380,
-        "wires": [
-            [
-                "fcd4f19676b82acd"
-            ]
-        ]
-    },
-    {
-        "id": "fcd4f19676b82acd",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "tasks",
-        "obj": true,
-        "x": 630,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "0417c82bf07e31aa",
-        "type": "function",
-        "z": "568b629767512beb",
-        "name": "cmd: \"cmd3\"",
-        "func": "msg.payload = {\n    cmd: \"add\",\n    task:{\n        data: msg.payload,\n        cmd: \"cmd3\"\n    }\n    \n}\nmsg.topic = \"tasks\"\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 450,
-        "y": 440,
-        "wires": [
-            [
-                "4d056c31fb8a406e"
-            ]
-        ]
-    },
-    {
-        "id": "4d056c31fb8a406e",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "tasks",
-        "obj": true,
-        "x": 630,
-        "y": 440,
-        "wires": []
-    },
-    {
-        "id": "80a935fc08fd6701",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 180,
-        "y": 440,
-        "wires": [
-            [
-                "0417c82bf07e31aa"
-            ]
-        ]
-    },
-    {
-        "id": "1e9a209555c36865",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 180,
-        "y": 380,
-        "wires": [
-            [
-                "a403772312f053b0"
-            ]
-        ]
-    },
-    {
-        "id": "0fde83b90ac05731",
-        "type": "redis-out",
-        "z": "3f98de411a14795f",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "workers",
-        "obj": true,
-        "x": 540,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "c2b2577579e2120a",
-        "type": "function",
-        "z": "3f98de411a14795f",
-        "name": "w0",
-        "func": "let worker_id = \"w0\"\nglobal.set('worker_id', worker_id)\n\nlet worker = {\n    worker_id: worker_id,\n    locked:false,\n    start: new Date().getTime(),\n    task_id:null\n}\nmsg.payload = {\n\n    cmd: \"add\",\n    worker: worker\n}\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 370,
+        "x": 1590,
         "y": 100,
         "wires": [
-            [
-                "0fde83b90ac05731"
-            ]
+            []
         ]
     },
     {
-        "id": "27db2f168531b6ef",
+        "id": "7033ba311f97738f",
         "type": "inject",
-        "z": "3f98de411a14795f",
-        "name": "",
+        "z": "568b629767512beb",
+        "name": "init functions",
         "props": [
             {
                 "p": "payload"
@@ -2619,63 +916,17 @@
         "repeat": "",
         "crontab": "",
         "once": true,
-        "onceDelay": "0.5",
+        "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 210,
+        "x": 1350,
         "y": 100,
         "wires": [
             [
-                "c2b2577579e2120a"
+                "24c489e3cd436036"
             ]
         ]
-    },
-    {
-        "id": "39619d1d6faffa93",
-        "type": "debug",
-        "z": "3f98de411a14795f",
-        "name": "debug 36",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 500,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "1e09f725191cbd3c",
-        "type": "catch",
-        "z": "3f98de411a14795f",
-        "name": "catch all",
-        "scope": null,
-        "uncaught": false,
-        "x": 200,
-        "y": 240,
-        "wires": [
-            [
-                "39619d1d6faffa93",
-                "9104db7b7e0991e5"
-            ]
-        ]
-    },
-    {
-        "id": "9104db7b7e0991e5",
-        "type": "redis-out",
-        "z": "3f98de411a14795f",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "stop",
-        "obj": false,
-        "x": 350,
-        "y": 240,
-        "wires": []
     },
     {
         "id": "d27b92e987155970",
@@ -2704,8 +955,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 600,
-        "y": 680,
+        "x": 640,
+        "y": 860,
         "wires": [
             [
                 "6a41476e49de7f14"
@@ -2735,8 +986,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 440,
-        "y": 680,
+        "x": 480,
+        "y": 860,
         "wires": [
             [
                 "d27b92e987155970"
@@ -2755,8 +1006,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
-        "y": 580,
+        "x": 870,
+        "y": 760,
         "wires": [
             [
                 "1d52faf4ab27679d",
@@ -2776,8 +1027,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
-        "y": 640,
+        "x": 870,
+        "y": 820,
         "wires": [
             [
                 "441611d3d2dcea4e",
@@ -2797,8 +1048,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
-        "y": 760,
+        "x": 870,
+        "y": 940,
         "wires": [
             [
                 "f805dc1fb48ea48d",
@@ -2820,11 +1071,10 @@
         "topic": "job",
         "obj": true,
         "timeout": 0,
-        "x": 190,
-        "y": 680,
+        "x": 230,
+        "y": 860,
         "wires": [
             [
-                "3474898fdfc341d5",
                 "76370c50d613e5fa"
             ]
         ]
@@ -2842,8 +1092,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1160,
-        "y": 580,
+        "x": 1200,
+        "y": 760,
         "wires": []
     },
     {
@@ -2855,8 +1105,8 @@
         "name": "",
         "topic": "fjob",
         "obj": true,
-        "x": 1010,
-        "y": 580,
+        "x": 1050,
+        "y": 760,
         "wires": []
     },
     {
@@ -2868,8 +1118,8 @@
         "name": "",
         "topic": "fjob",
         "obj": true,
-        "x": 990,
-        "y": 640,
+        "x": 1030,
+        "y": 820,
         "wires": []
     },
     {
@@ -2885,8 +1135,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1140,
-        "y": 640,
+        "x": 1180,
+        "y": 820,
         "wires": []
     },
     {
@@ -2898,8 +1148,8 @@
         "name": "",
         "topic": "fjob",
         "obj": true,
-        "x": 1030,
-        "y": 760,
+        "x": 1070,
+        "y": 940,
         "wires": []
     },
     {
@@ -2915,8 +1165,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1180,
-        "y": 760,
+        "x": 1220,
+        "y": 940,
         "wires": []
     },
     {
@@ -2928,8 +1178,8 @@
         "name": "",
         "topic": "tasks",
         "obj": true,
-        "x": 1030,
-        "y": 800,
+        "x": 1070,
+        "y": 980,
         "wires": []
     },
     {
@@ -2937,15 +1187,15 @@
         "type": "debug",
         "z": "3f98de411a14795f",
         "name": "debug 33",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 180,
-        "y": 620,
+        "x": 220,
+        "y": 800,
         "wires": []
     },
     {
@@ -2960,8 +1210,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 880,
-        "y": 800,
+        "x": 920,
+        "y": 980,
         "wires": [
             [
                 "6e5d54647e4db6e6",
@@ -2982,559 +1232,177 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1220,
-        "y": 800,
+        "x": 1260,
+        "y": 980,
         "wires": []
     },
     {
-        "id": "8b32af2f20fb9c8b",
-        "type": "ui-switch",
-        "z": "20ab889ce2631bfa",
-        "name": "",
-        "label": "Автостарт после перезагрузки",
-        "group": "87d5213318a54d25",
-        "order": 1,
-        "width": "",
-        "height": "",
-        "passthru": true,
-        "decouple": false,
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "className": "",
-        "layout": "row-spread",
-        "clickableArea": "label",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "x": 870,
-        "y": 360,
-        "wires": [
-            [
-                "a4a77381630faae2"
-            ]
-        ]
-    },
-    {
-        "id": "2a93e7ce.341078",
+        "id": "f3987b323a93c5c3",
         "type": "inject",
-        "z": "20ab889ce2631bfa",
-        "name": "",
+        "z": "3f98de411a14795f",
+        "g": "d4c174739de217d4",
+        "name": "Init Worker 2",
+        "props": [
+            {
+                "p": "payload",
+                "v": "true",
+                "t": "bool"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "str"
+            }
+        ],
         "repeat": "",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 220,
-        "y": 60,
+        "payloadType": "bool",
+        "x": 370,
+        "y": 140,
         "wires": [
             [
-                "d89709ef.fd9368"
+                "d2e16916844ef8c6"
             ]
         ]
     },
     {
-        "id": "d89709ef.fd9368",
+        "id": "d2e16916844ef8c6",
         "type": "function",
-        "z": "20ab889ce2631bfa",
-        "name": "redis.info()",
-        "func": "let redis = context.global.get('redis');\n\nredis.info().then((data)=>{\n    msg.payload = data\n    node.send(msg);\n})\n\n/*\nredis.call(\"anycmd\").then((data)=>{\n    msg.payload = data\n    node.send(msg);\n})*/",
+        "z": "3f98de411a14795f",
+        "g": "d4c174739de217d4",
+        "name": "Worker 2: Init",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// Используем context.flow для получения ID воркера, если он уже существует, иначе генерируем новый\nconst workerId = context.flow.get('workerId') || 'worker:' + RED.util.generateId();\ncontext.flow.set('workerId', workerId);\n\n// Регистрируем воркера\n(async () => await redis.set(workerId, 1))();\nnode.status({fill:\"green\",shape:\"dot\",text:\"Воркер 2 запущен:\" + workerId});\n\nmsg.workerID = workerId;\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
-        "y": 60,
+        "x": 550,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aee5dc394e1301d4",
+        "type": "function",
+        "z": "3f98de411a14795f",
+        "g": "d4c174739de217d4",
+        "name": "Worker 2: Process Job",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n(async () => {\n    try {\n        // Получаем ID воркера из контекста Flow\n        const workerId = context.flow.get('workerId');\n        // Получаем сообщение\n        let task = msg.payload;\n        // Проверяем, предназначено ли сообщение этому воркеру\n        if (msg.payload.workerId !== workerId) {\n            return; // Если нет, выходим из функции\n        }\n        node.warn('Воркер '+ workerId+' получил задачу');\n\n        // Добавляем startTime и finishTime в taskData\n        const startTime = task.startTime;\n\n        // Создаем финальный объект для отправки\n        const finalData = {\n            startTime: startTime,\n            task: task.task,\n            bot_data: task.bot_data, // Добавляем данные бота\n            workerId: workerId,  // Добавляем workerId\n            bot_id: task.task.bot_id // Добавляем bot_id\n        };\n\n        // Имитация выполнения задачи\n        await new Promise(resolve => setTimeout(resolve, Math.random() * (30 - 10) + 10));\n\n        msg.payload = finalData;\n        msg.topic = \"fjob\";\n\n        node.send(msg);\n    } catch (err) {\n        node.error(\"Ошибка в воркере 2: \" + err);\n        return [null, { error: 'Ошибка в воркере 2', details: err }];\n    }\n})();",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 240,
         "wires": [
             [
-                "f2e9c3a0.8f181"
+                "28974da5b4417212",
+                "01a180c0b0f2225d"
             ]
         ]
     },
     {
-        "id": "f2e9c3a0.8f181",
+        "id": "94015585f348d9c3",
+        "type": "redis-in",
+        "z": "3f98de411a14795f",
+        "g": "d4c174739de217d4",
+        "server": "a0efbb89.5e42d8",
+        "command": "subscribe",
+        "name": "job",
+        "topic": "job",
+        "obj": true,
+        "timeout": 0,
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "606463e04b70cf07",
+                "aee5dc394e1301d4"
+            ]
+        ]
+    },
+    {
+        "id": "606463e04b70cf07",
         "type": "debug",
-        "z": "20ab889ce2631bfa",
-        "name": "",
-        "active": true,
+        "z": "3f98de411a14795f",
+        "g": "d4c174739de217d4",
+        "name": "debug 53",
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 550,
-        "y": 60,
+        "x": 360,
+        "y": 300,
         "wires": []
     },
     {
-        "id": "1be6f7e94d6a1fa8",
-        "type": "redis-command",
-        "z": "20ab889ce2631bfa",
+        "id": "c3283ee72a5a301c",
+        "type": "redis-out",
+        "z": "3f98de411a14795f",
+        "g": "d4c174739de217d4",
         "server": "a0efbb89.5e42d8",
-        "command": "get",
+        "command": "publish",
         "name": "",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 520,
+        "topic": "fjob",
+        "obj": true,
+        "x": 910,
         "y": 240,
-        "wires": [
-            [
-                "feb16e3893d5e4af"
-            ]
-        ]
-    },
-    {
-        "id": "6c2952eb0b2d1489",
-        "type": "inject",
-        "z": "20ab889ce2631bfa",
-        "name": "global_settings:main_puls_delay",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "0.2",
-        "topic": "global_settings:main_puls_delay",
-        "payload": "[]",
-        "payloadType": "json",
-        "x": 300,
-        "y": 240,
-        "wires": [
-            [
-                "1be6f7e94d6a1fa8"
-            ]
-        ]
-    },
-    {
-        "id": "feb16e3893d5e4af",
-        "type": "ui-number-input",
-        "z": "20ab889ce2631bfa",
-        "group": "87d5213318a54d25",
-        "name": "",
-        "label": "Задержка главного цикла, мс",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "topic": "topic",
-        "topicType": "msg",
-        "min": 0,
-        "max": "10000",
-        "step": 1,
-        "tooltip": "",
-        "passthru": true,
-        "sendOnBlur": true,
-        "sendOnEnter": true,
-        "className": "",
-        "clearable": false,
-        "icon": "",
-        "iconPosition": "left",
-        "iconInnerPosition": "inside",
-        "spinner": "default",
-        "x": 750,
-        "y": 240,
-        "wires": [
-            [
-                "81a628e43d7bcbda"
-            ]
-        ]
-    },
-    {
-        "id": "81a628e43d7bcbda",
-        "type": "function",
-        "z": "20ab889ce2631bfa",
-        "name": "prepare data",
-        "func": "msg = {\n    payload: [msg.topic,msg.payload]\n}\nglobal.set('main_puls_delay',msg.payload[1])\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 990,
-        "y": 240,
-        "wires": [
-            [
-                "479e53ebd03b2a11"
-            ]
-        ]
-    },
-    {
-        "id": "479e53ebd03b2a11",
-        "type": "redis-command",
-        "z": "20ab889ce2631bfa",
-        "server": "a0efbb89.5e42d8",
-        "command": "set",
-        "name": "",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 1160,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a41a7c47e4a3c971",
-        "type": "redis-command",
-        "z": "20ab889ce2631bfa",
-        "server": "a0efbb89.5e42d8",
-        "command": "get",
-        "name": "",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 460,
-        "y": 360,
-        "wires": [
-            [
-                "9d69361e373bf600"
-            ]
-        ]
-    },
-    {
-        "id": "a3bf3587154fb70a",
-        "type": "inject",
-        "z": "20ab889ce2631bfa",
-        "name": "global_settings:auto_start",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "0.2",
-        "topic": "global_settings:auto_start",
-        "payload": "[]",
-        "payloadType": "json",
-        "x": 270,
-        "y": 360,
-        "wires": [
-            [
-                "a41a7c47e4a3c971"
-            ]
-        ]
-    },
-    {
-        "id": "a4a77381630faae2",
-        "type": "function",
-        "z": "20ab889ce2631bfa",
-        "name": "prepare data",
-        "func": "msg = {\n    payload: [msg.topic,msg.payload]\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1110,
-        "y": 360,
-        "wires": [
-            [
-                "b6bad10972b53e66"
-            ]
-        ]
-    },
-    {
-        "id": "b6bad10972b53e66",
-        "type": "redis-command",
-        "z": "20ab889ce2631bfa",
-        "server": "a0efbb89.5e42d8",
-        "command": "set",
-        "name": "",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 1280,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9d69361e373bf600",
-        "type": "function",
-        "z": "20ab889ce2631bfa",
-        "name": "prepare data",
-        "func": "if (msg.payload==='false') { msg.payload = false}\nif (msg.payload==='true') { msg.payload = true}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 630,
-        "y": 360,
-        "wires": [
-            [
-                "8b32af2f20fb9c8b"
-            ]
-        ]
-    },
-    {
-        "id": "d05b942b9a18303b",
-        "type": "redis-command",
-        "z": "20ab889ce2631bfa",
-        "server": "a0efbb89.5e42d8",
-        "command": "set",
-        "name": "",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 900,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1ea37f58ea3cded1",
-        "type": "function",
-        "z": "20ab889ce2631bfa",
-        "name": "set 1000 if null",
-        "func": "if (msg.payload === null || msg.payload === '') {\n    msg = {\n        payload: [msg.topic, '1000']\n    }\n\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 720,
-        "y": 200,
-        "wires": [
-            [
-                "d05b942b9a18303b"
-            ]
-        ]
-    },
-    {
-        "id": "9ac3e473eefcec9f",
-        "type": "redis-command",
-        "z": "20ab889ce2631bfa",
-        "server": "a0efbb89.5e42d8",
-        "command": "get",
-        "name": "",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 540,
-        "y": 200,
-        "wires": [
-            [
-                "1ea37f58ea3cded1"
-            ]
-        ]
-    },
-    {
-        "id": "1bd155b0f55efb30",
-        "type": "inject",
-        "z": "20ab889ce2631bfa",
-        "name": "global_settings:main_puls_delay",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "global_settings:main_puls_delay",
-        "payload": "[]",
-        "payloadType": "json",
-        "x": 300,
-        "y": 200,
-        "wires": [
-            [
-                "9ac3e473eefcec9f"
-            ]
-        ]
-    },
-    {
-        "id": "f6087cb738894a58",
-        "type": "redis-command",
-        "z": "20ab889ce2631bfa",
-        "server": "a0efbb89.5e42d8",
-        "command": "set",
-        "name": "",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 900,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "df900b16f5940e5b",
-        "type": "function",
-        "z": "20ab889ce2631bfa",
-        "name": "set false if null",
-        "func": "if (msg.payload === null || msg.payload === '') {\n    msg = {\n        payload: [msg.topic, 'false']\n    }\n\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 720,
-        "y": 320,
-        "wires": [
-            [
-                "f6087cb738894a58"
-            ]
-        ]
-    },
-    {
-        "id": "1b4b7d9f9beec7c3",
-        "type": "redis-command",
-        "z": "20ab889ce2631bfa",
-        "server": "a0efbb89.5e42d8",
-        "command": "get",
-        "name": "",
-        "topic": "",
-        "params": "[]",
-        "paramsType": "json",
-        "payloadType": "json",
-        "block": false,
-        "x": 540,
-        "y": 320,
-        "wires": [
-            [
-                "df900b16f5940e5b"
-            ]
-        ]
-    },
-    {
-        "id": "2413b78733fa9c47",
-        "type": "inject",
-        "z": "20ab889ce2631bfa",
-        "name": "global_settings:auto_start",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "global_settings:auto_start",
-        "payload": "[]",
-        "payloadType": "json",
-        "x": 270,
-        "y": 320,
-        "wires": [
-            [
-                "1b4b7d9f9beec7c3"
-            ]
-        ]
-    },
-    {
-        "id": "4274a918b99b6efa",
-        "type": "redis-instance",
-        "z": "20ab889ce2631bfa",
-        "server": "a0efbb89.5e42d8",
-        "name": "",
-        "topic": "redis",
-        "location": "global",
-        "x": 810,
-        "y": 60,
         "wires": []
     },
     {
-        "id": "24c489e3cd436036",
-        "type": "function",
-        "z": "20ab889ce2631bfa",
-        "name": "getBotDifferences",
-        "func": "function getBotDifferences(bot, botStart, ignorePaths = []) {\n    const ignoreSet = new Set(ignorePaths);    // Рекурсивная функция сравнения объектов    \n    function compareObjects(a, b, differences = {}, path = []) {\n        const allKeys = new Set([...Object.keys(a), ...Object.keys(b)]);\n        allKeys.forEach(key => {\n            const currentPath = [...path, key];\n            const pathString = currentPath.join('.');            // Пропускаем игнорируемые пути  \n            if (ignoreSet.has(pathString)) return;\n            const aVal = a[key];\n            const bVal = b[key];\n            // Обработка объектов        \n            if (isObject(aVal) && isObject(bVal)) {\n                const nestedDiff = {};\n                compareObjects(aVal, bVal, nestedDiff, currentPath);\n                if (Object.keys(nestedDiff).length > 0) {\n                    differences[key] = nestedDiff;\n                }\n            }\n            // Обработка массивов   \n            else if (Array.isArray(aVal) && Array.isArray(bVal)) {\n                if (JSON.stringify(aVal) !== JSON.stringify(bVal)) {\n                    differences[key] = { old: bVal, new: aVal };\n                }\n            }\n            // Простые значения     \n            else {\n                if (!isEqual(aVal, bVal)) {\n                    differences[key] = { old: bVal, new: aVal };\n                }\n            }\n        });\n        return differences;\n    }\n    // Проверка является ли значение объектом (не массивом)  \n    function isObject(val) { return val !== null && typeof val === 'object' && !Array.isArray(val); }\n    // Универсальное сравнение значений   \n    function isEqual(a, b) {\n        if (a === b) return true;\n        if (a === undefined || b === undefined) return false;\n        return JSON.stringify(a) === JSON.stringify(b);\n    }\n    return compareObjects(bot, botStart);\n} global.set('getBotDifferences', getBotDifferences);\n\nreturn msg;",
+        "id": "28974da5b4417212",
+        "type": "delay",
+        "z": "3f98de411a14795f",
+        "g": "d4c174739de217d4",
+        "name": "",
+        "pauseType": "random",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "0",
+        "randomLast": "1",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
         "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 470,
-        "y": 520,
+        "x": 760,
+        "y": 240,
         "wires": [
-            []
+            [
+                "c3283ee72a5a301c"
+            ]
         ]
     },
     {
-        "id": "7033ba311f97738f",
-        "type": "inject",
-        "z": "20ab889ce2631bfa",
-        "name": "init functions",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 230,
-        "y": 520,
-        "wires": [
-            [
-                "24c489e3cd436036"
-            ]
-        ]
+        "id": "01a180c0b0f2225d",
+        "type": "debug",
+        "z": "3f98de411a14795f",
+        "g": "d4c174739de217d4",
+        "name": "debug 65",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 300,
+        "wires": []
     }
 ]
