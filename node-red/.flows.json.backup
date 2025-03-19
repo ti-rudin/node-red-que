@@ -46,8 +46,8 @@
             "386ca7e8c7e67c3b",
             "0e83c0fd6d981286"
         ],
-        "x": 94,
-        "y": 339,
+        "x": 174,
+        "y": 499,
         "w": 772,
         "h": 242
     },
@@ -78,6 +78,35 @@
         "y": 99,
         "w": 732,
         "h": 242
+    },
+    {
+        "id": "c34bda795978de35",
+        "type": "group",
+        "z": "568b629767512beb",
+        "style": {
+            "stroke": "#2e333a",
+            "stroke-opacity": "1",
+            "fill": "#383c45",
+            "fill-opacity": "0.5",
+            "label": true,
+            "label-position": "nw",
+            "color": "#dddddd"
+        },
+        "nodes": [
+            "162b94472306b1a9",
+            "c8fbde1a7dcb152b",
+            "ec7e1d976fe04766",
+            "83ec644475f3fbd2",
+            "722cfd9a35127689",
+            "43389ead78d0f309",
+            "11440855fb0d494d",
+            "70a01627a8dbffef",
+            "bde84900c30b397d"
+        ],
+        "x": 174,
+        "y": 59,
+        "w": 812,
+        "h": 302
     },
     {
         "id": "2080f36ce7985358",
@@ -182,6 +211,7 @@
         "id": "162b94472306b1a9",
         "type": "inject",
         "z": "568b629767512beb",
+        "g": "c34bda795978de35",
         "name": "Broker Timer",
         "props": [
             {
@@ -207,6 +237,7 @@
         "id": "c8fbde1a7dcb152b",
         "type": "function",
         "z": "568b629767512beb",
+        "g": "c34bda795978de35",
         "name": "Broker: Check Tasks and Workers",
         "func": "// ==== Конфигурация ====\nconst config = {\n    redis: {\n        taskQueueName: 'new_tasks',\n        jobChannel: 'job',\n        botLockPrefix: 'bot_lock:',\n        workerLockPrefix: 'worker_lock:',\n    },\n    noLockCommands: ['sell_on_binance', 'cancel_on_binance'],\n    lockTTL: 5, // Время жизни блокировки в секундах\n    maxTasksPerRun: 10 // Максимальное количество задач для обработки за один запуск\n};\n\n// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// ==== Функция проверки, занят ли бот ====\nasync function isBotBusy(botId) {\n    try {\n        let value = await redis.get(config.redis.botLockPrefix + botId);\n        return value !== null;\n    } catch (err) {\n        node.error(`Ошибка при проверке занятости бота ${botId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция проверки, занят ли воркер ====\nasync function isWorkerBusy(workerId) {\n    try {\n        let value = await redis.get(config.redis.workerLockPrefix + workerId);\n        return value !== null;\n    } catch (err) {\n        node.error(`Ошибка при проверке занятости воркера ${workerId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция блокировки бота ====\nasync function lockBot(botId) {\n    try {\n        await redis.set(config.redis.botLockPrefix + botId, 1, 'EX', config.lockTTL);\n        node.log(`Бот ${botId} заблокирован на ${config.lockTTL} секунд.`);\n    } catch (err) {\n        node.error(`Ошибка при блокировке бота ${botId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция блокировки воркера ====\nasync function lockWorker(workerId) {\n    try {\n        await redis.set(config.redis.workerLockPrefix + workerId, 1, 'EX', config.lockTTL);\n        node.log(`Воркер ${workerId} заблокирован на ${config.lockTTL} секунд.`);\n    } catch (err) {\n        node.error(`Ошибка при блокировке воркера ${workerId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция получения свободного воркера ====\nasync function getFreeWorker() {\n    try {\n        // Получаем список всех воркеров\n        const workers = await redis.keys('worker:*');\n\n        // Ищем первого свободного воркера\n        for (const worker of workers) {\n            const isBusy = await isWorkerBusy(worker);\n            if (!isBusy) {\n                return worker; // Возвращаем первого свободного воркера\n            }\n        }\n\n        // Если все воркеры заняты, возвращаем null\n        return null;\n    } catch (err) {\n        node.error('Ошибка при выборе воркера:', err);\n        throw err;\n    }\n}\n\n// ==== Логика брокера ====\n(async () => {\n    try {\n        // Обрабатываем до maxTasksPerRun задач за один запуск\n        for (let i = 0; i < config.maxTasksPerRun; i++) {\n            // 1. Получаем задачу из очереди\n            let taskData = await redis.lpop(config.redis.taskQueueName);\n\n            if (!taskData) {\n                node.log('Очередь задач пуста.');\n                break; // Выходим из цикла, если очередь пуста\n            }\n\n            let task;\n            try {\n                task = JSON.parse(taskData);\n            } catch (err) {\n                node.error('Ошибка при парсинге задачи:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 2. Валидация задачи\n            if (!task.task || !task.task.bot_id || !task.task.cmd) {\n                node.warn('Некорректная задача: отсутствуют обязательные поля.');\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 3. Получаем данные бота из Redis\n            let botData;\n            try {\n                botData = await redis.get(`bots:${task.task.bot_id}:data`);\n                if (botData) {\n                    task.bot_data = JSON.parse(botData);\n                } else {\n                    node.warn(`Данные бота ${task.task.bot_id} не найдены в Redis.`);\n                    await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                    continue; // Переходим к следующей задаче\n                }\n            } catch (err) {\n                node.error('Ошибка при получении данных бота:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 4. Проверяем, нужно ли блокировать бота\n            const shouldLockBot = !config.noLockCommands.includes(task.task.cmd);\n\n            // 5. Если блокировка бота требуется, проверяем, свободен ли бот\n            if (shouldLockBot) {\n                try {\n                    const isBotBusyb = await isBotBusy(task.task.bot_id);\n                    if (isBotBusyb) {\n                        node.warn(`Бот ${task.task.bot_id} занят. Возвращаем задачу в очередь.`);\n                        await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                        continue; // Переходим к следующей задаче\n                    }\n                } catch (err) {\n                    node.error('Ошибка при проверке занятости бота:', err);\n                    await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                    continue; // Переходим к следующей задаче\n                }\n            }\n\n            // 6. Получаем свободного воркера\n            let workerId;\n            try {\n                workerId = await getFreeWorker();\n                if (!workerId) {\n                    node.warn('Нет доступных воркеров. Возвращаем задачу в очередь.');\n                    await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                    continue; // Переходим к следующей задаче\n                }\n            } catch (err) {\n                node.error('Ошибка при выборе воркера:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 7. Если блокировка бота требуется, блокируем бота\n            if (shouldLockBot) {\n                try {\n                    await lockBot(task.task.bot_id);\n                } catch (err) {\n                    node.error('Ошибка при блокировке бота:', err);\n                    await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                    continue; // Переходим к следующей задаче\n                }\n            }\n\n            // 8. Блокируем воркера\n            try {\n                await lockWorker(workerId);\n            } catch (err) {\n                node.error('Ошибка при блокировке воркера:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 9. Отправляем задачу воркеру\n            task.workerId = workerId;\n            task.startTime = Date.now();\n            try {\n                await redis.publish(config.redis.jobChannel, JSON.stringify(task));\n                node.log(`Задача ${task.task.cmd} отправлена воркеру ${workerId}`);\n            } catch (err) {\n                node.error('Ошибка при отправке задачи воркеру:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 10. Получаем количество задач в очереди\n            try {\n                let queueLength = await redis.llen(config.redis.taskQueueName);\n                msg.payload = queueLength;\n                node.send(msg);\n            } catch (err) {\n                node.error('Ошибка при получении длины очереди:', err);\n                continue; // Переходим к следующей задаче\n            }\n        }\n    } catch (err) {\n        node.error(\"Ошибка в логике брокера: \", err);\n    }\n})();",
         "outputs": 2,
@@ -230,6 +261,7 @@
         "id": "ec7e1d976fe04766",
         "type": "function",
         "z": "568b629767512beb",
+        "g": "c34bda795978de35",
         "name": "Broker: Analyse Results",
         "func": "// ==== Конфигурация ====\nconst config = {\n    redis: {\n        botLockPrefix: 'bot_lock:',\n        workerLockPrefix: 'worker_lock:',\n    },\n    noLockCommands: ['sell_on_binance', 'cancel_on_binance'],\n};\n\n// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// ==== Функция разблокировки воркера ====\nasync function unlockWorker(workerId) {\n    try {\n        await redis.del(config.redis.workerLockPrefix + workerId);\n        node.log(`Воркер ${workerId} разблокирован.`);\n    } catch (err) {\n        node.error(`Ошибка при разблокировке воркера ${workerId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция разблокировки бота ====\nasync function unlockBot(botId) {\n    try {\n        await redis.del(config.redis.botLockPrefix + botId);\n        node.log(`Бот ${botId} разблокирован.`);\n    } catch (err) {\n        node.error(`Ошибка при разблокировке бота ${botId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Логика анализа результатов ====\n(async () => {\n    try {\n        const msg2 = msg.payload;\n\n        //Выполняем анализ:\n        const finishTime = Date.now();\n        let durationJob = finishTime - msg2.startTime;\n        let topickey = msg.payload.workerId + msg.payload.bot_id;\n        msg.topic = topickey;\n        msg.payload = durationJob;\n\n        // Разблокируем воркера\n        await unlockWorker(msg2.workerId);\n\n        // Разблокируем бота, если команда требует блокировки\n        if (!config.noLockCommands.includes(msg2.task.cmd)) {\n            await unlockBot(msg2.bot_id);\n        }\n\n        node.send(msg);\n    } catch (err) {\n        node.error(\"Ошибка при анализе результатов: \" + err);\n        return [null, { error: 'Ошибка при анализе результатов', details: err }];\n    }\n})();",
         "outputs": 1,
@@ -238,8 +270,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
-        "y": 260,
+        "x": 460,
+        "y": 320,
         "wires": [
             [
                 "43389ead78d0f309",
@@ -251,14 +283,15 @@
         "id": "83ec644475f3fbd2",
         "type": "redis-in",
         "z": "568b629767512beb",
+        "g": "c34bda795978de35",
         "server": "a0efbb89.5e42d8",
         "command": "subscribe",
         "name": "fjob",
         "topic": "fjob",
         "obj": true,
         "timeout": 0,
-        "x": 210,
-        "y": 240,
+        "x": 260,
+        "y": 300,
         "wires": [
             [
                 "ec7e1d976fe04766",
@@ -270,6 +303,7 @@
         "id": "722cfd9a35127689",
         "type": "debug",
         "z": "568b629767512beb",
+        "g": "c34bda795978de35",
         "name": "debug 58",
         "active": false,
         "tosidebar": true,
@@ -279,14 +313,15 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 430,
-        "y": 220,
+        "x": 410,
+        "y": 280,
         "wires": []
     },
     {
         "id": "43389ead78d0f309",
         "type": "ui-chart",
         "z": "568b629767512beb",
+        "g": "c34bda795978de35",
         "group": "d403defdfbeecc46",
         "name": "Время выполнения задач",
         "label": "Время выполнения задач",
@@ -339,8 +374,8 @@
         "height": 8,
         "className": "",
         "interpolation": "linear",
-        "x": 760,
-        "y": 260,
+        "x": 740,
+        "y": 320,
         "wires": [
             []
         ]
@@ -349,6 +384,7 @@
         "id": "11440855fb0d494d",
         "type": "ui-chart",
         "z": "568b629767512beb",
+        "g": "c34bda795978de35",
         "group": "d403defdfbeecc46",
         "name": "Кол-во задач в очереди",
         "label": "Кол-во задач в очереди",
@@ -401,8 +437,8 @@
         "height": 8,
         "className": "",
         "interpolation": "linear",
-        "x": 890,
-        "y": 60,
+        "x": 850,
+        "y": 100,
         "wires": [
             []
         ]
@@ -411,6 +447,7 @@
         "id": "70a01627a8dbffef",
         "type": "debug",
         "z": "568b629767512beb",
+        "g": "c34bda795978de35",
         "name": "debug 63",
         "active": false,
         "tosidebar": true,
@@ -420,8 +457,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
-        "y": 220,
+        "x": 720,
+        "y": 280,
         "wires": []
     },
     {
@@ -441,8 +478,8 @@
         "topic": "",
         "payload": "{\"task\":{\"bot_id\":\"testid\",\"cmd\":\"sell_on_binance\",\"params\":{\"pair\":\"BNBUSDT\",\"quantity\":0.035,\"price\":544.02,\"stopprice\":544.29}}}",
         "payloadType": "json",
-        "x": 960,
-        "y": 920,
+        "x": 1350,
+        "y": 600,
         "wires": [
             [
                 "84948af1aba39a62"
@@ -458,15 +495,15 @@
         "name": "",
         "topic": "new_tasks",
         "obj": true,
-        "x": 1200,
-        "y": 920,
+        "x": 1590,
+        "y": 600,
         "wires": []
     },
     {
         "id": "41ff76b137e42b28",
         "type": "inject",
         "z": "568b629767512beb",
-        "name": "Test task",
+        "name": "Test task2",
         "props": [
             {
                 "p": "payload"
@@ -479,8 +516,8 @@
         "topic": "",
         "payload": "{\"task\":{\"bot_id\":\"testid2\",\"cmd\":\"sell_on_binance\",\"params\":{\"pair\":\"BNBUSDT\",\"quantity\":0.035,\"price\":544.02,\"stopprice\":544.29}}}",
         "payloadType": "json",
-        "x": 960,
-        "y": 1000,
+        "x": 1350,
+        "y": 680,
         "wires": [
             [
                 "cdec4e2f30362af6"
@@ -496,8 +533,8 @@
         "name": "",
         "topic": "new_tasks",
         "obj": true,
-        "x": 1200,
-        "y": 1000,
+        "x": 1590,
+        "y": 680,
         "wires": []
     },
     {
@@ -521,8 +558,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 410,
-        "y": 940,
+        "x": 1350,
+        "y": 240,
         "wires": [
             [
                 "cc134211cabcae1d"
@@ -541,8 +578,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 940,
+        "x": 1540,
+        "y": 240,
         "wires": [
             []
         ]
@@ -568,8 +605,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 410,
-        "y": 1000,
+        "x": 1350,
+        "y": 300,
         "wires": [
             [
                 "0fac8e94e1e2b310"
@@ -588,8 +625,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 1000,
+        "x": 1540,
+        "y": 300,
         "wires": [
             []
         ]
@@ -598,6 +635,7 @@
         "id": "bde84900c30b397d",
         "type": "debug",
         "z": "568b629767512beb",
+        "g": "c34bda795978de35",
         "name": "debug 66",
         "active": true,
         "tosidebar": true,
@@ -607,7 +645,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
+        "x": 800,
         "y": 140,
         "wires": []
     },
@@ -617,15 +655,15 @@
         "z": "568b629767512beb",
         "g": "98132085df5d6410",
         "name": "Worker 1: Process Job",
-        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n(async () => {\n    try {\n        // Получаем ID воркера из контекста Flow\n        const workerId = context.flow.get('workerId');\n        // Получаем сообщение\n        let task = msg.payload;\n        // Проверяем, предназначено ли сообщение этому воркеру\n        if (msg.payload.workerId !== workerId) {\n            return; // Если нет, выходим из функции\n        }\n        node.warn('Воркер '+ workerId +' получил задачу');\n\n        // Добавляем startTime и finishTime в taskData\n        const startTime = task.startTime;\n\n        // Создаем финальный объект для отправки\n        const finalData = {\n            startTime: startTime,\n            task: task.task,\n            bot_data: task.bot_data, // Добавляем данные бота\n            workerId: workerId,  // Добавляем workerId\n            bot_id: task.task.bot_id // Добавляем bot_id\n        };\n\n        // Имитация выполнения задачи\n        await new Promise(resolve => setTimeout(resolve, Math.random() * (30 - 10) + 10));\n\n        msg.payload = finalData;\n        msg.topic = \"fjob\";\n\n        node.send(msg);\n    } catch (err) {\n        node.error(\"Ошибка в воркере 1: \" + err);\n        return [null, { error: 'Ошибка в воркере 1', details: err }];\n    }\n})();",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n(async () => {\n    try {\n        // Получаем ID воркера из контекста Flow\n        const workerId = context.flow.get('workerId');\n        // Получаем сообщение\n        let task = msg.payload;\n        // Проверяем, предназначено ли сообщение этому воркеру\n        if (msg.payload.workerId !== workerId) {\n            return; // Если нет, выходим из функции\n        }\n        node.warn('Воркер '+ workerId +' получил задачу');\n\n        // Добавляем startTime и finishTime в taskData\n        const startTime = task.startTime;\n\n        // Создаем финальный объект для отправки\n        const finalData = {\n            startTime: startTime,\n            task: task.task,\n            bot_data: task.bot_data, // Добавляем данные бота\n            workerId: workerId,  // Добавляем workerId\n            bot_id: task.task.bot_id // Добавляем bot_id\n        };\n\n        // Имитация выполнения задачи\n        await new Promise(resolve => setTimeout(resolve, Math.random() * (30 - 10) + 10));\n\n        msg.payload = finalData;\n        msg.topic = \"fjob\";\n\n        node.send(msg);\n    } catch (err) {\n        node.error(\"Ошибка: \" + err);\n        return [null, { error: 'Ошибка ', details: err }];\n    }\n})();",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
-        "y": 460,
+        "x": 500,
+        "y": 620,
         "wires": [
             [
                 "386ca7e8c7e67c3b",
@@ -651,8 +689,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 210,
-        "y": 380,
+        "x": 290,
+        "y": 540,
         "wires": [
             [
                 "21af50813565584d"
@@ -670,8 +708,8 @@
         "topic": "job",
         "obj": true,
         "timeout": 0,
-        "x": 190,
-        "y": 460,
+        "x": 270,
+        "y": 620,
         "wires": [
             [
                 "4fa9d878be1d41c4",
@@ -685,15 +723,15 @@
         "z": "568b629767512beb",
         "g": "98132085df5d6410",
         "name": "Worker 1: Init",
-        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// Используем context.flow для получения ID воркера, если он уже существует, иначе генерируем новый\nconst workerId = context.flow.get('workerId') || 'worker:' + RED.util.generateId();\ncontext.flow.set('workerId', workerId);\n\n// Регистрируем воркера\n(async () => await redis.set(workerId, 1))();\nnode.status({fill:\"green\",shape:\"dot\",text:\"Воркер 1 запущен:\" + workerId});\n\nmsg.workerID = workerId;\nreturn msg;",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// Используем context.flow для получения ID воркера, если он уже существует, иначе генерируем новый\nconst workerId = context.flow.get('workerId') || 'worker:' + RED.util.generateId();\ncontext.flow.set('workerId', workerId);\n\n// Регистрируем воркера\n(async () => await redis.set(workerId, 1))();\nnode.status({fill:\"green\",shape:\"dot\",text:\"Воркер запущен:\" + workerId});\n\nmsg.workerID = workerId;\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
-        "y": 380,
+        "x": 470,
+        "y": 540,
         "wires": [
             []
         ]
@@ -712,8 +750,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 300,
-        "y": 540,
+        "x": 380,
+        "y": 700,
         "wires": []
     },
     {
@@ -726,8 +764,8 @@
         "name": "",
         "topic": "fjob",
         "obj": true,
-        "x": 790,
-        "y": 460,
+        "x": 870,
+        "y": 620,
         "wires": []
     },
     {
@@ -748,8 +786,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 640,
-        "y": 460,
+        "x": 720,
+        "y": 620,
         "wires": [
             [
                 "49c40644aa9fa132"
@@ -770,8 +808,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 540,
+        "x": 740,
+        "y": 700,
         "wires": []
     },
     {
@@ -786,8 +824,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1220,
-        "y": 200,
+        "x": 1480,
+        "y": 160,
         "wires": [
             [
                 "d89709ef.fd9368"
@@ -806,8 +844,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1390,
-        "y": 200,
+        "x": 1650,
+        "y": 160,
         "wires": [
             [
                 "f2e9c3a0.8f181"
@@ -827,8 +865,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1550,
-        "y": 200,
+        "x": 1810,
+        "y": 160,
         "wires": []
     },
     {
@@ -839,8 +877,8 @@
         "name": "",
         "topic": "redis",
         "location": "global",
-        "x": 1810,
-        "y": 200,
+        "x": 1310,
+        "y": 160,
         "wires": []
     },
     {
@@ -855,8 +893,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1470,
-        "y": 660,
+        "x": 1590,
+        "y": 100,
         "wires": [
             []
         ]
@@ -882,8 +920,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1230,
-        "y": 660,
+        "x": 1350,
+        "y": 100,
         "wires": [
             [
                 "24c489e3cd436036"
@@ -1236,7 +1274,7 @@
         "z": "3f98de411a14795f",
         "g": "d4c174739de217d4",
         "name": "Worker 2: Init",
-        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// Используем context.flow для получения ID воркера, если он уже существует, иначе генерируем новый\nconst workerId = context.flow.get('workerId') || 'worker:' + RED.util.generateId();\ncontext.flow.set('workerId', workerId);\n\n// Регистрируем воркера\n(async () => await redis.set(workerId, 1))();\nnode.status({fill:\"green\",shape:\"dot\",text:\"Воркер 2 запущен:\" + workerId});\n\nmsg.workerID = workerId;\nreturn msg;",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// Используем context.flow для получения ID воркера, если он уже существует, иначе генерируем новый\nconst workerId = context.flow.get('workerId') || 'worker:' + RED.util.generateId();\ncontext.flow.set('workerId', workerId);\n\n// Регистрируем воркера\n(async () => await redis.set(workerId, 1))();\nnode.status({fill:\"green\",shape:\"dot\",text:\"Воркер запущен:\" + workerId});\n\nmsg.workerID = workerId;\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -1255,7 +1293,7 @@
         "z": "3f98de411a14795f",
         "g": "d4c174739de217d4",
         "name": "Worker 2: Process Job",
-        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n(async () => {\n    try {\n        // Получаем ID воркера из контекста Flow\n        const workerId = context.flow.get('workerId');\n        // Получаем сообщение\n        let task = msg.payload;\n        // Проверяем, предназначено ли сообщение этому воркеру\n        if (msg.payload.workerId !== workerId) {\n            return; // Если нет, выходим из функции\n        }\n        node.warn('Воркер '+ workerId+' получил задачу');\n\n        // Добавляем startTime и finishTime в taskData\n        const startTime = task.startTime;\n\n        // Создаем финальный объект для отправки\n        const finalData = {\n            startTime: startTime,\n            task: task.task,\n            bot_data: task.bot_data, // Добавляем данные бота\n            workerId: workerId,  // Добавляем workerId\n            bot_id: task.task.bot_id // Добавляем bot_id\n        };\n\n        // Имитация выполнения задачи\n        await new Promise(resolve => setTimeout(resolve, Math.random() * (30 - 10) + 10));\n\n        msg.payload = finalData;\n        msg.topic = \"fjob\";\n\n        node.send(msg);\n    } catch (err) {\n        node.error(\"Ошибка в воркере 2: \" + err);\n        return [null, { error: 'Ошибка в воркере 2', details: err }];\n    }\n})();",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n(async () => {\n    try {\n        // Получаем ID воркера из контекста Flow\n        const workerId = context.flow.get('workerId');\n        // Получаем сообщение\n        let task = msg.payload;\n        // Проверяем, предназначено ли сообщение этому воркеру\n        if (msg.payload.workerId !== workerId) {\n            return; // Если нет, выходим из функции\n        }\n        node.warn('Воркер '+ workerId+' получил задачу');\n\n        // Добавляем startTime и finishTime в taskData\n        const startTime = task.startTime;\n\n        // Создаем финальный объект для отправки\n        const finalData = {\n            startTime: startTime,\n            task: task.task,\n            bot_data: task.bot_data, // Добавляем данные бота\n            workerId: workerId,  // Добавляем workerId\n            bot_id: task.task.bot_id // Добавляем bot_id\n        };\n\n        // Имитация выполнения задачи\n        await new Promise(resolve => setTimeout(resolve, Math.random() * (30 - 10) + 10));\n\n        msg.payload = finalData;\n        msg.topic = \"fjob\";\n\n        node.send(msg);\n    } catch (err) {\n        node.error(\"Ошибка : \" + err);\n        return [null, { error: 'Ошибка', details: err }];\n    }\n})();",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -1355,7 +1393,7 @@
         "z": "3f98de411a14795f",
         "g": "d4c174739de217d4",
         "name": "debug 65",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
