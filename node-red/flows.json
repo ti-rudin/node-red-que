@@ -2,7 +2,7 @@
     {
         "id": "568b629767512beb",
         "type": "tab",
-        "label": "Main",
+        "label": "broker + w0",
         "disabled": false,
         "info": "",
         "env": []
@@ -10,21 +10,13 @@
     {
         "id": "3f98de411a14795f",
         "type": "tab",
-        "label": "w0",
+        "label": "w1",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "20ab889ce2631bfa",
-        "type": "tab",
-        "label": "settings",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "98132085df5d6410",
+        "id": "4f3f415805e8d135",
         "type": "group",
         "z": "568b629767512beb",
         "style": {
@@ -37,50 +29,18 @@
             "color": "#dddddd"
         },
         "nodes": [
-            "4fa9d878be1d41c4",
-            "18eb79254fcfcd07",
-            "65cd5b44329acb2e",
-            "21af50813565584d",
-            "607b98142d4cc63b",
-            "49c40644aa9fa132",
-            "386ca7e8c7e67c3b",
-            "0e83c0fd6d981286"
+            "2b7d39b31bcd80b4",
+            "5675052d7f4e1ecd",
+            "4729ac62b494b38b",
+            "628812a184ece349"
         ],
-        "x": 174,
+        "x": 44,
         "y": 499,
-        "w": 772,
-        "h": 242
+        "w": 592,
+        "h": 122
     },
     {
-        "id": "d4c174739de217d4",
-        "type": "group",
-        "z": "3f98de411a14795f",
-        "style": {
-            "stroke": "#2e333a",
-            "stroke-opacity": "1",
-            "fill": "#383c45",
-            "fill-opacity": "0.5",
-            "label": true,
-            "label-position": "nw",
-            "color": "#dddddd"
-        },
-        "nodes": [
-            "f3987b323a93c5c3",
-            "d2e16916844ef8c6",
-            "aee5dc394e1301d4",
-            "94015585f348d9c3",
-            "606463e04b70cf07",
-            "c3283ee72a5a301c",
-            "28974da5b4417212",
-            "01a180c0b0f2225d"
-        ],
-        "x": 254,
-        "y": 99,
-        "w": 732,
-        "h": 242
-    },
-    {
-        "id": "c34bda795978de35",
+        "id": "b3aea270dace08fc",
         "type": "group",
         "z": "568b629767512beb",
         "style": {
@@ -93,20 +53,49 @@
             "color": "#dddddd"
         },
         "nodes": [
-            "162b94472306b1a9",
-            "c8fbde1a7dcb152b",
-            "ec7e1d976fe04766",
-            "83ec644475f3fbd2",
-            "722cfd9a35127689",
-            "43389ead78d0f309",
-            "11440855fb0d494d",
-            "70a01627a8dbffef",
-            "bde84900c30b397d"
+            "0dd9b61bf9852af0",
+            "ed434aa36d13a3c4",
+            "c4092dc29fe69a84",
+            "d3dcc09aeac1257d",
+            "7d5e2ed7627d093f",
+            "cfca039d328602c9",
+            "c97e2a7d3da4f7a7",
+            "f8965512f3d939d9",
+            "84920f91e5195f57",
+            "ef51a20275de431a",
+            "410a42736b9b60bf"
         ],
-        "x": 174,
+        "x": 944,
+        "y": 519,
+        "w": 742,
+        "h": 442
+    },
+    {
+        "id": "660b34820fc6fad2",
+        "type": "group",
+        "z": "568b629767512beb",
+        "name": "broker",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "44a38e85ac48ecf5",
+            "a86562b4d73e37a7",
+            "a043cece8af6ec65",
+            "917a4f04a3017a69",
+            "1791b4d8eadc1bf1",
+            "0e6cbbfa2380d34d",
+            "0155c8a58945a0d9",
+            "4a4de9207489c47b",
+            "f4c164a7d0975feb",
+            "9f488ec8664efcde",
+            "d70c7cfd6876eacb",
+            "cfabfdac98a06539"
+        ],
+        "x": 34,
         "y": 59,
-        "w": 812,
-        "h": 302
+        "w": 1502,
+        "h": 282
     },
     {
         "id": "2080f36ce7985358",
@@ -208,183 +197,488 @@
         "groupType": "default"
     },
     {
-        "id": "162b94472306b1a9",
+        "id": "09763db8f88a8d0d",
         "type": "inject",
         "z": "568b629767512beb",
-        "g": "c34bda795978de35",
-        "name": "Broker Timer",
+        "name": "Test task",
         "props": [
             {
                 "p": "payload"
             }
         ],
-        "repeat": ".5",
+        "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "str",
-        "x": 300,
-        "y": 120,
+        "payload": "{\"task\":{\"bot_id\":\"testid\",\"cmd\":\"check\",\"params\":{\"pair\":\"BNBUSDT\",\"quantity\":0.035,\"price\":544.02,\"stopprice\":544.29}}}",
+        "payloadType": "json",
+        "x": 430,
+        "y": 960,
         "wires": [
             [
-                "c8fbde1a7dcb152b"
+                "84948af1aba39a62"
             ]
         ]
     },
     {
-        "id": "c8fbde1a7dcb152b",
+        "id": "84948af1aba39a62",
+        "type": "redis-out",
+        "z": "568b629767512beb",
+        "server": "a0efbb89.5e42d8",
+        "command": "rpush",
+        "name": "",
+        "topic": "new_tasks",
+        "obj": true,
+        "x": 670,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "41ff76b137e42b28",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "name": "Test task2",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"task\":{\"bot_id\":\"testid2\",\"cmd\":\"sell_on_binance\",\"params\":{\"pair\":\"BNBUSDT\",\"quantity\":0.035,\"price\":544.02,\"stopprice\":544.29}}}",
+        "payloadType": "json",
+        "x": 430,
+        "y": 1040,
+        "wires": [
+            [
+                "cdec4e2f30362af6"
+            ]
+        ]
+    },
+    {
+        "id": "cdec4e2f30362af6",
+        "type": "redis-out",
+        "z": "568b629767512beb",
+        "server": "a0efbb89.5e42d8",
+        "command": "rpush",
+        "name": "",
+        "topic": "new_tasks",
+        "obj": true,
+        "x": 670,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "7061e722720929e2",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "name": "init test data",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1750,
+        "y": 240,
+        "wires": [
+            [
+                "cc134211cabcae1d"
+            ]
+        ]
+    },
+    {
+        "id": "cc134211cabcae1d",
         "type": "function",
         "z": "568b629767512beb",
-        "g": "c34bda795978de35",
-        "name": "Broker: Check Tasks and Workers",
-        "func": "// ==== Конфигурация ====\nconst config = {\n    redis: {\n        taskQueueName: 'new_tasks',\n        jobChannel: 'job',\n        botLockPrefix: 'bot_lock:',\n        workerLockPrefix: 'worker_lock:',\n    },\n    noLockCommands: ['sell_on_binance', 'cancel_on_binance'],\n    lockTTL: 5, // Время жизни блокировки в секундах\n    maxTasksPerRun: 10 // Максимальное количество задач для обработки за один запуск\n};\n\n// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// ==== Функция проверки, занят ли бот ====\nasync function isBotBusy(botId) {\n    try {\n        let value = await redis.get(config.redis.botLockPrefix + botId);\n        return value !== null;\n    } catch (err) {\n        node.error(`Ошибка при проверке занятости бота ${botId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция проверки, занят ли воркер ====\nasync function isWorkerBusy(workerId) {\n    try {\n        let value = await redis.get(config.redis.workerLockPrefix + workerId);\n        return value !== null;\n    } catch (err) {\n        node.error(`Ошибка при проверке занятости воркера ${workerId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция блокировки бота ====\nasync function lockBot(botId) {\n    try {\n        await redis.set(config.redis.botLockPrefix + botId, 1, 'EX', config.lockTTL);\n        node.log(`Бот ${botId} заблокирован на ${config.lockTTL} секунд.`);\n    } catch (err) {\n        node.error(`Ошибка при блокировке бота ${botId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция блокировки воркера ====\nasync function lockWorker(workerId) {\n    try {\n        await redis.set(config.redis.workerLockPrefix + workerId, 1, 'EX', config.lockTTL);\n        node.log(`Воркер ${workerId} заблокирован на ${config.lockTTL} секунд.`);\n    } catch (err) {\n        node.error(`Ошибка при блокировке воркера ${workerId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция получения свободного воркера ====\nasync function getFreeWorker() {\n    try {\n        // Получаем список всех воркеров\n        const workers = await redis.keys('worker:*');\n\n        // Ищем первого свободного воркера\n        for (const worker of workers) {\n            const isBusy = await isWorkerBusy(worker);\n            if (!isBusy) {\n                return worker; // Возвращаем первого свободного воркера\n            }\n        }\n\n        // Если все воркеры заняты, возвращаем null\n        return null;\n    } catch (err) {\n        node.error('Ошибка при выборе воркера:', err);\n        throw err;\n    }\n}\n\n// ==== Логика брокера ====\n(async () => {\n    try {\n        // Обрабатываем до maxTasksPerRun задач за один запуск\n        for (let i = 0; i < config.maxTasksPerRun; i++) {\n            // 1. Получаем задачу из очереди\n            let taskData = await redis.lpop(config.redis.taskQueueName);\n\n            if (!taskData) {\n                node.log('Очередь задач пуста.');\n                break; // Выходим из цикла, если очередь пуста\n            }\n\n            let task;\n            try {\n                task = JSON.parse(taskData);\n            } catch (err) {\n                node.error('Ошибка при парсинге задачи:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 2. Валидация задачи\n            if (!task.task || !task.task.bot_id || !task.task.cmd) {\n                node.warn('Некорректная задача: отсутствуют обязательные поля.');\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 3. Получаем данные бота из Redis\n            let botData;\n            try {\n                botData = await redis.get(`bots:${task.task.bot_id}:data`);\n                if (botData) {\n                    task.bot_data = JSON.parse(botData);\n                } else {\n                    node.warn(`Данные бота ${task.task.bot_id} не найдены в Redis.`);\n                    await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                    continue; // Переходим к следующей задаче\n                }\n            } catch (err) {\n                node.error('Ошибка при получении данных бота:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 4. Проверяем, нужно ли блокировать бота\n            const shouldLockBot = !config.noLockCommands.includes(task.task.cmd);\n\n            // 5. Если блокировка бота требуется, проверяем, свободен ли бот\n            if (shouldLockBot) {\n                try {\n                    const isBotBusyb = await isBotBusy(task.task.bot_id);\n                    if (isBotBusyb) {\n                        node.warn(`Бот ${task.task.bot_id} занят. Возвращаем задачу в очередь.`);\n                        await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                        continue; // Переходим к следующей задаче\n                    }\n                } catch (err) {\n                    node.error('Ошибка при проверке занятости бота:', err);\n                    await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                    continue; // Переходим к следующей задаче\n                }\n            }\n\n            // 6. Получаем свободного воркера\n            let workerId;\n            try {\n                workerId = await getFreeWorker();\n                if (!workerId) {\n                    node.warn('Нет доступных воркеров. Возвращаем задачу в очередь.');\n                    await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                    continue; // Переходим к следующей задаче\n                }\n            } catch (err) {\n                node.error('Ошибка при выборе воркера:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 7. Если блокировка бота требуется, блокируем бота\n            if (shouldLockBot) {\n                try {\n                    await lockBot(task.task.bot_id);\n                } catch (err) {\n                    node.error('Ошибка при блокировке бота:', err);\n                    await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                    continue; // Переходим к следующей задаче\n                }\n            }\n\n            // 8. Блокируем воркера\n            try {\n                await lockWorker(workerId);\n            } catch (err) {\n                node.error('Ошибка при блокировке воркера:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 9. Отправляем задачу воркеру\n            task.workerId = workerId;\n            task.startTime = Date.now();\n            try {\n                await redis.publish(config.redis.jobChannel, JSON.stringify(task));\n                node.log(`Задача ${task.task.cmd} отправлена воркеру ${workerId}`);\n            } catch (err) {\n                node.error('Ошибка при отправке задачи воркеру:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData); // Возвращаем задачу в очередь\n                continue; // Переходим к следующей задаче\n            }\n\n            // 10. Получаем количество задач в очереди\n            try {\n                let queueLength = await redis.llen(config.redis.taskQueueName);\n                msg.payload = queueLength;\n                node.send(msg);\n            } catch (err) {\n                node.error('Ошибка при получении длины очереди:', err);\n                continue; // Переходим к следующей задаче\n            }\n        }\n    } catch (err) {\n        node.error(\"Ошибка в логике брокера: \", err);\n    }\n})();",
-        "outputs": 2,
-        "timeout": "",
+        "name": "redis.set    testid",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\nlet test_data = {};\ntest_data.id = \"bots:testid:data\";\ntest_data.somearr = [0,1,2];\ntest_data.someobj = {q:[0,1,2], \"bool\":true};\n\n\n// Регистрируем воркера\n(async () => await redis.set(test_data.id, JSON.stringify(test_data)))();\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
-        "y": 120,
+        "x": 1940,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "760867d2369ea4a1",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "name": "init test data",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1750,
+        "y": 300,
         "wires": [
             [
-                "11440855fb0d494d"
-            ],
-            [
-                "bde84900c30b397d"
+                "0fac8e94e1e2b310"
             ]
         ]
     },
     {
-        "id": "ec7e1d976fe04766",
+        "id": "0fac8e94e1e2b310",
         "type": "function",
         "z": "568b629767512beb",
-        "g": "c34bda795978de35",
-        "name": "Broker: Analyse Results",
-        "func": "// ==== Конфигурация ====\nconst config = {\n    redis: {\n        botLockPrefix: 'bot_lock:',\n        workerLockPrefix: 'worker_lock:',\n    },\n    noLockCommands: ['sell_on_binance', 'cancel_on_binance'],\n};\n\n// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// ==== Функция разблокировки воркера ====\nasync function unlockWorker(workerId) {\n    try {\n        await redis.del(config.redis.workerLockPrefix + workerId);\n        node.log(`Воркер ${workerId} разблокирован.`);\n    } catch (err) {\n        node.error(`Ошибка при разблокировке воркера ${workerId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция разблокировки бота ====\nasync function unlockBot(botId) {\n    try {\n        await redis.del(config.redis.botLockPrefix + botId);\n        node.log(`Бот ${botId} разблокирован.`);\n    } catch (err) {\n        node.error(`Ошибка при разблокировке бота ${botId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Логика анализа результатов ====\n(async () => {\n    try {\n        const msg2 = msg.payload;\n\n        //Выполняем анализ:\n        const finishTime = Date.now();\n        let durationJob = finishTime - msg2.startTime;\n        let topickey = msg.payload.workerId + msg.payload.bot_id;\n        msg.topic = topickey;\n        msg.payload = durationJob;\n\n        // Разблокируем воркера\n        await unlockWorker(msg2.workerId);\n\n        // Разблокируем бота, если команда требует блокировки\n        if (!config.noLockCommands.includes(msg2.task.cmd)) {\n            await unlockBot(msg2.bot_id);\n        }\n\n        node.send(msg);\n    } catch (err) {\n        node.error(\"Ошибка при анализе результатов: \" + err);\n        return [null, { error: 'Ошибка при анализе результатов', details: err }];\n    }\n})();",
+        "name": "redis.set   testid2",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\nlet test_data = {};\ntest_data.id = \"bots:testid2:data\";\ntest_data.somearr = [0,1,2];\ntest_data.someobj = {q:[0,1,2], \"bool\":true};\n\n\n// Регистрируем воркера\n(async () => await redis.set(test_data.id, JSON.stringify(test_data)))();\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1940,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0dd9b61bf9852af0",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "g": "b3aea270dace08fc",
+        "name": "Init Worker 1",
+        "props": [
+            {
+                "p": "payload",
+                "v": "true",
+                "t": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1060,
+        "y": 560,
+        "wires": [
+            [
+                "c4092dc29fe69a84"
+            ]
+        ]
+    },
+    {
+        "id": "ed434aa36d13a3c4",
+        "type": "redis-in",
+        "z": "568b629767512beb",
+        "g": "b3aea270dace08fc",
+        "server": "a0efbb89.5e42d8",
+        "command": "subscribe",
+        "name": "job",
+        "topic": "job",
+        "obj": true,
+        "timeout": 0,
+        "x": 1020,
+        "y": 800,
+        "wires": [
+            [
+                "cfca039d328602c9"
+            ]
+        ]
+    },
+    {
+        "id": "c4092dc29fe69a84",
+        "type": "function",
+        "z": "568b629767512beb",
+        "g": "b3aea270dace08fc",
+        "name": "Worker 0: Init",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// Используем context.flow для получения ID воркера, если он уже существует, иначе генерируем новый\nconst workerId = context.flow.get('workerId') || 'worker:' + RED.util.generateId();\ncontext.flow.set('workerId', workerId);\n\n// Регистрируем воркера\n(async () => await redis.set(workerId, 1))();\nnode.status({fill:\"green\",shape:\"dot\",text:\"Воркер запущен:\" + workerId});\n\nmsg.workerID = workerId;\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 320,
-        "wires": [
-            [
-                "43389ead78d0f309",
-                "70a01627a8dbffef"
-            ]
-        ]
-    },
-    {
-        "id": "83ec644475f3fbd2",
-        "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "c34bda795978de35",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "fjob",
-        "topic": "fjob",
-        "obj": true,
-        "timeout": 0,
-        "x": 260,
-        "y": 300,
-        "wires": [
-            [
-                "ec7e1d976fe04766",
-                "722cfd9a35127689"
-            ]
-        ]
-    },
-    {
-        "id": "722cfd9a35127689",
-        "type": "debug",
-        "z": "568b629767512beb",
-        "g": "c34bda795978de35",
-        "name": "debug 58",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 410,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "43389ead78d0f309",
-        "type": "ui-chart",
-        "z": "568b629767512beb",
-        "g": "c34bda795978de35",
-        "group": "d403defdfbeecc46",
-        "name": "Время выполнения задач",
-        "label": "Время выполнения задач",
-        "order": 1,
-        "chartType": "line",
-        "category": "topic",
-        "categoryType": "msg",
-        "xAxisLabel": "",
-        "xAxisProperty": "",
-        "xAxisPropertyType": "timestamp",
-        "xAxisType": "time",
-        "xAxisFormat": "",
-        "xAxisFormatType": "auto",
-        "xmin": "",
-        "xmax": "",
-        "yAxisLabel": "",
-        "yAxisProperty": "payload",
-        "yAxisPropertyType": "msg",
-        "ymin": "",
-        "ymax": "",
-        "bins": 10,
-        "action": "append",
-        "stackSeries": false,
-        "pointShape": "circle",
-        "pointRadius": "2",
-        "showLegend": true,
-        "removeOlder": 1,
-        "removeOlderUnit": "60",
-        "removeOlderPoints": "",
-        "colors": [
-            "#0095ff",
-            "#ff0000",
-            "#ff7f0e",
-            "#2ca02c",
-            "#a347e1",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "textColor": [
-            "#666666"
-        ],
-        "textColorDefault": true,
-        "gridColor": [
-            "#e5e5e5"
-        ],
-        "gridColorDefault": true,
-        "width": 6,
-        "height": 8,
-        "className": "",
-        "interpolation": "linear",
-        "x": 740,
-        "y": 320,
+        "x": 1240,
+        "y": 560,
         "wires": [
             []
         ]
     },
     {
-        "id": "11440855fb0d494d",
+        "id": "d3dcc09aeac1257d",
+        "type": "redis-out",
+        "z": "568b629767512beb",
+        "g": "b3aea270dace08fc",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "fjob",
+        "obj": true,
+        "x": 1340,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "7d5e2ed7627d093f",
+        "type": "switch",
+        "z": "568b629767512beb",
+        "g": "b3aea270dace08fc",
+        "name": "task.cmd",
+        "property": "payload.task.cmd",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "check",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "sell_on_binance",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1330,
+        "y": 800,
+        "wires": [
+            [
+                "ef51a20275de431a"
+            ],
+            [
+                "410a42736b9b60bf"
+            ],
+            [
+                "410a42736b9b60bf"
+            ]
+        ]
+    },
+    {
+        "id": "cfca039d328602c9",
+        "type": "switch",
+        "z": "568b629767512beb",
+        "g": "b3aea270dace08fc",
+        "name": "workerId",
+        "property": "payload.workerId",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "workerId",
+                "vt": "flow"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1170,
+        "y": 800,
+        "wires": [
+            [
+                "7d5e2ed7627d093f"
+            ]
+        ]
+    },
+    {
+        "id": "c97e2a7d3da4f7a7",
+        "type": "function",
+        "z": "568b629767512beb",
+        "g": "b3aea270dace08fc",
+        "name": "msg.topic = \"fjob\"",
+        "func": " msg.topic = \"fjob\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 920,
+        "wires": [
+            [
+                "d3dcc09aeac1257d"
+            ]
+        ]
+    },
+    {
+        "id": "f8965512f3d939d9",
+        "type": "link in",
+        "z": "568b629767512beb",
+        "g": "b3aea270dace08fc",
+        "name": "link in 3",
+        "links": [
+            "84920f91e5195f57",
+            "410a42736b9b60bf"
+        ],
+        "x": 1015,
+        "y": 920,
+        "wires": [
+            [
+                "c97e2a7d3da4f7a7"
+            ]
+        ]
+    },
+    {
+        "id": "84920f91e5195f57",
+        "type": "link out",
+        "z": "568b629767512beb",
+        "g": "b3aea270dace08fc",
+        "name": "link out 29",
+        "mode": "link",
+        "links": [
+            "f8965512f3d939d9"
+        ],
+        "x": 1645,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "ef51a20275de431a",
+        "type": "function",
+        "z": "568b629767512beb",
+        "g": "b3aea270dace08fc",
+        "name": "count + 1",
+        "func": "msg.payload.bot.count = msg.payload.bot.count + 1;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1530,
+        "y": 720,
+        "wires": [
+            [
+                "84920f91e5195f57"
+            ]
+        ]
+    },
+    {
+        "id": "945ac6b3b445aaa0",
+        "type": "redis-instance",
+        "z": "568b629767512beb",
+        "server": "a0efbb89.5e42d8",
+        "name": "",
+        "topic": "redis",
+        "location": "global",
+        "x": 1720,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "44b5186c49bc7040",
+        "type": "function",
+        "z": "568b629767512beb",
+        "name": "getBotDifferences",
+        "func": "function getBotDifferences(bot, botStart, ignorePaths = []) {\n    const ignoreSet = new Set(ignorePaths);\n\n    function compareObjects(a, b, differences = {}, path = []) {\n        const allKeys = new Set([...Object.keys(a), ...Object.keys(b)]);\n        allKeys.forEach(key => {\n            const currentPath = [...path, key];\n            const pathString = currentPath.join('.');\n\n            if (ignoreSet.has(pathString)) return;\n\n            const aVal = a[key];\n            const bVal = b[key];\n\n            if (typeof aVal === 'object' && aVal !== null && typeof bVal === 'object' && bVal !== null) {\n                compareObjects(aVal, bVal, differences, currentPath);\n            } else if (Array.isArray(aVal) && Array.isArray(bVal)) {\n                if (JSON.stringify(aVal) !== JSON.stringify(bVal)) {\n                    differences[key] = { old: bVal, new: aVal };\n                }\n            } else if (aVal !== bVal) {\n                differences[key] = { old: bVal, new: aVal };\n            }\n        });\n        return differences;\n    }\n\n    return compareObjects(bot, botStart);\n}\n\nglobal.set('getBotDifferences', getBotDifferences);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1990,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e977403f092789ec",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "name": "init functions",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1750,
+        "y": 80,
+        "wires": [
+            [
+                "44b5186c49bc7040",
+                "7b090a91eb9bd32d"
+            ]
+        ]
+    },
+    {
+        "id": "44a38e85ac48ecf5",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "g": "660b34820fc6fad2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 820,
+        "y": 100,
+        "wires": [
+            [
+                "a043cece8af6ec65"
+            ]
+        ]
+    },
+    {
+        "id": "a86562b4d73e37a7",
         "type": "ui-chart",
         "z": "568b629767512beb",
-        "g": "c34bda795978de35",
+        "g": "660b34820fc6fad2",
         "group": "d403defdfbeecc46",
         "name": "Кол-во задач в очереди",
         "label": "Кол-во задач в очереди",
@@ -437,206 +731,43 @@
         "height": 8,
         "className": "",
         "interpolation": "linear",
-        "x": 850,
-        "y": 100,
+        "x": 1370,
+        "y": 120,
         "wires": [
             []
         ]
     },
     {
-        "id": "70a01627a8dbffef",
-        "type": "debug",
-        "z": "568b629767512beb",
-        "g": "c34bda795978de35",
-        "name": "debug 63",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 720,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "09763db8f88a8d0d",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "name": "Test task",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"task\":{\"bot_id\":\"testid\",\"cmd\":\"sell_on_binance\",\"params\":{\"pair\":\"BNBUSDT\",\"quantity\":0.035,\"price\":544.02,\"stopprice\":544.29}}}",
-        "payloadType": "json",
-        "x": 1350,
-        "y": 600,
-        "wires": [
-            [
-                "84948af1aba39a62"
-            ]
-        ]
-    },
-    {
-        "id": "84948af1aba39a62",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "server": "a0efbb89.5e42d8",
-        "command": "rpush",
-        "name": "",
-        "topic": "new_tasks",
-        "obj": true,
-        "x": 1590,
-        "y": 600,
-        "wires": []
-    },
-    {
-        "id": "41ff76b137e42b28",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "name": "Test task2",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"task\":{\"bot_id\":\"testid2\",\"cmd\":\"sell_on_binance\",\"params\":{\"pair\":\"BNBUSDT\",\"quantity\":0.035,\"price\":544.02,\"stopprice\":544.29}}}",
-        "payloadType": "json",
-        "x": 1350,
-        "y": 680,
-        "wires": [
-            [
-                "cdec4e2f30362af6"
-            ]
-        ]
-    },
-    {
-        "id": "cdec4e2f30362af6",
-        "type": "redis-out",
-        "z": "568b629767512beb",
-        "server": "a0efbb89.5e42d8",
-        "command": "rpush",
-        "name": "",
-        "topic": "new_tasks",
-        "obj": true,
-        "x": 1590,
-        "y": 680,
-        "wires": []
-    },
-    {
-        "id": "7061e722720929e2",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "name": "init test data",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1350,
-        "y": 240,
-        "wires": [
-            [
-                "cc134211cabcae1d"
-            ]
-        ]
-    },
-    {
-        "id": "cc134211cabcae1d",
+        "id": "a043cece8af6ec65",
         "type": "function",
         "z": "568b629767512beb",
-        "name": "redis.set    testid",
-        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\nlet test_data = {};\ntest_data.id = \"bots:testid:data\";\ntest_data.somearr = [0,1,2];\ntest_data.someobj = {q:[0,1,2], \"bool\":true};\n\n\n// Регистрируем воркера\n(async () => await redis.set(test_data.id, JSON.stringify(test_data)))();\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
+        "g": "660b34820fc6fad2",
+        "name": "Broker: Check Tasks and Workers",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\nconst config = context.global.get('config');\n\n// ==== Функция проверки, занят ли бот ====\nasync function isBotBusy(botId) {\n    try {\n        let value = await redis.get(config.redis.botLockPrefix + botId);\n        return value !== null;\n    } catch (err) {\n        node.error(`Ошибка при проверке занятости бота ${botId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция проверки, занят ли воркер ====\nasync function isWorkerBusy(workerId) {\n    try {\n        let value = await redis.get(config.redis.workerLockPrefix + workerId);\n        return value !== null;\n    } catch (err) {\n        node.error(`Ошибка при проверке занятости воркера ${workerId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция блокировки бота ====\nasync function lockBot(botId) {\n    try {\n        await redis.set(config.redis.botLockPrefix + botId, 1, 'EX', config.lockTTL);\n        node.log(`Бот ${botId} заблокирован на ${config.lockTTL} секунд.`);\n    } catch (err) {\n        node.error(`Ошибка при блокировке бота ${botId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция блокировки воркера ====\nasync function lockWorker(workerId) {\n    try {\n        await redis.set(config.redis.workerLockPrefix + workerId, 1, 'EX', config.lockTTL);\n        node.log(`Воркер ${workerId} заблокирован на ${config.lockTTL} секунд.`);\n    } catch (err) {\n        node.error(`Ошибка при блокировке воркера ${workerId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция получения свободного воркера ====\nasync function getFreeWorker() {\n    try {\n        let cursor = '0';\n        do {\n            const result = await redis.scan(cursor, 'MATCH', 'worker:*');\n            cursor = result[0];\n            const workers = result[1];\n            for (const worker of workers) {\n                const isBusy = await isWorkerBusy(worker);\n                if (!isBusy) {\n                    return worker;\n                }\n            }\n        } while (cursor !== '0');\n        return null;\n    } catch (err) {\n        node.error('Ошибка при выборе воркера:', err);\n        throw err;\n    }\n}\n\n// ==== Логика брокера ====\n(async () => {\n    try {\n        const currentTime = Date.now();\n\n        // Проверка времени выполнения активных задач\n        let cursor = '0';\n        do {\n            const result = await redis.scan(cursor, 'MATCH', `${config.redis.activeTasksPrefix}*`);\n            cursor = result[0];\n            const activeTasks = result[1];\n\n            for (const taskKey of activeTasks) {\n                const taskInfo = await redis.get(taskKey);\n                if (taskInfo) {\n                    const task = JSON.parse(taskInfo);\n                    const elapsedTime = currentTime - task.startTime;\n\n                    if (elapsedTime > config.taskTimeout * 1000) {\n                        node.warn(`Задача ${taskKey} не завершена в течение ${config.taskTimeout} секунд.`);\n                        await redis.del(taskKey);\n                        node.send([null, { error: `Задача ${taskKey} не завершена в течение ${config.taskTimeout} секунд.`, task: task }]);\n                    }\n                }\n            }\n        } while (cursor !== '0');\n\n        // Обработка задач из очереди\n        while (true) {\n            let taskData = await redis.lpop(config.redis.taskQueueName);\n\n            if (!taskData) {\n                break;\n            }\n\n            let task;\n            try {\n                task = JSON.parse(taskData);\n            } catch (err) {\n                node.error('Ошибка при парсинге задачи:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData);\n                continue;\n            }\n\n            if (!task.task || !task.task.bot_id || !task.task.cmd) {\n                node.warn('Некорректная задача: отсутствуют обязательные поля.');\n                await redis.rpush(config.redis.taskQueueName, taskData);\n                continue;\n            }\n\n            let botData;\n            try {\n                botData = await redis.get(`bots:${task.task.bot_id}:data`);\n                if (botData) {\n                    task.bot = JSON.parse(botData);\n                    task.bot_start = task.bot;\n                } else {\n                    node.warn(`Данные бота ${task.task.bot_id} не найдены в Redis.`);\n                    await redis.rpush(config.redis.taskQueueName, taskData);\n                    continue;\n                }\n            } catch (err) {\n                node.error('Ошибка при получении данных бота:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData);\n                continue;\n            }\n\n            const shouldLockBot = !config.noLockCommands.includes(task.task.cmd);\n\n            if (shouldLockBot) {\n                try {\n                    const isBotBusyb = await isBotBusy(task.task.bot_id);\n                    if (isBotBusyb) {\n                        node.warn(`Бот ${task.task.bot_id} занят. Возвращаем задачу в очередь.`);\n                        await redis.rpush(config.redis.taskQueueName, taskData);\n                        continue;\n                    }\n                } catch (err) {\n                    node.error('Ошибка при проверке занятости бота:', err);\n                    await redis.rpush(config.redis.taskQueueName, taskData);\n                    continue;\n                }\n            }\n\n            let workerId;\n            try {\n                workerId = await getFreeWorker();\n                if (!workerId) {\n                    node.warn('Нет доступных воркеров. Возвращаем задачу в очередь.');\n                    await redis.rpush(config.redis.taskQueueName, taskData);\n                    continue;\n                }\n            } catch (err) {\n                node.error('Ошибка при выборе воркера:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData);\n                continue;\n            }\n\n            if (shouldLockBot) {\n                try {\n                    await lockBot(task.task.bot_id);\n                } catch (err) {\n                    node.error('Ошибка при блокировке бота:', err);\n                    await redis.rpush(config.redis.taskQueueName, taskData);\n                    continue;\n                }\n            }\n\n            try {\n                await lockWorker(workerId);\n            } catch (err) {\n                node.error('Ошибка при блокировке воркера:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData);\n                continue;\n            }\n\n            task.workerId = workerId;\n            task.startTime = currentTime;\n\n            // Сохраняем задачу как активную\n            const taskKey = `${config.redis.activeTasksPrefix}${workerId}:${task.task.bot_id}:${task.task.cmd}`;\n            await redis.set(taskKey, JSON.stringify(task), 'EX', config.taskTimeout);\n\n            try {\n                await redis.publish(config.redis.jobChannel, JSON.stringify(task));\n            } catch (err) {\n                node.error('Ошибка при отправке задачи воркеру:', err);\n                await redis.rpush(config.redis.taskQueueName, taskData);\n                continue;\n            }\n\n            let queueLength = await redis.llen(config.redis.taskQueueName);\n            msg.payload = queueLength;\n            node.send(msg);\n        }\n    } catch (err) {\n        node.error(\"Ошибка в логике брокера: \" + err);\n    }\n})();\n",
+        "outputs": 2,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1540,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "760867d2369ea4a1",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "name": "init test data",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1350,
-        "y": 300,
+        "x": 1020,
+        "y": 160,
         "wires": [
             [
-                "0fac8e94e1e2b310"
+                "a86562b4d73e37a7"
+            ],
+            [
+                "917a4f04a3017a69",
+                "a86562b4d73e37a7"
             ]
         ]
     },
     {
-        "id": "0fac8e94e1e2b310",
-        "type": "function",
-        "z": "568b629767512beb",
-        "name": "redis.set   testid2",
-        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\nlet test_data = {};\ntest_data.id = \"bots:testid2:data\";\ntest_data.somearr = [0,1,2];\ntest_data.someobj = {q:[0,1,2], \"bool\":true};\n\n\n// Регистрируем воркера\n(async () => await redis.set(test_data.id, JSON.stringify(test_data)))();\n\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1540,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bde84900c30b397d",
+        "id": "917a4f04a3017a69",
         "type": "debug",
         "z": "568b629767512beb",
-        "g": "c34bda795978de35",
-        "name": "debug 66",
+        "g": "660b34820fc6fad2",
+        "name": "debug 69",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -645,43 +776,349 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 140,
+        "x": 1300,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "4fa9d878be1d41c4",
+        "id": "1791b4d8eadc1bf1",
         "type": "function",
         "z": "568b629767512beb",
-        "g": "98132085df5d6410",
-        "name": "Worker 1: Process Job",
-        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n(async () => {\n    try {\n        // Получаем ID воркера из контекста Flow\n        const workerId = context.flow.get('workerId');\n        // Получаем сообщение\n        let task = msg.payload;\n        // Проверяем, предназначено ли сообщение этому воркеру\n        if (msg.payload.workerId !== workerId) {\n            return; // Если нет, выходим из функции\n        }\n        node.warn('Воркер '+ workerId +' получил задачу');\n\n        // Добавляем startTime и finishTime в taskData\n        const startTime = task.startTime;\n\n        // Создаем финальный объект для отправки\n        const finalData = {\n            startTime: startTime,\n            task: task.task,\n            bot_data: task.bot_data, // Добавляем данные бота\n            workerId: workerId,  // Добавляем workerId\n            bot_id: task.task.bot_id // Добавляем bot_id\n        };\n\n        // Имитация выполнения задачи\n        await new Promise(resolve => setTimeout(resolve, Math.random() * (30 - 10) + 10));\n\n        msg.payload = finalData;\n        msg.topic = \"fjob\";\n\n        node.send(msg);\n    } catch (err) {\n        node.error(\"Ошибка: \" + err);\n        return [null, { error: 'Ошибка ', details: err }];\n    }\n})();",
+        "g": "660b34820fc6fad2",
+        "name": "Broker: Analyse Results",
+        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\nconst config = context.global.get('config');\nconst getBotDifferences = global.get('getBotDifferences');\n\n// ==== Функция разблокировки воркера ====\nasync function unlockWorker(workerId) {\n    try {\n        await redis.del(config.redis.workerLockPrefix + workerId);\n        node.log(`Воркер ${workerId} разблокирован.`);\n    } catch (err) {\n        node.error(`Ошибка при разблокировке воркера ${workerId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Функция разблокировки бота ====\nasync function unlockBot(botId) {\n    try {\n        await redis.del(config.redis.botLockPrefix + botId);\n        node.log(`Бот ${botId} разблокирован.`);\n    } catch (err) {\n        node.error(`Ошибка при разблокировке бота ${botId}:`, err);\n        throw err;\n    }\n}\n\n// ==== Логика анализа результатов ====\n(async () => {\n    try {\n        const msg2 = msg.payload;\n\n        // Выполняем анализ:\n        const changes = getBotDifferences(msg2.bot, msg2.bot_start);\n        msg.changes = changes;\n        node.log(`Изменения в данных ${JSON.stringify(changes, null, 2)}`);\n\n        const finishTime = Date.now();\n        let durationJob = finishTime - msg2.startTime;\n        let topickey = msg2.workerId + ' - ' + msg2.task.bot_id + ' - ' + msg2.task.cmd;\n        msg.topic = topickey;\n        msg.payload = durationJob;\n\n        // Удаляем задачу из активных\n        const taskKey = `${config.redis.activeTasksPrefix}${msg2.workerId}:${msg2.task.bot_id}:${msg2.task.cmd}`;\n        await redis.del(taskKey);\n        node.log(`Задача ${taskKey} завершена успешно.`);\n\n        // Разблокируем воркера\n        await unlockWorker(msg2.workerId);\n\n        // Разблокируем бота, если команда требует блокировки\n        if (!config.noLockCommands.includes(msg2.task.cmd)) {\n            await redis.set(`bots:${msg2.task.bot_id}:data`, JSON.stringify(msg2.bot));\n            await unlockBot(msg2.task.bot_id);\n        }\n\n        node.send(msg);\n    } catch (err) {\n        node.error(\"Ошибка при анализе результатов: \" + err);\n    }\n})();\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 500,
-        "y": 620,
+        "x": 1010,
+        "y": 300,
         "wires": [
             [
-                "386ca7e8c7e67c3b",
-                "0e83c0fd6d981286"
+                "0155c8a58945a0d9"
             ]
         ]
     },
     {
-        "id": "18eb79254fcfcd07",
+        "id": "0e6cbbfa2380d34d",
+        "type": "redis-in",
+        "z": "568b629767512beb",
+        "g": "660b34820fc6fad2",
+        "server": "a0efbb89.5e42d8",
+        "command": "subscribe",
+        "name": "fjob",
+        "topic": "fjob",
+        "obj": true,
+        "timeout": 0,
+        "x": 810,
+        "y": 300,
+        "wires": [
+            [
+                "1791b4d8eadc1bf1"
+            ]
+        ]
+    },
+    {
+        "id": "0155c8a58945a0d9",
+        "type": "ui-chart",
+        "z": "568b629767512beb",
+        "g": "660b34820fc6fad2",
+        "group": "d403defdfbeecc46",
+        "name": "Время выполнения задач",
+        "label": "Время выполнения задач",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": "2",
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 1390,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b090a91eb9bd32d",
+        "type": "function",
+        "z": "568b629767512beb",
+        "name": "config",
+        "func": "// ==== Инициализация конфигурации ====\nconst config = {\n    redis: {\n        taskQueueName: 'new_tasks',\n        jobChannel: 'job',\n        returnChannel: 'return_channel',\n        botLockPrefix: 'bot_lock:',\n        workerLockPrefix: 'worker_lock:',\n        activeTasksPrefix: 'active_task:',\n    },\n    noLockCommands: ['sell_on_binance', 'cancel_on_binance'],\n    lockTTL: 5,\n    maxTasksPerRun: 10,\n    taskTimeout: 5,\n    enableLogging: true,\n};\n\n// Сохраняем конфигурацию в глобальный контекст\ncontext.global.set('config', config);\n\n// Возвращаем сообщение без изменений\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1950,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2b7d39b31bcd80b4",
         "type": "inject",
         "z": "568b629767512beb",
-        "g": "98132085df5d6410",
-        "name": "Init Worker 1",
+        "g": "4f3f415805e8d135",
+        "name": " stop",
         "props": [
             {
-                "p": "payload",
+                "p": "payload"
+            },
+            {
+                "p": "reset",
                 "v": "true",
-                "t": "bool"
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 560,
+        "y": 540,
+        "wires": [
+            [
+                "5675052d7f4e1ecd"
+            ]
+        ]
+    },
+    {
+        "id": "5675052d7f4e1ecd",
+        "type": "redis-out",
+        "z": "568b629767512beb",
+        "g": "4f3f415805e8d135",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "stop",
+        "obj": false,
+        "x": 560,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "4729ac62b494b38b",
+        "type": "inject",
+        "z": "568b629767512beb",
+        "g": "4f3f415805e8d135",
+        "name": "start",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 540,
+        "wires": [
+            [
+                "628812a184ece349"
+            ]
+        ]
+    },
+    {
+        "id": "628812a184ece349",
+        "type": "redis-out",
+        "z": "568b629767512beb",
+        "g": "4f3f415805e8d135",
+        "server": "a0efbb89.5e42d8",
+        "command": "publish",
+        "name": "",
+        "topic": "start",
+        "obj": false,
+        "x": 140,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "4a4de9207489c47b",
+        "type": "trigger",
+        "z": "568b629767512beb",
+        "g": "660b34820fc6fad2",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-500",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 460,
+        "y": 160,
+        "wires": [
+            [
+                "a043cece8af6ec65"
+            ]
+        ]
+    },
+    {
+        "id": "f4c164a7d0975feb",
+        "type": "delay",
+        "z": "568b629767512beb",
+        "g": "660b34820fc6fad2",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 250,
+        "y": 160,
+        "wires": [
+            [
+                "4a4de9207489c47b"
+            ]
+        ]
+    },
+    {
+        "id": "9f488ec8664efcde",
+        "type": "redis-in",
+        "z": "568b629767512beb",
+        "g": "660b34820fc6fad2",
+        "server": "a0efbb89.5e42d8",
+        "command": "subscribe",
+        "name": "",
+        "topic": "start",
+        "obj": true,
+        "timeout": 0,
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "f4c164a7d0975feb"
+            ]
+        ]
+    },
+    {
+        "id": "d70c7cfd6876eacb",
+        "type": "redis-in",
+        "z": "568b629767512beb",
+        "g": "660b34820fc6fad2",
+        "server": "a0efbb89.5e42d8",
+        "command": "subscribe",
+        "name": "",
+        "topic": "stop",
+        "obj": true,
+        "timeout": 0,
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "cfabfdac98a06539"
+            ]
+        ]
+    },
+    {
+        "id": "cfabfdac98a06539",
+        "type": "function",
+        "z": "568b629767512beb",
+        "g": "660b34820fc6fad2",
+        "name": "stop",
+        "func": "msg.reset = true;\nmsg.payload = \"\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "4a4de9207489c47b"
+            ]
+        ]
+    },
+    {
+        "id": "410a42736b9b60bf",
+        "type": "link out",
+        "z": "568b629767512beb",
+        "g": "b3aea270dace08fc",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "f8965512f3d939d9"
+        ],
+        "x": 1535,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "ee977f0676562b21",
+        "type": "inject",
+        "z": "3f98de411a14795f",
+        "name": "Init Worker ",
+        "props": [
+            {
+                "p": "payload"
             }
         ],
         "repeat": "",
@@ -689,40 +1126,39 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 290,
-        "y": 540,
+        "payload": "true",
+        "payloadType": "str",
+        "x": 210,
+        "y": 100,
         "wires": [
             [
-                "21af50813565584d"
+                "53ee5c1bb9ac5c7c"
             ]
         ]
     },
     {
-        "id": "65cd5b44329acb2e",
+        "id": "74fd2485648ef35f",
         "type": "redis-in",
-        "z": "568b629767512beb",
-        "g": "98132085df5d6410",
+        "z": "3f98de411a14795f",
         "server": "a0efbb89.5e42d8",
         "command": "subscribe",
         "name": "job",
         "topic": "job",
         "obj": true,
         "timeout": 0,
-        "x": 270,
-        "y": 620,
+        "x": 190,
+        "y": 500,
         "wires": [
             [
-                "4fa9d878be1d41c4",
-                "607b98142d4cc63b"
+                "393425648f5da403"
             ]
         ]
     },
     {
-        "id": "21af50813565584d",
+        "id": "53ee5c1bb9ac5c7c",
         "type": "function",
-        "z": "568b629767512beb",
-        "g": "98132085df5d6410",
-        "name": "Worker 1: Init",
+        "z": "3f98de411a14795f",
+        "name": "Worker : Init",
         "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// Используем context.flow для получения ID воркера, если он уже существует, иначе генерируем новый\nconst workerId = context.flow.get('workerId') || 'worker:' + RED.util.generateId();\ncontext.flow.set('workerId', workerId);\n\n// Регистрируем воркера\n(async () => await redis.set(workerId, 1))();\nnode.status({fill:\"green\",shape:\"dot\",text:\"Воркер запущен:\" + workerId});\n\nmsg.workerID = workerId;\nreturn msg;",
         "outputs": 1,
         "timeout": "",
@@ -730,206 +1166,27 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 540,
+        "x": 390,
+        "y": 100,
         "wires": [
             []
         ]
     },
     {
-        "id": "607b98142d4cc63b",
-        "type": "debug",
-        "z": "568b629767512beb",
-        "g": "98132085df5d6410",
-        "name": "debug 51",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
-        "y": 700,
-        "wires": []
-    },
-    {
-        "id": "49c40644aa9fa132",
+        "id": "77322bcd7a0151ad",
         "type": "redis-out",
-        "z": "568b629767512beb",
-        "g": "98132085df5d6410",
+        "z": "3f98de411a14795f",
         "server": "a0efbb89.5e42d8",
         "command": "publish",
         "name": "",
         "topic": "fjob",
         "obj": true,
-        "x": 870,
-        "y": 620,
+        "x": 1010,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "386ca7e8c7e67c3b",
-        "type": "delay",
-        "z": "568b629767512beb",
-        "g": "98132085df5d6410",
-        "name": "",
-        "pauseType": "random",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "0",
-        "randomLast": "1",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 720,
-        "y": 620,
-        "wires": [
-            [
-                "49c40644aa9fa132"
-            ]
-        ]
-    },
-    {
-        "id": "0e83c0fd6d981286",
-        "type": "debug",
-        "z": "568b629767512beb",
-        "g": "98132085df5d6410",
-        "name": "debug 64",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 700,
-        "wires": []
-    },
-    {
-        "id": "2a93e7ce.341078",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "name": "",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1480,
-        "y": 160,
-        "wires": [
-            [
-                "d89709ef.fd9368"
-            ]
-        ]
-    },
-    {
-        "id": "d89709ef.fd9368",
-        "type": "function",
-        "z": "568b629767512beb",
-        "name": "redis.info()",
-        "func": "let redis = context.global.get('redis');\n\nredis.info().then((data)=>{\n    msg.payload = data\n    node.send(msg);\n})\n\n/*\nredis.call(\"anycmd\").then((data)=>{\n    msg.payload = data\n    node.send(msg);\n})*/",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1650,
-        "y": 160,
-        "wires": [
-            [
-                "f2e9c3a0.8f181"
-            ]
-        ]
-    },
-    {
-        "id": "f2e9c3a0.8f181",
-        "type": "debug",
-        "z": "568b629767512beb",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1810,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "4274a918b99b6efa",
-        "type": "redis-instance",
-        "z": "568b629767512beb",
-        "server": "a0efbb89.5e42d8",
-        "name": "",
-        "topic": "redis",
-        "location": "global",
-        "x": 1310,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "24c489e3cd436036",
-        "type": "function",
-        "z": "568b629767512beb",
-        "name": "getBotDifferences",
-        "func": "function getBotDifferences(bot, botStart, ignorePaths = []) {\n    const ignoreSet = new Set(ignorePaths);    // Рекурсивная функция сравнения объектов    \n    function compareObjects(a, b, differences = {}, path = []) {\n        const allKeys = new Set([...Object.keys(a), ...Object.keys(b)]);\n        allKeys.forEach(key => {\n            const currentPath = [...path, key];\n            const pathString = currentPath.join('.');            // Пропускаем игнорируемые пути  \n            if (ignoreSet.has(pathString)) return;\n            const aVal = a[key];\n            const bVal = b[key];\n            // Обработка объектов        \n            if (isObject(aVal) && isObject(bVal)) {\n                const nestedDiff = {};\n                compareObjects(aVal, bVal, nestedDiff, currentPath);\n                if (Object.keys(nestedDiff).length > 0) {\n                    differences[key] = nestedDiff;\n                }\n            }\n            // Обработка массивов   \n            else if (Array.isArray(aVal) && Array.isArray(bVal)) {\n                if (JSON.stringify(aVal) !== JSON.stringify(bVal)) {\n                    differences[key] = { old: bVal, new: aVal };\n                }\n            }\n            // Простые значения     \n            else {\n                if (!isEqual(aVal, bVal)) {\n                    differences[key] = { old: bVal, new: aVal };\n                }\n            }\n        });\n        return differences;\n    }\n    // Проверка является ли значение объектом (не массивом)  \n    function isObject(val) { return val !== null && typeof val === 'object' && !Array.isArray(val); }\n    // Универсальное сравнение значений   \n    function isEqual(a, b) {\n        if (a === b) return true;\n        if (a === undefined || b === undefined) return false;\n        return JSON.stringify(a) === JSON.stringify(b);\n    }\n    return compareObjects(bot, botStart);\n} global.set('getBotDifferences', getBotDifferences);\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1590,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7033ba311f97738f",
-        "type": "inject",
-        "z": "568b629767512beb",
-        "name": "init functions",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 1350,
-        "y": 100,
-        "wires": [
-            [
-                "24c489e3cd436036"
-            ]
-        ]
-    },
-    {
-        "id": "d27b92e987155970",
+        "id": "f1977b420063071d",
         "type": "switch",
         "z": "3f98de411a14795f",
         "name": "task.cmd",
@@ -938,471 +1195,141 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "cmd1",
+                "v": "check",
                 "vt": "str"
             },
             {
                 "t": "eq",
-                "v": "cmd2",
+                "v": "sell_on_binance",
                 "vt": "str"
             },
             {
-                "t": "eq",
-                "v": "cmd3",
-                "vt": "str"
+                "t": "else"
             }
         ],
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 640,
-        "y": 860,
+        "x": 500,
+        "y": 500,
         "wires": [
             [
-                "6a41476e49de7f14"
+                "bf8b8fc38d4aed63"
             ],
             [
-                "ecab19de5ac32361"
+                "b4fc45cb56bd8409"
             ],
             [
-                "c723462dab492859"
+                "b4fc45cb56bd8409"
             ]
         ]
     },
     {
-        "id": "3474898fdfc341d5",
+        "id": "393425648f5da403",
         "type": "switch",
         "z": "3f98de411a14795f",
-        "name": "worker_id",
-        "property": "payload.worker.worker_id",
+        "name": "workerId",
+        "property": "payload.workerId",
         "propertyType": "msg",
         "rules": [
             {
                 "t": "eq",
-                "v": "worker_id",
-                "vt": "global"
+                "v": "workerId",
+                "vt": "flow"
             }
         ],
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 480,
-        "y": 860,
+        "x": 340,
+        "y": 500,
         "wires": [
             [
-                "d27b92e987155970"
+                "f1977b420063071d"
             ]
         ]
     },
     {
-        "id": "6a41476e49de7f14",
+        "id": "4970669a0e9cf487",
         "type": "function",
         "z": "3f98de411a14795f",
-        "name": "cmd1",
-        "func": "\n\nmsg.payload.data.onoff = false\n\nmsg.payload.data.updated = new Date().getTime()\n\nmsg.topic = \"fjob\"\nnode.status({ fill: \"green\", shape: \"dot\" });\nreturn msg;",
+        "name": "msg.topic = \"fjob\"",
+        "func": " msg.topic = \"fjob\";\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
-        "y": 760,
+        "x": 830,
+        "y": 200,
         "wires": [
             [
-                "1d52faf4ab27679d",
-                "f38e31a1e61fd462"
+                "77322bcd7a0151ad"
             ]
         ]
     },
     {
-        "id": "ecab19de5ac32361",
-        "type": "function",
+        "id": "e8aee682ddbe8c4b",
+        "type": "link in",
         "z": "3f98de411a14795f",
-        "name": "cmd2",
-        "func": "let redis = context.global.get('redis');\n\nlet startSetKey = \"global_settings:main_puls_delay\";\n\nredis.get(startSetKey).then((startSet) => {\n    msg.payload.data.startSet += JSON.parse(startSet)\n\n    msg.topic = \"fjob\"\n    node.status({ fill: \"green\", shape: \"dot\" });\n    node.send(msg)\n\n}).catch((err) => {\n    node.error(\"Error getting startSet: \" + err);\n});\n\n\n\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 870,
-        "y": 820,
-        "wires": [
-            [
-                "441611d3d2dcea4e",
-                "13f0a455a01d190d"
-            ]
-        ]
-    },
-    {
-        "id": "c723462dab492859",
-        "type": "function",
-        "z": "3f98de411a14795f",
-        "name": "cmd3",
-        "func": "\n\nmsg.payload.data.onoff = !msg.payload.data.onoff\n\nmsg.payload.data.updated = new Date().getTime()\n\nmsg.topic = \"fjob\"\nnode.status({ fill: \"green\", shape: \"dot\" });\nreturn [msg,msg];",
-        "outputs": 2,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 870,
-        "y": 940,
-        "wires": [
-            [
-                "f805dc1fb48ea48d",
-                "b980f98e071e07ea"
-            ],
-            [
-                "83b5684b5d188dfc"
-            ]
+        "name": "link in 1",
+        "links": [
+            "7bdddc1be54a9489",
+            "b4fc45cb56bd8409"
         ],
-        "icon": "node-red/inject.svg"
-    },
-    {
-        "id": "0b6ffdc763204db1",
-        "type": "redis-in",
-        "z": "3f98de411a14795f",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "",
-        "topic": "job",
-        "obj": true,
-        "timeout": 0,
-        "x": 230,
-        "y": 860,
+        "x": 685,
+        "y": 200,
         "wires": [
             [
-                "76370c50d613e5fa"
+                "4970669a0e9cf487"
             ]
         ]
     },
     {
-        "id": "1d52faf4ab27679d",
-        "type": "debug",
+        "id": "7bdddc1be54a9489",
+        "type": "link out",
         "z": "3f98de411a14795f",
-        "name": "debug 25",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1200,
-        "y": 760,
-        "wires": []
-    },
-    {
-        "id": "f38e31a1e61fd462",
-        "type": "redis-out",
-        "z": "3f98de411a14795f",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "fjob",
-        "obj": true,
-        "x": 1050,
-        "y": 760,
-        "wires": []
-    },
-    {
-        "id": "441611d3d2dcea4e",
-        "type": "redis-out",
-        "z": "3f98de411a14795f",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "fjob",
-        "obj": true,
-        "x": 1030,
-        "y": 820,
-        "wires": []
-    },
-    {
-        "id": "13f0a455a01d190d",
-        "type": "debug",
-        "z": "3f98de411a14795f",
-        "name": "debug 43",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1180,
-        "y": 820,
-        "wires": []
-    },
-    {
-        "id": "f805dc1fb48ea48d",
-        "type": "redis-out",
-        "z": "3f98de411a14795f",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "fjob",
-        "obj": true,
-        "x": 1070,
-        "y": 940,
-        "wires": []
-    },
-    {
-        "id": "b980f98e071e07ea",
-        "type": "debug",
-        "z": "3f98de411a14795f",
-        "name": "debug 27",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1220,
-        "y": 940,
-        "wires": []
-    },
-    {
-        "id": "6e5d54647e4db6e6",
-        "type": "redis-out",
-        "z": "3f98de411a14795f",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "tasks",
-        "obj": true,
-        "x": 1070,
-        "y": 980,
-        "wires": []
-    },
-    {
-        "id": "76370c50d613e5fa",
-        "type": "debug",
-        "z": "3f98de411a14795f",
-        "name": "debug 33",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 220,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "83b5684b5d188dfc",
-        "type": "function",
-        "z": "3f98de411a14795f",
-        "name": "do cmd1",
-        "func": "msg.payload = {\n    cmd: \"add\",\n    task:{\n        data: msg.payload.data,\n        cmd: \"cmd1\"\n    }\n    \n}\nmsg.topic = \"tasks\"\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 920,
-        "y": 980,
-        "wires": [
-            [
-                "6e5d54647e4db6e6",
-                "69af9d0a35951760"
-            ]
-        ]
-    },
-    {
-        "id": "69af9d0a35951760",
-        "type": "debug",
-        "z": "3f98de411a14795f",
-        "name": "debug 3",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1260,
-        "y": 980,
-        "wires": []
-    },
-    {
-        "id": "f3987b323a93c5c3",
-        "type": "inject",
-        "z": "3f98de411a14795f",
-        "g": "d4c174739de217d4",
-        "name": "Init Worker 2",
-        "props": [
-            {
-                "p": "payload",
-                "v": "true",
-                "t": "bool"
-            },
-            {
-                "p": "topic",
-                "v": "",
-                "vt": "str"
-            }
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "e8aee682ddbe8c4b"
         ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payloadType": "bool",
-        "x": 370,
-        "y": 140,
-        "wires": [
-            [
-                "d2e16916844ef8c6"
-            ]
-        ]
+        "x": 865,
+        "y": 420,
+        "wires": []
     },
     {
-        "id": "d2e16916844ef8c6",
+        "id": "bf8b8fc38d4aed63",
         "type": "function",
         "z": "3f98de411a14795f",
-        "g": "d4c174739de217d4",
-        "name": "Worker 2: Init",
-        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n// Используем context.flow для получения ID воркера, если он уже существует, иначе генерируем новый\nconst workerId = context.flow.get('workerId') || 'worker:' + RED.util.generateId();\ncontext.flow.set('workerId', workerId);\n\n// Регистрируем воркера\n(async () => await redis.set(workerId, 1))();\nnode.status({fill:\"green\",shape:\"dot\",text:\"Воркер запущен:\" + workerId});\n\nmsg.workerID = workerId;\nreturn msg;",
+        "name": "count + 1",
+        "func": "msg.payload.bot.count = msg.payload.bot.count + 1;\nreturn msg;",
         "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 550,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "aee5dc394e1301d4",
-        "type": "function",
-        "z": "3f98de411a14795f",
-        "g": "d4c174739de217d4",
-        "name": "Worker 2: Process Job",
-        "func": "// ==== Настройка ====\nlet redis = context.global.get('redis');\n\n(async () => {\n    try {\n        // Получаем ID воркера из контекста Flow\n        const workerId = context.flow.get('workerId');\n        // Получаем сообщение\n        let task = msg.payload;\n        // Проверяем, предназначено ли сообщение этому воркеру\n        if (msg.payload.workerId !== workerId) {\n            return; // Если нет, выходим из функции\n        }\n        node.warn('Воркер '+ workerId+' получил задачу');\n\n        // Добавляем startTime и finishTime в taskData\n        const startTime = task.startTime;\n\n        // Создаем финальный объект для отправки\n        const finalData = {\n            startTime: startTime,\n            task: task.task,\n            bot_data: task.bot_data, // Добавляем данные бота\n            workerId: workerId,  // Добавляем workerId\n            bot_id: task.task.bot_id // Добавляем bot_id\n        };\n\n        // Имитация выполнения задачи\n        await new Promise(resolve => setTimeout(resolve, Math.random() * (30 - 10) + 10));\n\n        msg.payload = finalData;\n        msg.topic = \"fjob\";\n\n        node.send(msg);\n    } catch (err) {\n        node.error(\"Ошибка : \" + err);\n        return [null, { error: 'Ошибка', details: err }];\n    }\n})();",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 540,
-        "y": 240,
-        "wires": [
-            [
-                "28974da5b4417212",
-                "01a180c0b0f2225d"
-            ]
-        ]
-    },
-    {
-        "id": "94015585f348d9c3",
-        "type": "redis-in",
-        "z": "3f98de411a14795f",
-        "g": "d4c174739de217d4",
-        "server": "a0efbb89.5e42d8",
-        "command": "subscribe",
-        "name": "job",
-        "topic": "job",
-        "obj": true,
         "timeout": 0,
-        "x": 350,
-        "y": 240,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 420,
         "wires": [
             [
-                "606463e04b70cf07",
-                "aee5dc394e1301d4"
+                "7bdddc1be54a9489"
             ]
         ]
     },
     {
-        "id": "606463e04b70cf07",
-        "type": "debug",
+        "id": "b4fc45cb56bd8409",
+        "type": "link out",
         "z": "3f98de411a14795f",
-        "g": "d4c174739de217d4",
-        "name": "debug 53",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 360,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "c3283ee72a5a301c",
-        "type": "redis-out",
-        "z": "3f98de411a14795f",
-        "g": "d4c174739de217d4",
-        "server": "a0efbb89.5e42d8",
-        "command": "publish",
-        "name": "",
-        "topic": "fjob",
-        "obj": true,
-        "x": 910,
-        "y": 240,
-        "wires": []
-    },
-    {
-        "id": "28974da5b4417212",
-        "type": "delay",
-        "z": "3f98de411a14795f",
-        "g": "d4c174739de217d4",
-        "name": "",
-        "pauseType": "random",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "0",
-        "randomLast": "1",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 760,
-        "y": 240,
-        "wires": [
-            [
-                "c3283ee72a5a301c"
-            ]
-        ]
-    },
-    {
-        "id": "01a180c0b0f2225d",
-        "type": "debug",
-        "z": "3f98de411a14795f",
-        "g": "d4c174739de217d4",
-        "name": "debug 65",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
-        "y": 300,
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "e8aee682ddbe8c4b"
+        ],
+        "x": 705,
+        "y": 500,
         "wires": []
     }
 ]
